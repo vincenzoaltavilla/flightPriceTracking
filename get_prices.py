@@ -7,7 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-# From Ryanair URL flight(s), this func returns the price(s)
+# From Ryanair URL flight(s), this function returns its(theirs) price(s)
 def get_prices(url):
     # Software which navigates with Chrome
     chrome_driver = ChromeDriverManager().install()

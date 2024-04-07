@@ -1,10 +1,8 @@
 from bs4 import BeautifulSoup
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 
 
 # From Ryanair URL flight(s), this function returns its(theirs) price(s)
@@ -19,10 +17,7 @@ def get_prices(url):
 
     # Open browser at URL
     driver.get(url)
-
-    element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, 'flights-price-simple'))
-    )
+    sleep(1)
 
     # Getting HTML source
     html = driver.page_source

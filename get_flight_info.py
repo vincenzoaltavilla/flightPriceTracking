@@ -43,7 +43,7 @@ def get_flight_info(url):
         info = []
 
         for i in range(len(prices)):
-            flight_info = {"Departure": times[i * 2], "Arrival": times[i * 2 + 1], "Price": prices[i]}
+            flight_info = {"Departure": times[i*2], "Arrival": times[i*2 + 1], "Price": prices[i]}
             info.append(flight_info)
 
         return info

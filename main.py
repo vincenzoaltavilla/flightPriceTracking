@@ -12,6 +12,12 @@ nOfPersons = "1"
 col = []
 prices = []
 
+# today = str(date.today())
+today = '2024-03-23'
+
+sheet_name = airportFrom+'-'+airportTo
+excel_file = sheet_name + '.xlsx'
+
 for dateOfFlight in dateOfFlights:
     URL = "https://www.ryanair.com/it/it/trip/flights/select?adults=" + nOfPersons + "&teens=0&children=0&infants=0&dateOut=" + dateOfFlight + "&dateIn=&isConnectedFlight=false&discount=0&promoCode=&isReturn=false&originIata=" + airportFrom + "&destinationIata=" + airportTo + "&tpAdults=" + nOfPersons + "&tpTeens=0&tpChildren=0&tpInfants=0&tpStartDate=" + dateOfFlight + "&tpEndDate=&tpDiscount=0&tpPromoCode=&tpOriginIata=" + airportFrom + "&tpDestinationIata=" + airportTo + ""
 
@@ -23,18 +29,17 @@ for dateOfFlight in dateOfFlights:
             col.append(dateOfFlight+", "+flight['Departure']+"-"+flight['Arrival'])
             prices.append(flight['Price'])
 
+# If daily top10 was already stored, don't do anything, else append it or store it if the file doesn't exist
+if os.path.exists(excel_file):
+    df = pd.read_excel(excel_file, sheet_name=sheet_name, index_col=0)
+    if "Prezzi al " + today not in df.index:
+        df.loc["Prezzi al " + today] = [float(price.replace(' €', '').replace(',', '.')) for price in prices]
+else:
+    df = pd.DataFrame(index=["Prezzi al " + today], columns=col)
+    df.loc["Prezzi al " + today] = [float(price.replace(' €', '').replace(',', '.')) for price in prices]
 
-prices_new = [float(price.replace(' €', '').replace(',', '.')) for price in prices]
-
-today = str(date.today())
-# today = '2024-03-23'
-
-df = pd.DataFrame(index=["Prezzi al " + today], columns=col)
-df.loc["Prezzi al " + today] = prices_new
-
-sheet_name = airportFrom+'-'+airportTo
-excel_file = sheet_name + '.xlsx'
 df.to_excel(excel_file, sheet_name=sheet_name)
+
 
 wb = load_workbook(excel_file)
 ws = wb[sheet_name]

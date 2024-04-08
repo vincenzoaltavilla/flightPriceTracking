@@ -27,18 +27,18 @@ def get_flight_info(url):
 
     soup = BeautifulSoup(html, 'html.parser')
 
-    flights = soup.find_all('flights-price-simple')
-    span_times = soup.find_all('span', class_='flight-info__hour')
+    flights_prices = soup.find_all('flights-price-simple')
+    flights_times = soup.find_all('span', class_='flight-info__hour')
     times = []
     prices = []
 
-    if len(flights) == 0:
+    if len(flights_prices) == 0:
         return 'No flights'
     else:
-        for flight in flights:
-            prices.append(flight.getText(strip=True))
-        for span_time in span_times:
-            times.append(span_time.get_text(strip=True))
+        for flight_price in flights_prices:
+            prices.append(flight_price.getText(strip=True))
+        for flight_time in flights_times:
+            times.append(flight_time.get_text(strip=True))
 
         info = []
 

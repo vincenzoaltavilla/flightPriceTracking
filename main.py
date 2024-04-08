@@ -4,7 +4,6 @@ from openpyxl import load_workbook
 import pandas as pd
 import os
 
-
 airportFrom = "TRN"
 airportTo = "BDS"
 dateOfFlights = ["2024-05-15", "2024-05-16", "2024-05-17"]
@@ -20,10 +19,8 @@ sheet_name = airportFrom+'-'+airportTo
 excel_file = sheet_name + '.xlsx'
 
 for dateOfFlight in dateOfFlights:
-    URL = "https://www.ryanair.com/it/it/trip/flights/select?adults=" + nOfPersons + "&teens=0&children=0&infants=0&dateOut=" + dateOfFlight + "&dateIn=&isConnectedFlight=false&discount=0&promoCode=&isReturn=false&originIata=" + airportFrom + "&destinationIata=" + airportTo + "&tpAdults=" + nOfPersons + "&tpTeens=0&tpChildren=0&tpInfants=0&tpStartDate=" + dateOfFlight + "&tpEndDate=&tpDiscount=0&tpPromoCode=&tpOriginIata=" + airportFrom + "&tpDestinationIata=" + airportTo + ""
 
-    info = get_flight_info(URL)
-    # print(info)
+    info = get_flight_info("https://www.ryanair.com/it/it/trip/flights/select?adults=" + nOfPersons + "&teens=0&children=0&infants=0&dateOut=" + dateOfFlight + "&dateIn=&isConnectedFlight=false&discount=0&promoCode=&isReturn=false&originIata=" + airportFrom + "&destinationIata=" + airportTo + "&tpAdults=" + nOfPersons + "&tpTeens=0&tpChildren=0&tpInfants=0&tpStartDate=" + dateOfFlight + "&tpEndDate=&tpDiscount=0&tpPromoCode=&tpOriginIata=" + airportFrom + "&tpDestinationIata=" + airportTo + "")
 
     if info != 'No flights':
         for flight in info:
@@ -39,7 +36,6 @@ else:
     df.loc["Prezzi al " + today] = [float(price.replace(' €', '').replace(',', '.')) for price in prices]
 
 df.to_excel(excel_file, sheet_name=sheet_name)
-
 
 wb = load_workbook(excel_file)
 ws = wb[sheet_name]

@@ -1,8 +1,9 @@
 from get_flight_info import *
 from datetime import date
+from openpyxl import load_workbook
 import pandas as pd
 import os
-from openpyxl import load_workbook
+
 
 airportFrom = "TRN"
 airportTo = "BDS"

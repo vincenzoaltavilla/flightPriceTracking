@@ -6,7 +6,7 @@ from time import sleep
 
 
 # From Ryanair URL flight(s), this function returns its(theirs) price(s)
-def get_prices(url):
+def get_flight_info(url):
     # Software which navigates with Chrome
     chrome_driver = ChromeDriverManager().install()
     op = webdriver.ChromeOptions()
@@ -26,8 +26,10 @@ def get_prices(url):
     driver.quit()
 
     soup = BeautifulSoup(html, 'html.parser')
-    flights = soup.find_all('flights-price-simple')
 
+    flights = soup.find_all('flights-price-simple')
+    span_times = soup.find_all('span', class_='flight-info__hour')
+    times = []
     prices = []
 
     if len(flights) == 0:
@@ -35,4 +37,13 @@ def get_prices(url):
     else:
         for flight in flights:
             prices.append(flight.getText(strip=True))
-        return prices
+        for span_time in span_times:
+            times.append(span_time.get_text(strip=True))
+
+        info = []
+
+        for i in range(len(prices)):
+            flight_info = {"Departure": times[i * 2], "Arrival": times[i * 2 + 1], "Price": prices[i]}
+            info.append(flight_info)
+
+        return info

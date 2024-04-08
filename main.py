@@ -1,4 +1,4 @@
-from get_prices import *
+from get_flight_info import *
 
 """from openpyxl import load_workbook
 import pandas as pd
@@ -12,7 +12,7 @@ dateOfFlight = "2024-05-15"
 nOfPersons = "1"
 URL = "https://www.ryanair.com/it/it/trip/flights/select?adults=" + nOfPersons + "&teens=0&children=0&infants=0&dateOut=" + dateOfFlight + "&dateIn=&isConnectedFlight=false&discount=0&promoCode=&isReturn=false&originIata=" + airportFrom + "&destinationIata=" + airportTo + "&tpAdults=" + nOfPersons + "&tpTeens=0&tpChildren=0&tpInfants=0&tpStartDate=" + dateOfFlight + "&tpEndDate=&tpDiscount=0&tpPromoCode=&tpOriginIata=" + airportFrom + "&tpDestinationIata=" + airportTo + ""
 
-prices = get_prices(URL)
+prices = get_flight_info(URL)
 print(prices)
 
 """

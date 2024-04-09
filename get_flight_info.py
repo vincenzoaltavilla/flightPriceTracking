@@ -17,7 +17,7 @@ def get_flight_info(url):
 
     # Open browser at URL
     driver.get(url)
-    sleep(2)
+    sleep(5)
 
     # Getting HTML source
     html = driver.page_source

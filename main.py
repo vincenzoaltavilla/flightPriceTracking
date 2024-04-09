@@ -3,6 +3,7 @@ from datetime import date
 from openpyxl import load_workbook
 import pandas as pd
 import os
+import matplotlib.pyplot as plt
 
 airportFrom = "TRN"
 airportTo = "BDS"
@@ -38,8 +39,23 @@ df.to_excel(excel_file, sheet_name=sheet_name)
 
 wb = load_workbook(excel_file)
 ws = wb[sheet_name]
-columns = "ABCDEFG"
+columns = "ABCDEFGHIJKL"
 for column in columns:
     ws.column_dimensions[column].width = 25
 wb.save(excel_file)
 wb.close()
+
+"""
+x = df.index.values.tolist()
+y = df.values.tolist()
+plt.plot(y)
+plt.xticks(range(len(x)), x)
+plt.legend(col, bbox_to_anchor=(0.5, 1.2), loc='upper center', ncol=2)
+plt.tight_layout()
+plt.ylabel("€")
+plt.grid()
+fig = plt.gcf()
+plt.show()
+plt.draw()
+fig.savefig('grafico.pdf')
+"""

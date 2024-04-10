@@ -44,6 +44,7 @@ for column in columns:
 wb.save(excel_file)
 wb.close()
 
+print("\n\n")
 print(df.to_string())
 
 x = df.index.values.tolist()
@@ -59,4 +60,4 @@ plt.show()
 plt.draw()
 # fig.savefig('grafico.pdf')
 
-input("Press any key to close...")
+input("\n\n\nPress any key to close...")

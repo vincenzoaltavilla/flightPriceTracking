@@ -44,6 +44,8 @@ for column in columns:
 wb.save(excel_file)
 wb.close()
 
+print(df.to_string())
+
 x = df.index.values.tolist()
 y = df.values.tolist()
 plt.plot(y)

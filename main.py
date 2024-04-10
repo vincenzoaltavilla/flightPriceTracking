@@ -29,12 +29,10 @@ for dateOfFlight in dateOfFlights:
 
 if os.path.exists(excel_file):
     df = pd.read_excel(excel_file, sheet_name=sheet_name, index_col=0)
-    if "Prezzi al " + today not in df.index:
-        df.loc["Prezzi al " + today] = [float(price.replace(' €', '').replace(',', '.')) for price in prices]
 else:
     df = pd.DataFrame(index=["Prezzi al " + today], columns=col)
-    df.loc["Prezzi al " + today] = [float(price.replace(' €', '').replace(',', '.')) for price in prices]
 
+df.loc["Prezzi al " + today] = [float(price.replace(' €', '').replace(',', '.')) for price in prices]
 df.to_excel(excel_file, sheet_name=sheet_name)
 
 wb = load_workbook(excel_file)
@@ -45,7 +43,6 @@ for column in columns:
 wb.save(excel_file)
 wb.close()
 
-"""
 x = df.index.values.tolist()
 y = df.values.tolist()
 plt.plot(y)
@@ -57,5 +54,4 @@ plt.grid()
 fig = plt.gcf()
 plt.show()
 plt.draw()
-fig.savefig('grafico.pdf')
-"""
+# fig.savefig('grafico.pdf')

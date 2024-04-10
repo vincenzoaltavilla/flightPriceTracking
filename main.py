@@ -58,3 +58,5 @@ fig = plt.gcf()
 plt.show()
 plt.draw()
 # fig.savefig('grafico.pdf')
+
+input("Press any key to close...")

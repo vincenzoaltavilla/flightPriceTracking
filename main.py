@@ -20,7 +20,7 @@ sheet_name = airportFrom+'-'+airportTo
 excel_file = sheet_name + '.xlsx'
 
 for dateOfFlight in dateOfFlights:
-    print("\nAnalizzando voli in data " + dateOfFlight)
+    print("\n\nAnalizzando voli in data " + dateOfFlight)
     info = get_flight_info("https://www.ryanair.com/it/it/trip/flights/select?adults=" + nOfPersons + "&teens=0&children=0&infants=0&dateOut=" + dateOfFlight + "&dateIn=&isConnectedFlight=false&discount=0&promoCode=&isReturn=false&originIata=" + airportFrom + "&destinationIata=" + airportTo + "&tpAdults=" + nOfPersons + "&tpTeens=0&tpChildren=0&tpInfants=0&tpStartDate=" + dateOfFlight + "&tpEndDate=&tpDiscount=0&tpPromoCode=&tpOriginIata=" + airportFrom + "&tpDestinationIata=" + airportTo + "")
 
     if info != 'No flights':

@@ -1,3 +1,4 @@
+import sys
 from bs4 import BeautifulSoup
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
@@ -10,6 +11,12 @@ def get_flight_info(url):
     # Software which navigates with Chrome
     chrome_driver = ChromeDriverManager().install()
     op = webdriver.ChromeOptions()
+    op.add_experimental_option('excludeSwitches', ['enable-logging'])
+    op.add_argument("--silent")
+    op.add_argument("--disable-gpu")
+    op.add_argument("--log-level=3")
+    op.add_argument("--disable-extensions")
+    op.add_argument("test-type")
     op.add_argument('headless')
 
     # What we are going to use to give orders to Chrome

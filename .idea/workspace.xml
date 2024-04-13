@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="run=update">
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="small changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_flight_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_flight_info.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +123,8 @@
       <workItem from="1712841413871" duration="475000" />
       <workItem from="1712842016204" duration="300000" />
       <workItem from="1712909263472" duration="1334000" />
+      <workItem from="1712999227071" duration="218000" />
+      <workItem from="1713006936888" duration="386000" />
     </task>
     <task id="LOCAL-00001" summary="Gained prices from URL flight">
       <option name="closed" value="true" />
@@ -284,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712756150761</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="small changes">
+      <option name="closed" value="true" />
+      <created>1712999442524</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1712999442524</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +308,8 @@
     <MESSAGE value="add following days" />
     <MESSAGE value="VISUALIZATION OK" />
     <MESSAGE value="run=update" />
-    <option name="LAST_COMMIT_MESSAGE" value="run=update" />
+    <MESSAGE value="small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small changes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1712910140876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

@@ -1,7 +1,11 @@
 from bs4 import BeautifulSoup
+from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
+from selenium.common.exceptions import TimeoutException, WebDriverException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
@@ -18,38 +22,43 @@ def get_flight_info(url):
     op.add_argument("test-type")
     op.add_argument('headless')
 
-    # What we are going to use to give orders to Chrome
-    driver = webdriver.Chrome(options=op, service=Service(chrome_driver))
+    try:
+        # Driver to give orders to Chrome
+        driver = webdriver.Chrome(options=op, service=Service(chrome_driver))
+        # Open browser at URL
+        driver.get(url)
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "a")))
+        sleep(5)
+        # Getting HTML source
+        html = driver.page_source
 
-    # Open browser at URL
-    driver.get(url)
-    sleep(5)
-
-    # Getting HTML source
-    html = driver.page_source
-
-    # Closing browser
-    driver.quit()
-
-    soup = BeautifulSoup(html, 'html.parser')
-
-    flights_prices = soup.find_all('flights-price-simple')
-    flights_times = soup.find_all('span', class_='flight-info__hour')
-    times = []
-    prices = []
-
-    if len(flights_prices) == 0:
-        return 'No flights'
+    except TimeoutException:
+        print("Timeout.")
+    except WebDriverException:
+        print("WebDriverError.")
+    except Exception as e:
+        print("Error:", e)
     else:
-        for flight_price in flights_prices:
-            prices.append(flight_price.getText(strip=True))
-        for flight_time in flights_times:
-            times.append(flight_time.get_text(strip=True))
+        soup = BeautifulSoup(html, 'html.parser')
 
-        info = []
+        if len(soup.find_all('flights-price-simple')):
+            times = []
+            prices = []
 
-        for i in range(len(prices)):
-            flight_info = {"Departure": times[i*2], "Arrival": times[i*2 + 1], "Price": prices[i]}
-            info.append(flight_info)
+            for flight_price in soup.find_all('flights-price-simple'):
+                prices.append(flight_price.getText(strip=True))
+            for flight_time in soup.find_all('span', class_='flight-info__hour'):
+                times.append(flight_time.get_text(strip=True))
 
-        return info
+            info = []
+
+            for i in range(len(prices)):
+                info.append({"Departure": times[i * 2], "Arrival": times[i * 2 + 1], "Price": prices[i]})
+
+            return info
+        else:
+            print('No flights')
+            return 0
+    finally:
+        # Closing browser
+        driver.quit()

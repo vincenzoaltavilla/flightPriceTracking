@@ -5,6 +5,7 @@ import pandas as pd
 import os
 import matplotlib.pyplot as plt
 import matplotlib.backends.backend_pdf
+import keyboard
 
 
 def main():
@@ -45,10 +46,11 @@ def main():
 
         x = df.index.values.tolist()
         y = df.values.tolist()
-        plt.plot(y)
-        plt.grid()
+
         plt.xticks(range(len(x)), x)
+        plt.plot(y)
         plt.ylabel("€")
+        plt.grid()
 
         plt.legend(col, bbox_to_anchor=(0.5, 1.2), loc='upper center', ncol=2)
         plt.tight_layout()
@@ -57,7 +59,8 @@ def main():
         plt.show()
         plt.draw()
 
-        input("\n\n\nPress any key to close...")
+        print("\n\n\nPress any key to close...")
+        keyboard.read_key()
 
 if __name__ == "__main__":
     main()

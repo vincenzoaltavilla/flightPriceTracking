@@ -4,6 +4,7 @@ from datetime import date
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
+import matplotlib.backends.backend_pdf
 
 
 def main():
@@ -13,7 +14,7 @@ def main():
     nOfPersons = '1'
 
     sheet_name = airportFrom + '-' + airportTo
-    excel_file = sheet_name + ".xlsx"
+    excel_file = sheet_name + "-" + ",".join(dateOfFlights) + ".xlsx"
 
     col, prices = [], []
 
@@ -52,11 +53,9 @@ def main():
         plt.legend(col, bbox_to_anchor=(0.5, 1.2), loc='upper center', ncol=2)
         plt.tight_layout()
 
-        fig = plt.gcf()
-        fig.autofmt_xdate()
+        plt.gcf().autofmt_xdate()
         plt.show()
         plt.draw()
-        # fig.savefig('grafico.pdf')
 
         input("\n\n\nPress any key to close...")
 

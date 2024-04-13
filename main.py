@@ -10,14 +10,11 @@ airportTo = "BDS"
 dateOfFlights = ["2024-05-15", "2024-05-16", "2024-05-17"]
 nOfPersons = "1"
 
-col = []
-prices = []
-
-today = str(date.today())
-# today = '2024-03-23'
-
 sheet_name = airportFrom+'-'+airportTo
 excel_file = sheet_name + '.xlsx'
+
+col = []
+prices = []
 
 for dateOfFlight in dateOfFlights:
     print("\n\nAnalizzando voli in data " + dateOfFlight)
@@ -27,6 +24,9 @@ for dateOfFlight in dateOfFlights:
         for flight in info:
             col.append(dateOfFlight+", "+flight['Departure']+"-"+flight['Arrival'])
             prices.append(flight['Price'])
+
+today = str(date.today())
+# today = '2024-03-23'
 
 if os.path.exists(excel_file):
     df = pd.read_excel(excel_file, sheet_name=sheet_name, index_col=0)
@@ -56,6 +56,7 @@ plt.tight_layout()
 plt.ylabel("€")
 plt.grid()
 fig = plt.gcf()
+fig.autofmt_xdate()
 plt.show()
 plt.draw()
 # fig.savefig('grafico.pdf')

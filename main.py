@@ -67,6 +67,5 @@ if __name__ == "__main__":
     get_prices("BGY", "BDS", ["2024-05-20"], '1')
     get_prices("MXP", "BDS", ["2024-05-20"], '1')
     """
-    # print("\n\n\nPress any key to close...")
-    # keyboard.read_key()
-
+    print("\n\n\nPress any key to close...")
+    keyboard.read_key()

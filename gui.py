@@ -3,7 +3,7 @@ from tkinter import ttk
 from tkinter import *
 from tkcalendar import DateEntry
 from tkinter import messagebox
-from datetime import datetime, date
+from datetime import date
 from routes import *
 from PIL import Image, ImageTk
 

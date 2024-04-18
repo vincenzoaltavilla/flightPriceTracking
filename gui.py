@@ -109,6 +109,13 @@ class Home(tk.Tk):
                                          font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
         self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=30)
 
+    def update_airport_to_menu(self, event):
+        new_airport_from = self.var_1.get()
+        self.menu_airport_to.config(values=self.airport_to[new_airport_from])
+
+        self.var_2.set("")
+        self.menu_airport_to.set("")
+
     def add_date(self):
         # Gain selected date
         selected_date = self.calendar.get_date()
@@ -182,10 +189,3 @@ class Home(tk.Tk):
         print("Aeroporto di arrivo:", selected_airport_to)
         print("Date Selezionate:", selected_dates)
         print("Numero di persone:", selected_n_of_persons)
-
-    def update_airport_to_menu(self, event):
-        new_airport_from = self.var_1.get()
-        self.menu_airport_to.config(values=self.airport_to[new_airport_from])
-
-        self.var_2.set("")
-        self.menu_airport_to.set("")

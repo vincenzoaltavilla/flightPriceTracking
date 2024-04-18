@@ -35,16 +35,12 @@ class Home(tk.Tk):
         self.resizable(False, False)
         self.frame_gui.pack()
 
-        # Carica l'immagine
+        # header
         image = Image.open("header.png")
         photo = ImageTk.PhotoImage(image)
-
-        # Crea un widget Label per visualizzare l'immagine
         header_label = tk.Label(self.frame_gui, image=photo, borderwidth=0)
-        header_label.image = photo  # Mantieni il riferimento all'immagine per evitare il garbage collection
-
-        # Posiziona il widget Label nell'header
-        header_label.grid(row=0, column=0, columnspan=3, pady=30)  # Regola i valori di padx e pady secondo le tue esigenze
+        header_label.image = photo
+        header_label.grid(row=0, column=0, columnspan=3, pady=30)
 
         # Airport from
         self.label_1 = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12), bg="#073693",

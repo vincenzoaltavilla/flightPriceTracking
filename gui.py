@@ -47,11 +47,13 @@ class Home(tk.Tk):
         header_label.grid(row=0, column=0, columnspan=3, pady=30)  # Regola i valori di padx e pady secondo le tue esigenze
 
         # Airport from
-        self.label_1 = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12), bg="#073693", fg = "white")
+        self.label_1 = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12), bg="#073693",
+                                fg = "white")
         self.label_1.grid(row=1, column=0, padx=10, pady=10, sticky="e")
         airport_from = list(routes)
         self.var_1 = tk.StringVar(value=airport_from[24])
-        self.menu_airport_from = ttk.Combobox(self.frame_gui, values=airport_from, textvariable=self.var_1, state="readonly", font=("Arial", 12), width=30)
+        self.menu_airport_from = ttk.Combobox(self.frame_gui, values=airport_from, textvariable=self.var_1, state="readonly",
+                                              font=("Arial", 12), width=30)
         self.menu_airport_from.grid(row=1, column=1, padx=10, pady=10)
 
         # Airport to
@@ -68,38 +70,46 @@ class Home(tk.Tk):
         # Calendar
         self.label_calendar = tk.Label(self.frame_gui, text="Date:", font=("Arial", 12), bg="#073693", fg = "white")
         self.label_calendar.grid(row=3, column=0, padx=10, pady=10, sticky="e")
-        self.calendar = DateEntry(self.frame_gui, width=30, background="#4080FF", foreground="white", borderwidth=2, date_pattern="yyyy-mm-dd", state="readonly", font=("Arial", 12))
+        self.calendar = DateEntry(self.frame_gui, width=30, background="#4080FF", foreground="white", borderwidth=2,
+                                  date_pattern="yyyy-mm-dd", state="readonly", font=("Arial", 12))
         self.calendar.grid(row=3, column=1, padx=10, pady=10)
 
         # Add date button
-        self.add_date_button = tk.Button(self.frame_gui, text="Aggiungi data", command=self.add_date, font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
+        self.add_date_button = tk.Button(self.frame_gui, text="Aggiungi data", command=self.add_date, font=("Arial", 12),
+                                         bg="#cdab2a", fg="#073693", relief=tk.FLAT)
         self.add_date_button.grid(row=3, column=2, padx=10, pady=10)
 
         # Selected dates list
-        self.label_selected_dates = tk.Label(self.frame_gui, text="Date selezionate:", font=("Arial", 12), bg = "#073693", fg = "white")
+        self.label_selected_dates = tk.Label(self.frame_gui, text="Date selezionate:", font=("Arial", 12), bg = "#073693",
+                                             fg = "white")
         self.label_selected_dates.grid(row=3, column=0, padx=10, pady=10, sticky="e")
         self.scrollbar = Scrollbar(self.frame_gui, orient=VERTICAL)
-        self.dates_list = Listbox(self.frame_gui, width=30, height=5, font=("Arial", 12), borderwidth=2, yscrollcommand=self.scrollbar.set)
+        self.dates_list = Listbox(self.frame_gui, width=30, height=5, font=("Arial", 12), borderwidth=2,
+                                  yscrollcommand=self.scrollbar.set)
         self.scrollbar.config(command=self.dates_list.yview)
         self.dates_list.grid(row=4, column=1, padx=10, pady=10, columnspan=1, sticky="nsw")
         self.scrollbar.grid(row=4, column=1, padx=10, pady=10,  sticky="nse")
 
         # Delete date button
-        self.delete_date_button = tk.Button(self.frame_gui, text="Cancella data", command=self.delete_date, font=("Arial", 12), state="disabled", bg="#8c061e", fg="white", relief=tk.FLAT)
+        self.delete_date_button = tk.Button(self.frame_gui, text="Cancella data", command=self.delete_date,
+                                            font=("Arial", 12), state="disabled", bg="#8c061e", fg="white", relief=tk.FLAT)
         self.delete_date_button.grid(row=4, column=2, columnspan=3, padx=10, pady=10)
 
         # Label number of persons
-        self.label_number_of_persons = tk.Label(self.frame_gui, text="Numero di persone:", font=("Arial", 12), bg = "#073693", fg = "white")
+        self.label_number_of_persons = tk.Label(self.frame_gui, text="Numero di persone:", font=("Arial", 12),
+                                                bg = "#073693", fg = "white")
         self.label_number_of_persons.grid(row=5, column=0, padx=10, pady=10, sticky="e")
 
         # Number of persons field
         self.number_of_persons_field = tk.Entry(self.frame_gui, width=32, font=("Arial", 12), borderwidth=2)
         self.number_of_persons_field.grid(row=5, column=1, padx=10, pady=10)
         self.number_of_persons_field.insert(0, "1")  # default
-        self.number_of_persons_field.config(validate="key", validatecommand=(self.number_of_persons_field.register(validate_input), "%P"))
+        self.number_of_persons_field.config(validate="key", validatecommand=(
+            self.number_of_persons_field.register(validate_input), "%P"))
 
         # Look for prices button
-        self.look_for_prices = tk.Button(self.frame_gui, text="Cerca prezzi", command=self.look_for_prices, font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
+        self.look_for_prices = tk.Button(self.frame_gui, text="Cerca prezzi", command=self.look_for_prices,
+                                         font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
         self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=30)
 
     def add_date(self):

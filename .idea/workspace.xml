@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="pdf download and new xlsx file name">
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="Press any key to close">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -47,12 +47,12 @@
     &quot;assignee&quot;: &quot;vincenzoaltavilla&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/vincenzoaltavilla/flightPriceTracking.git",
-    "accountId": "77a2130d-3cc2-429d-9631-2e69563eebcd"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/vincenzoaltavilla/flightPriceTracking.git&quot;,
+    &quot;accountId&quot;: &quot;77a2130d-3cc2-429d-9631-2e69563eebcd&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -143,7 +143,11 @@
       <workItem from="1713006936888" duration="7390000" />
       <workItem from="1713014564460" duration="3508000" />
       <workItem from="1713018348133" duration="782000" />
-      <workItem from="1713021863588" duration="332000" />
+      <workItem from="1713021863588" duration="729000" />
+      <workItem from="1713022636581" duration="28000" />
+      <workItem from="1713277079609" duration="1170000" />
+      <workItem from="1713370742083" duration="5580000" />
+      <workItem from="1713430129007" duration="21466000" />
     </task>
     <task id="LOCAL-00001" summary="Gained prices from URL flight">
       <option name="closed" value="true" />
@@ -345,7 +349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713017923746</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Press any key to close">
+      <option name="closed" value="true" />
+      <created>1713022601545</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1713022601545</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,9 +374,10 @@
     <MESSAGE value="small changes" />
     <MESSAGE value="exceptions and improvements" />
     <MESSAGE value="pdf download and new xlsx file name" />
-    <option name="LAST_COMMIT_MESSAGE" value="pdf download and new xlsx file name" />
+    <MESSAGE value="Press any key to close" />
+    <option name="LAST_COMMIT_MESSAGE" value="Press any key to close" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713017699649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713456583994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

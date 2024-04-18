@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 from time import sleep
 
 
@@ -27,7 +27,7 @@ def get_flight_info(url):
         driver = webdriver.Chrome(options=op, service=Service(chrome_driver))
         # Open browser at URL
         driver.get(url)
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "a")))
+        WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.TAG_NAME, "a")))
         sleep(5)
         # Getting HTML source
         html = driver.page_source

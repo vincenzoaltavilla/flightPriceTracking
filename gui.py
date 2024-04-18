@@ -66,7 +66,7 @@ class Home(tk.Tk):
         # Calendar
         self.label_calendar = tk.Label(self.frame_gui, text="Date:", font=("Arial", 12), bg="#073693", fg = "white")
         self.label_calendar.grid(row=3, column=0, padx=10, pady=10, sticky="e")
-        self.calendar = DateEntry(self.frame_gui, width=30, background="#4080FF", foreground="white", borderwidth=2,
+        self.calendar = DateEntry(self.frame_gui, width=30, background="#cdab2a", foreground="#073693", borderwidth=2,
                                   date_pattern="yyyy-mm-dd", state="readonly", font=("Arial", 12))
         self.calendar.grid(row=3, column=1, padx=10, pady=10)
 

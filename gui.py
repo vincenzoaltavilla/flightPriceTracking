@@ -90,6 +90,7 @@ class Home(tk.Tk):
         self.delete_date_button = tk.Button(self.frame_gui, text="Cancella data", command=self.delete_date,
                                             font=("Arial", 12), state="disabled", bg="#8c061e", fg="white", relief=tk.FLAT)
         self.delete_date_button.grid(row=4, column=2, columnspan=3, padx=10, pady=10)
+        self.bind("<Delete>", self.delete_date_wrapper)
 
         # Label number of persons
         self.label_number_of_persons = tk.Label(self.frame_gui, text="Numero di persone:", font=("Arial", 12),
@@ -150,6 +151,9 @@ class Home(tk.Tk):
                     self.delete_date_button.config(state="disabled")
             else:
                 messagebox.showwarning("Data non trovata", "La data selezionata non è presente nella lista.")
+
+    def delete_date_wrapper(self, event=None):
+        self.delete_date()
 
     def look_for_prices(self):
         selected_airport_from = self.menu_airport_from.get()

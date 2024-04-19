@@ -1,9 +1,66 @@
 routes = {
+    "Aalborg": ["Barcellona (Girona)", "Londra (Stansted)"],
+    "Aarhus": ['Corfù', 'Danzica', 'Faro', 'Londra (Stansted)', 'Malaga', 'Palma', 'Riga', 'Zara'],
+    "Aberdeen": ["Alicante", "Faro", "Malaga"],
+    "Agadir": ['Birmingham', 'Bordeaux', 'Bournemouth', 'Breslavia', 'Bruxelles (Charleroi)', 'Colonia', 'Cracovia',
+               'Dublino', 'Düsseldorf (Weeze)', 'Edimburgo', 'Fez', 'Francoforte (Hahn)', 'Karlsruhe / Baden-Baden',
+               'Lisbona', 'Londra (Stansted)', 'Madrid', 'Manchester', 'Marsiglia', 'Milano Bergamo', 'Nantes', 'Oujda',
+               'Parigi (Beauvais)', 'Perpignan', 'Porto', 'Strasbourg', 'Tangeri', 'Tenerife (Sud)', 'Tolosa',
+               'Valencia', 'Vienna'],
     "Alghero": ["Barcellona El Prat", "Bari", "Billund", "Bologna", "Bordeaux", "Bratislava", "Bruxelles (Charleroi)",
                 "Budapest", "Catania", "Cork", "Dublino", "Francoforte (Hahn)", "Katowice", "Londra (Stansted)",
                 "Madrid", "Memmingen", "Milano Bergamo", "Milano Malpensa", "Napoli", "Palermo", "Pescara", "Pisa",
                 "Venezia M.Polo"],
+    "Alicante": ['Aberdeen', 'Amburgo', 'Barcellona El Prat', 'Bari', 'Belfast International', 'Berlino Brandeburgo',
+                 'Billund', 'Birmingham', 'Bologna', 'Bordeaux', 'Bournemouth', 'Brema', 'Breslavia', 'Bristol',
+                 'Bruxelles (Charleroi)', 'Budapest', 'Cardiff', 'Colonia', 'Copenaghen', 'Cork', 'Cracovia', 'Danzica',
+                 'Dublino', 'Düsseldorf (Weeze)', 'East Midlands', 'Edimburgo', 'Eindhoven', 'Exeter', 'Fez',
+                 'Francoforte (Hahn)', 'Glasgow', 'Glasgow (Prestwick)', 'Göteborg Landvetter', 'Helsinki', 'Ibiza',
+                 'Karlsruhe / Baden-Baden', 'Katowice', 'Kaunas', 'Kerry', 'Klagenfurt', 'Knock-Irlanda dell ovest',
+                 'Lanzarote', 'Leeds Bradford', 'Lisbona', 'Liverpool', 'Lodz', 'Londra (Gatwick)', 'Londra (Luton)',
+                 'Londra (Stansted)', 'Maastricht', 'Manchester', 'Marrakech', 'Marsiglia', 'Memmingen',
+                 'Milano Bergamo', 'Milano Malpensa', 'Minorca', 'Münster', 'Newcastle', 'Newquay Cornovaglia',
+                 'Norimberga', 'Norwich', 'Oslo (Torp)', 'Paderborn', 'Palma', 'Pardubice', 'Parigi (Beauvais)',
+                 'Porto', 'Poznan', 'Roma (Fiumicino)', 'Rzeszow', 'Santander', 'Santiago', 'Shannon', 'Siviglia',
+                 'Sofia', 'Stoccolma Arlanda', 'Stoccolma Västerås', 'Teesside', 'Tenerife (Nord)', 'Tolosa', 'Torino',
+                 'Tétouan', 'Varsavia (Chopin)', 'Varsavia (Modlin)', 'Venezia (Treviso)', 'Vienna', 'Vitoria',
+                 'Växjö Småland', 'Zagabria'],
+    "Almeria": ["Bruxelles (Charleroi)", "Londra (Stansed)", "Manchester"],
+    "Amburgo": ['Alicante', 'Danzica', 'Dublino', 'Edimburgo', 'Londra (Stansted)', 'Malaga', 'Milano Bergamo', 'Palma',
+                'Porto', 'Valencia', 'Zara'],
+    "Amman Giordania": ['Bologna', 'Bruxelles (Charleroi)', 'Bucharest (Otopeni)', 'Budapest', 'Madrid', 'Marsiglia',
+                        'Memmingen', 'Milano Bergamo', 'Pafos', 'Parigi (Beauvais)', 'Pisa', 'Poznan', 'Praga',
+                        'Roma (Ciampino)', 'Varsavia (Modlin)', 'Venezia (Treviso)', 'Vienna'],
+    "Amsterdam": ["Dublino", "Malaga"],
     "Ancona": ["Bruxelles (Charleroi)", "Catania", "Cracovia", "Düsseldorf (Weeze)", "Londra (Stansted)"],
+    "Asturie": ['Bruxelles (Charleroi)', 'Düsseldorf (Weeze)', 'Londra (Stansted)', 'Roma (Fiumicino)'],
+    "Atene": ['Bari', 'Berlino Brandeburgo', 'Bologna', 'Breslavia', 'Bruxelles (Charleroi)', 'Budapest', 'Catania',
+              'Chania (Creta)', 'Colonia', 'Corfù', 'Cracovia', 'Dublino', 'Katowice', 'Londra (Luton)',
+              'Londra (Stansted)', 'Malta', 'Milano Bergamo', 'Milano Malpensa', 'Pafos', 'Roma (Fiumicino)',
+              'Santorini Nazionale', 'Tel Aviv', 'Varsavia (Modlin)', 'Vienna', 'Vilnius'],
+    "Banja Luka": ['Bruxelles (Charleroi)', 'Göteborg Landvetter', 'Karlsruhe / Baden-Baden', 'Memmingen',
+                   'Stoccolma Arlanda', 'Vienna'],
+    "Barcellona (Girona)": ['Aalborg', 'Bari', 'Belfast International', 'Beni Mellal', 'Birmingham', 'Bournemouth',
+                            'Breslavia', 'Bristol', 'Bruxelles (Charleroi)', 'Bruxelles Zaventem', 'Cork', 'Cracovia',
+                            'Dublino', 'Düsseldorf (Weeze)', 'East Midlands', 'Eindhoven', 'Francoforte (Hahn)',
+                            'Helsinki', 'Karlsruhe / Baden-Baden', 'Knock-Irlanda dell ovest', 'Leeds Bradford',
+                            'Londra (Stansted)', 'Maastricht', 'Manchester', 'Marrakech', 'Memmingen', 'Norimberga',
+                            'Paderborn', 'Pardubice', 'Parigi (Beauvais)', 'Pescara', 'Pisa', 'Poznan', 'Riga',
+                            'Shannon', 'Zagabria'],
+    "Barcellona (Reus)": ['Birmingham', 'Bruxelles (Charleroi)', 'Cork', 'Dublino', 'Düsseldorf (Weeze)',
+                          'East Midlands', 'Eindhoven', 'Leeds Bradford', 'Liverpool', 'Londra (Stansted)',
+                          'Manchester', 'Shannon'],
+    "Barcellona El Prat": ['Alghero', 'Alicante', 'Berlino Brandeburgo', 'Billund', 'Birmingham', 'Bologna', 'Bordeaux',
+                           'Bristol', 'Bruxelles (Charleroi)', 'Bruxelles Zaventem', 'Budapest', 'Colonia', 'Corfù',
+                           'Cork', 'Cracovia', 'Danzica', 'Dublino', 'East Midlands', 'Edimburgo', 'Faro', 'Fez',
+                           'Francoforte (Hahn)', 'Fuerteventura', 'Glasgow (Prestwick)', 'Gran Canaria', 'Ibiza',
+                           'Jerez', 'Lanzarote', 'Lisbona', 'Liverpool', 'Londra (Luton)', 'Londra (Stansted)',
+                           'Lussemburgo', 'Malaga', 'Malta', 'Manchester', 'Marrakech', 'Milano Bergamo',
+                           'Milano Malpensa', 'Minorca', 'Nador', 'Napoli', 'Newcastle', 'Ouarzazate', 'Oujda',
+                           'Palermo', 'Palma', 'Parigi (Beauvais)', 'Perugia', 'Poitiers', 'Porto', 'Praga', 'Rabat',
+                           'Reggio Calabria', 'Riga', 'Roma (Fiumicino)', 'Santiago', 'Siviglia', 'Sofia',
+                           'Stoccolma Arlanda', 'Tallinn', 'Tangeri', 'Tenerife (Nord)', 'Tenerife (Sud)', 'Torino',
+                           'Trieste', 'Valladolid', 'Varsavia (Modlin)', 'Venezia M.Polo', 'Vienna'],
     "Bari": ["Alghero", "Alicante", "Atene", "Barcellona (Girona)", "Berlino Brandeburgo", "Billund", "Bologna",
              "Bordeaux", "Bruxelles (Charleroi)", "Budapest", "Cagliari", "Catania", "Chania (Creta)", "Cracovia",
              "Dublino", "Dubrovnik", "Düsseldorf (Weeze)", "Edimburgo", "Francoforte (Hahn)", "Genova", "Ibiza",
@@ -15,6 +72,48 @@ routes = {
              "Santorini Nazionale", "Siviglia", "Skiathos", "Sofia", "Tel Aviv", "Tirana", "Tolosa", "Torino",
              "Trieste", "Valencia", "Varsavia (Modlin)",
              "Venezia M.Polo", "Verona", "Vienna", "Zacinto"],
+    "Basilea": ["Dublino", "Londra (Stansted)", "Zagabria"],
+    "Belfast International": ['Alicante', 'Barcellona (Girona)', 'Budapest', 'Cracovia', 'Danzica', 'East Midlands',
+                              'Edimburgo', 'Faro', 'Lanzarote', 'Londra (Stansted)', 'Malaga', 'Malta', 'Manchester',
+                              'Milano Bergamo', 'Palma', 'Parigi (Beauvais)', 'Porto', 'Torino', 'Valencia'],
+    "Beni Mellal": ["Barcellona (Girona)", "Milano Bergamo"],
+    "Bergerac": ['Bournemouth', 'Bristol', 'Bruxelles (Charleroi)', 'East Midlands', 'Edimburgo', 'Liverpool',
+                 'Londra (Stansted)'],
+    "Berlino Brandeburgo": ['Alicante', 'Atene', 'Barcellona El Prat', 'Bari', 'Birmingham', 'Bologna',
+                            'Bruxelles Zaventem',
+                            'Bucharest (Otopeni)', 'Budapest', 'Castellon (Valencia)', 'Catania', 'Chania (Creta)',
+                            'Corfù',
+                            'Cracovia', 'Dublino', 'Dubrovnik', 'East Midlands', 'Edimburgo', 'Faro', 'Fuerteventura',
+                            'Gran Canaria', 'Heraklion Creta', 'Ibiza', 'Kaunas', 'Kos', 'Lanzarote', 'Lisbona',
+                            'Londra (Stansted)', 'Lussemburgo', 'Madrid', 'Malaga', 'Manchester', 'Marrakech',
+                            'Marsiglia',
+                            'Milano Bergamo', 'Milano Malpensa', 'Pafos', 'Palermo', 'Palma', 'Pisa', 'Podgorica',
+                            'Porto',
+                            'Reggio Calabria', 'Riga', 'Rodi', 'Roma (Fiumicino)', 'Salonicco', 'Sofia', 'Tallinn',
+                            'Tel Aviv',
+                            'Tenerife (Sud)', 'Trieste', 'Valencia', 'Venezia (Treviso)', 'Venezia M.Polo', 'Vilnius',
+                            'Zara'],
+    "Beziers": ['Bristol', 'Bruxelles (Charleroi)', 'Düsseldorf (Weeze)', 'Edimburgo', 'Londra (Luton)',
+                'Londra (Stansted)',
+                'Manchester', 'Parigi (Beauvais)', 'Shannon', 'Stoccolma Arlanda'],
+    "Biarritz": ['Bruxelles (Charleroi)', 'Dublino', 'Edimburgo', 'Londra (Stansted)', 'Milano Bergamo'],
+    "Billund": ['Alghero', 'Alicante', 'Barcellona El Prat', 'Bari', 'Bologna', 'Breslavia', 'Bruxelles (Charleroi)',
+                'Budapest', 'Cracovia', 'Danzica', 'Dublino', 'Edimburgo', 'Londra (Stansted)', 'Madrid', 'Malaga',
+                'Malta',
+                'Manchester', 'Milano Bergamo', 'Palma', 'Pisa', 'Porto', 'Poznan', 'Roma (Fiumicino)', 'Siviglia',
+                'Tallinn',
+                'Trapani-Marsala', 'Valencia', 'Venezia (Treviso)', 'Vienna', 'Vilnius'],
+    "Birmingham": ['Agadir', 'Alicante', 'Barcellona (Girona)', 'Barcellona (Reus)', 'Barcellona El Prat',
+                   'Berlino Brandeburgo', 'Bordeaux', 'Bucharest (Otopeni)', 'Budapest', 'Bydgoszcz', 'Chania (Creta)',
+                   'Corfù', 'Cork', 'Cracovia', 'Derry', 'Dublino', 'Faro', 'Fuerteventura', 'Gran Canaria', 'Grenoble',
+                   'Ibiza',
+                   'Knock-Irlanda dell ovest', 'Lanzarote', 'Lisbona', 'Madrid', 'Malaga', 'Malta', 'Marrakech',
+                   'Milano Bergamo', 'Murcia International', 'Pafos', 'Palma', 'Parigi (Beauvais)', 'Perpignan', 'Pisa',
+                   'Porto', 'Poznan', 'Rodi', 'Santander', 'Shannon', 'Siviglia', 'Sofia', 'Stoccolma Arlanda',
+                   'Tenerife (Sud)', 'Tirana', 'Tolosa', 'Torino', 'Valencia', 'Varsavia (Modlin)', 'Venezia M.Polo',
+                   'Verona',
+                   'Zara'],
+    "Bodrum": ["Dublino"],
     "Bologna": ["AlgheroAlicante", "Amman Giordania", "Atene", "Barcellona El Prat", "Bari", "Berlino Brandeburgo",
                 "Billund", "Breslavia",
                 "Brindisi", "Bruxelles (Charleroi)", "Bucharest (Otopeni)", "Budapest", "Cagliari", "Catania",
@@ -29,11 +128,109 @@ routes = {
                 "Stoccolma Arlanda", "Tel Aviv",
                 "Tenerife (Sud)", "Tirana", "Tolosa", "Trapani-Marsala", "Valencia", "Varsavia (Modlin)", "Vienna",
                 "Zara"],
+    "Bordeaux": ['Agadir', 'Alghero', 'Alicante', 'Barcellona El Prat', 'Bari', 'Birmingham', 'Bruxelles (Charleroi)',
+                 'Cork',
+                 'Cracovia', 'Dublino', 'Edimburgo', 'Faro', 'Fez', 'Figari', 'Ibiza', 'Lisbona', 'Londra (Stansted)',
+                 'Madrid',
+                 'Malaga', 'Malta', 'Manchester', 'Marrakech', 'Marsiglia', 'Milano Bergamo', 'Minorca', 'Napoli',
+                 'Pafos',
+                 'Palma', 'Pisa', 'Porto', 'Praga', 'Rabat', 'Roma (Fiumicino)', 'Siviglia', 'Tangeri',
+                 'Tenerife (Sud)',
+                 'Trapani-Marsala', 'Valencia', 'Venezia M.Polo', 'Zara'],
+    "Bournemouth": ['Agadir', 'Alicante', 'Barcellona (Girona)', 'Bergerac', 'Breslavia', 'Budapest', 'Carcassonne',
+                    'Cracovia', 'Edimburgo', 'Faro', 'Gran Canaria', 'Lanzarote', 'Malaga', 'Malta',
+                    'Murcia International',
+                    'Nantes', 'Palma', 'Tenerife (Sud)', 'Venezia M.Polo', 'Zara'],
+    "Bratislava": ['Alghero', 'Bruxelles (Charleroi)', 'Burgas', 'Corfù', 'Dalaman', 'Dublino', 'Edimburgo',
+                   'Eindhoven',
+                   'Kaunas', 'Lanzarote', 'Leeds Bradford', 'Londra (Stansted)', 'Malta', 'Manchester',
+                   'Milano Bergamo',
+                   'Pafos', 'Palma', 'Roma (Ciampino)', 'Salonicco', 'Sofia', 'Trapani-Marsala'],
+    "Brema": ['Alghero', 'Bruxelles (Charleroi)', 'Burgas', 'Corfù', 'Dalaman', 'Dublino', 'Edimburgo', 'Eindhoven',
+              'Kaunas',
+              'Lanzarote', 'Leeds Bradford', 'Londra (Stansted)', 'Malta', 'Manchester', 'Milano Bergamo', 'Pafos',
+              'Palma',
+              'Roma (Ciampino)', 'Salonicco', 'Sofia', 'Trapani-Marsala'],
+    "Breslavia": ['Agadir', 'Alicante', 'Atene', 'Barcellona (Girona)', 'Billund', 'Bologna', 'Bournemouth', 'Brindisi',
+                  'Bristol', 'Bruxelles (Charleroi)', 'Chania (Creta)', 'Corfù', 'Danzica', 'Dublino', 'Dubrovnik',
+                  'East Midlands', 'Edimburgo', 'Glasgow', 'Leeds Bradford', 'Lisbona', 'Liverpool',
+                  'Londra (Stansted)',
+                  'Malaga', 'Malta', 'Manchester', 'Marsiglia', 'Milano Bergamo', 'Napoli', 'Newcastle', 'Oslo (Torp)',
+                  'Pafos',
+                  'Palermo', 'Palma', 'Parigi (Beauvais)', 'Pisa', 'Podgorica', 'Porto', 'Roma (Ciampino)', 'Shannon',
+                  'Sofia',
+                  'Stoccolma Arlanda', 'Valencia', 'Venezia (Treviso)', 'Zara'],
     "Brindisi": ["Bologna", "Breslavia", "Bruxelles (Charleroi)", "Danzica", "Dublino", "Eindhoven", "Genova",
                  "Londra (Stansted)", "Madrid", "Manchester",
                  "Memmingen", "Milano Bergamo", "Milano Malpensa", "Palermo", "Parigi (Beauvais)", "Perugia", "Pisa",
                  "Roma (Fiumicino)", "Stoccolma Arlanda",
                  "Torino", "Trieste", "Venezia M.Polo", "Verona"],
+    "Bristol": ['Alicante', 'Barcellona (Girona)', 'Barcellona El Prat', 'Bergerac', 'Beziers', 'Breslavia',
+                'Bucharest (Otopeni)', 'Budapest', 'Bydgoszcz', 'Colonia', 'Copenaghen', 'Cracovia', 'Danzica',
+                'Dublino',
+                'Faro', 'Fuerteventura', 'Gran Canaria', 'Grenoble', 'Ibiza', 'Kaunas', 'Knock-Irlanda dell ovest',
+                'Lanzarote', 'Limoges', 'Madrid', 'Malaga', 'Marrakech', 'Marsiglia', 'Milano Bergamo', 'Palma',
+                'Porto',
+                'Poznan', 'Praga', 'Riga', 'Rzeszow', 'Sofia', 'Tenerife (Sud)', 'Tirana', 'Torino', 'Valencia',
+                'Venezia M.Polo'],
+    "Brive": ["Londra (Stansted)", "Porto", "Siviglia"],
+    "Brno": ["Londra (Stansted)", "Milano Bergamo"],
+    "Bruxelles (Charleroi)": ['Alicante', 'Almeria', 'Amman Giordania', 'Ancona', 'Asturie', 'Atene', 'Banja Luka',
+                              'Barcellona (Girona)', 'Barcellona (Reus)', 'Barcellona El Prat', 'Bari', 'Bergerac',
+                              'Beziers', 'Biarritz', 'Billund', 'Bologna', 'Bordeaux', 'Bratislava', 'Breslavia',
+                              'Brindisi',
+                              'Bucharest (Otopeni)', 'Budapest', 'Cagliari', 'Carcassonne', 'Castellon (Valencia)',
+                              'Catania', 'Chania (Creta)', 'Cluj', 'Corfù', 'Cork', 'Cracovia', 'Dublino', 'Dubrovnik',
+                              'Edimburgo', 'Essaouira', 'Faro', 'Fez', 'Figari', 'Fiume', 'Fuerteventura', 'Genova',
+                              'Glasgow',
+                              'Gran Canaria', 'Göteborg Landvetter', 'Helsinki', 'Heraklion Creta', 'Iasi', 'Ibiza',
+                              'Kaunas',
+                              'La Rochelle', 'Lamezia', 'Lanzarote', 'Lisbona', 'Lodz', 'Lourdes', 'Madeira Funchal',
+                              'Madrid',
+                              'Malaga', 'Malta', 'Manchester', 'Marrakech', 'Marsiglia', 'Milano Bergamo', 'Minorca',
+                              'Nador',
+                              'Nantes', 'Napoli', 'Nimes', 'Olbia', 'Oujda', 'Pafos', 'Palermo', 'Palma', 'Perpignan',
+                              'Perugia',
+                              'Pescara', 'Pisa', 'Podgorica', 'Pola', 'Ponta Delgada', 'Porto', 'Poznan', 'Praga',
+                              'Rabat',
+                              'Riga', 'Rodez', 'Rodi', 'Roma (Ciampino)', 'Rovaniemi - Lapponia', 'Salonicco',
+                              'Santander',
+                              'Santiago', 'Saragozza', 'Sarajevo', 'Siviglia', 'Sofia', 'Stoccolma Arlanda', 'Tangeri',
+                              'Tel Aviv', 'Tenerife (Sud)', 'Tirana', 'Tolosa', 'Torino', 'Trapani-Marsala', 'Trieste',
+                              'Tétouan', 'Valencia', 'Varsavia (Chopin)', 'Varsavia (Modlin)', 'Venezia (Treviso)',
+                              'Verona',
+                              'Vienna', 'Vitoria', 'Zagabria', 'Zara'],
+    "Bruxelles Zaventem": ['Barcellona (Girona)', 'Barcellona El Prat', 'Berlino Brandeburgo', 'Dublino', 'Madrid',
+                           'Malaga',
+                           'Marrakech', 'Palma', 'Pisa', 'Porto', 'Roma (Fiumicino)', 'Valencia'],
+    "Bucharest (Otopeni)": ['Amman Giordania', 'Berlino Brandeburgo', 'Birmingham', 'Bologna', 'Bristol',
+                            'Bruxelles (Charleroi)', 'Catania', 'Chania (Creta)', 'Corfù', 'Dublino', 'Edimburgo',
+                            'Genova',
+                            'Leeds Bradford', 'Londra (Stansted)', 'Madrid', 'Malaga', 'Malta', 'Manchester',
+                            'Marsiglia',
+                            'Milano Bergamo', 'Milano Malpensa', 'Napoli', 'Pafos', 'Palermo', 'Palma',
+                            'Parigi (Beauvais)',
+                            'Perugia', 'Pescara', 'Pisa', 'Roma (Ciampino)', 'Salonicco', 'Skiathos', 'Tel Aviv',
+                            'Tirana',
+                            'Venezia (Treviso)', 'Vienna', 'Zara'],
+    "Budapest": ['Alghero', 'Alicante', 'Amman Giordania', 'Atene', 'Barcellona El Prat', 'Bari',
+                 'Belfast International',
+                 'Berlino Brandeburgo', 'Billund', 'Birmingham', 'Bologna', 'Bournemouth', 'Bristol',
+                 'Bruxelles (Charleroi)',
+                 'Burgas', 'Cagliari', 'Catania', 'Chania (Creta)', 'Copenaghen', 'Corfù', 'Dublino', 'East Midlands',
+                 'Edimburgo', 'Faro', 'Francoforte (Hahn)', 'Gran Canaria', 'Göteborg Landvetter', 'Lanzarote',
+                 'Lisbona',
+                 'Londra (Stansted)', 'Madrid', 'Malaga', 'Malta', 'Manchester', 'Marsiglia', 'Milano Bergamo',
+                 'Milano Malpensa', 'Mykonos', 'Napoli', 'Norimberga', 'Pafos', 'Palermo', 'Palma', 'Parigi (Beauvais)',
+                 'Pisa',
+                 'Porto', 'Praga', 'Preveza - Aktion', 'Rimini', 'Rodi', 'Roma (Ciampino)', 'Salonicco', 'Shannon',
+                 'Siviglia',
+                 'Skiathos', 'Sofia', 'Stoccolma Arlanda', 'Tel Aviv', 'Tenerife (Sud)', 'Tirana', 'Trieste',
+                 'Valencia',
+                 'Varsavia (Modlin)', 'Venezia (Treviso)', 'Zacinto', 'Zara'],
+    "Burgas": ['Bratislava', 'Budapest', 'Cracovia', 'Danzica', 'Dublino', 'Kaunas', 'Londra (Luton)', 'Poznan',
+               'Varsavia (Modlin)', 'Vienna'],
+    "Bydgoszcz": ['Birmingham', 'Bristol', 'Dublino', 'Londra (Luton)', 'Londra (Stansted)'],
     "Cagliari": ["Bari", "Bologna", "Bruxelles (Charleroi)", "Budapest", "Carcassonne", "Catania", "Cracovia", "Cuneo",
                  "Dublino", "Düsseldorf (Weeze)",
                  "Francoforte (Hahn)", "Genova", "Göteborg Landvetter", "Karlsruhe / Baden-Baden", "Londra (Stansted)",
@@ -41,7 +238,10 @@ routes = {
                  "Milano Malpensa", "Napoli", "Norimberga", "Palermo", "Palma", "Parigi (Beauvais)", "Parma", "Perugia",
                  "Pisa", "Porto", "Poznan", "Rimini",
                  "Roma (Ciampino)", "Siviglia", "Torino", "Trieste", "Valencia", "Venezia M.Polo", "Verona", "Vienna"],
-    "Catania": ["Alghero", "AnconaAtene", "Bari", "Berlino Brandeburgo", "Bologna", "Bruxelles (Charleroi)",
+    "Carcassonne": ['Bournemouth', 'Bruxelles (Charleroi)', 'Cagliari', 'Cork', 'Dublino', 'East Midlands', 'Londra (Stansted)', 'Manchester', 'Porto', 'Tangeri'],
+    "Cardiff": ['Alicante', 'Dublino', 'Faro', 'Malaga', 'Tenerife (Sud)'],
+    "Castellon (Valencia)": ['Berlino Brandeburgo', 'Bruxelles (Charleroi)', 'Düsseldorf (Weeze)', 'Londra (Stansted)', 'Milano Bergamo', 'Porto'],
+    "Catania": ["Alghero", "Ancona", "Atene", "Bari", "Berlino Brandeburgo", "Bologna", "Bruxelles (Charleroi)",
                 "Bucharest (Otopeni)", "Budapest", "Cagliari",
                 "Cracovia", "Eindhoven", "Francoforte (Hahn)", "Genova", "Heraklion Creta", "Katowice",
                 "Londra (Luton)", "Londra (Stansted)", "Madrid",
@@ -49,15 +249,91 @@ routes = {
                 "Pescara", "Pisa", "Praga", "Rodi",
                 "Roma (Fiumicino)", "Siviglia", "Sofia", "Tirana", "Torino", "Trieste", "Varsavia (Modlin)",
                 "Venezia M.Polo", "Verona", "Vienna"],
+    "Cefalonia": ['Londra (Stansted)', 'Milano Bergamo', 'Pisa', 'Roma (Fiumicino)', 'Vienna'],
+    "Chania (Creta)": ['Atene', 'Bari', 'Berlino Brandeburgo', 'Birmingham', 'Bologna', 'Breslavia', 'Bruxelles (Charleroi)', 'Bucharest (Otopeni)', 'Budapest', 'Cracovia', 'Danzica', 'Dublino', 'Düsseldorf (Weeze)', 'East Midlands', 'Francoforte (Hahn)', 'Leeds Bradford', 'Londra (Stansted)', 'Malta', 'Manchester', 'Marsiglia', 'Memmingen', 'Milano Bergamo', 'Napoli', 'Newcastle', 'Norimberga', 'Pafos', 'Pisa', 'Poznan', 'Roma (Fiumicino)', 'Salonicco', 'Sofia', 'Stoccolma Arlanda', 'Tel Aviv', 'Varsavia (Modlin)', 'Venezia (Treviso)', 'Vienna'],
+    "Clermont Ferrand": ["Fez", "Porto"],
+    "Cluj": ['Bruxelles (Charleroi)', 'Dublino', 'Londra (Stansted)', 'Milano Bergamo', 'Parigi (Beauvais)'],
+    "Colonia": ['Agadir', 'Alicante', 'Atene', 'Barcellona El Prat', 'Bologna', 'Bristol', 'Copenaghen', 'Corfù', 'Dublino', 'Faro', 'Fuerteventura', 'Gran Canaria', 'Kaunas', 'Knock-Irlanda dell ovest', 'Lanzarote', 'Lisbona', 'Londra (Stansted)', 'Malaga', 'Malta', 'Manchester', 'Marrakech', 'Milano Bergamo', 'Pafos', 'Palermo', 'Palma', 'Porto', 'Riga', 'Roma (Fiumicino)', 'Siviglia', 'Sofia', 'Stoccolma Arlanda', 'Tenerife (Sud)', 'Valencia', 'Venezia M.Polo', 'Vienna', 'Vitoria', 'Zara'],
+    "Copenaghen": ['Alicante', 'Bologna', 'Bristol', 'Budapest', 'Colonia', 'Cracovia', 'Danzica', 'Dublino', 'Düsseldorf (Weeze)', 'Edimburgo', 'Faro', 'Kaunas', 'Londra (Stansted)', 'Madrid', 'Malaga', 'Manchester', 'Milano Bergamo', 'Napoli', 'Olbia', 'Palma', 'Parigi (Beauvais)', 'Pisa', 'Porto', 'Poznan', 'Praga', 'Roma (Fiumicino)', 'Salonicco', 'Sofia', 'Torino', 'Varsavia (Modlin)', 'Venezia M.Polo', 'Vienna', 'Zara'],
+    "Corfù": ['Aarhus', 'Atene', 'Barcellona El Prat', 'Berlino Brandeburgo', 'Birmingham', 'Bologna', 'Bratislava', 'Breslavia', 'Bruxelles (Charleroi)', 'Bucharest (Otopeni)', 'Budapest', 'Colonia', 'Cracovia', 'Danzica', 'Dublino', 'Düsseldorf (Weeze)', 'East Midlands', 'Edimburgo', 'Karlsruhe / Baden-Baden', 'Liverpool', 'Londra (Stansted)', 'Manchester', 'Marsiglia', 'Memmingen', 'Milano Bergamo', 'Milano Malpensa', 'Münster', 'Napoli', 'Nis', 'Norimberga', 'Pisa', 'Poznan', 'Praga', 'Roma (Ciampino)', 'Salonicco', 'Shannon', 'Sofia', 'Stoccolma Arlanda', 'Teesside', 'Tel Aviv', 'Tolosa', 'Torino', 'Varsavia (Modlin)', 'Venezia (Treviso)', 'Verona', 'Vienna', 'Vilnius', 'Zagabria'],
+    "Cork": ['Alghero', 'Alicante', 'Barcellona (Girona)', 'Barcellona (Reus)', 'Barcellona El Prat', 'Birmingham', 'Bordeaux', 'Bruxelles (Charleroi)', 'Carcassonne', 'Danzica', 'Edimburgo', 'Faro', 'Fuerteventura', 'Gran Canaria', 'La Rochelle', 'Lanzarote', 'Liverpool', 'Londra (Gatwick)', 'Londra (Luton)', 'Londra (Stansted)', 'Malaga', 'Manchester', 'Milano Bergamo', 'Palma', 'Parigi (Beauvais)', 'Pisa', 'Poznan', 'Rodi', 'Roma (Fiumicino)', 'Siviglia', 'Tenerife (Sud)', 'Valencia', 'Venezia (Treviso)', 'Venezia M.Polo', 'Zara'],
+    "Cracovia": ['Agadir', 'Alicante', 'Ancona', 'Atene', 'Barcellona (Girona)', 'Barcellona El Prat', 'Bari', 'Belfast International', 'Berlino Brandeburgo', 'Billund', 'Birmingham', 'Bologna', 'Bordeaux', 'Bournemouth', 'Bristol', 'Bruxelles (Charleroi)', 'Burgas', 'Cagliari', 'Catania', 'Chania (Creta)', 'Copenaghen', 'Corfù', 'Danzica', 'Dortmund', 'Dublino', 'Dubrovnik', 'East Midlands', 'Edimburgo', 'Eindhoven', 'Faro', 'Fuerteventura', 'Glasgow', 'Gran Canaria', 'Göteborg Landvetter', 'Lamezia', 'Leeds Bradford', 'Lille', 'Lisbona', 'Liverpool', 'Londra (Luton)', 'Londra (Stansted)', 'Lourdes', 'Madrid', 'Malaga', 'Malta', 'Manchester', 'Marsiglia', 'Memmingen', 'Milano Bergamo', 'Napoli', 'Newcastle', 'Olbia', 'Oslo (Torp)', 'Pafos', 'Palermo', 'Palma', 'Parigi (Beauvais)', 'Perugia', 'Pescara', 'Pisa', 'Podgorica', 'Porto', 'Praga', 'Riga', 'Rimini', 'Rodi', 'Roma (Ciampino)', 'Salonicco', 'Santorini Nazionale', 'Shannon', 'Siviglia', 'Stettino', 'Stoccolma Arlanda', 'Tel Aviv', 'Tenerife (Sud)', 'Tirana', 'Tolosa', 'Torino', 'Trieste', 'Valencia', 'Varna', 'Venezia (Treviso)', 'Vienna', 'Zara'],
     "Crotone": ["Bologna", "Milano Bergamo", "Torino", "Venezia (Treviso)"],
     "Cuneo": ["Cagliari", "Palermo"],
+    "Dalaman": ["Bratislava", "Dublino"],
+    "Danzica": ['Aarhus', 'Alicante', 'Amburgo', 'Barcellona El Prat', 'Belfast International', 'Billund', 'Breslavia', 'Brindisi', 'Bristol', 'Burgas', 'Chania (Creta)', 'Copenaghen', 'Corfù', 'Cork', 'Cracovia', 'Dublino', 'Edimburgo', 'Göteborg Landvetter', 'Leeds Bradford', 'Londra (Stansted)', 'Lublino', 'Malaga', 'Malta', 'Manchester', 'Milano Bergamo', 'Napoli', 'Newcastle', 'Oslo (Torp)', 'Pafos', 'Parigi (Beauvais)', 'Pisa', 'Podgorica', 'Praga', 'Riga', 'Roma (Ciampino)', 'Santorini Nazionale', 'Skelleftea', 'Stoccolma Arlanda', 'Venezia (Treviso)', 'Växjö Småland', 'Zara'],
+    "Derry": ["Birmingham", "Manchester"],
+    "Dole": ["Fez", "Marrakech", "Porto"],
+    "Dortmund": ['Cracovia', 'Katowice', 'Londra (Stansted)', 'Malaga', 'Palma', 'Porto', 'Salonicco'],
+    "Dresden": ["Palma"],
+    "Dublino": ['Agadir', 'Alghero', 'Alicante', 'Amburgo', 'Amsterdam', 'Atene', 'Barcellona (Girona)', 'Barcellona (Reus)', 'Barcellona El Prat', 'Bari', 'Basilea', 'Berlino Brandeburgo', 'Biarritz', 'Billund', 'Birmingham', 'Bodrum', 'Bologna', 'Bordeaux', 'Bratislava', 'Breslavia', 'Brindisi', 'Bristol', 'Bruxelles (Charleroi)', 'Bruxelles Zaventem', 'Bucharest (Otopeni)', 'Budapest', 'Burgas', 'Bydgoszcz', 'Cagliari', 'Carcassonne', 'Cardiff', 'Chania (Creta)', 'Cluj', 'Colonia', 'Copenaghen', 'Corfù', 'Cracovia', 'Dalaman', 'Danzica', 'Dubrovnik', 'East Midlands', 'Edimburgo', 'Eindhoven', 'Faro', 'Francoforte (Hahn)', 'Fuerteventura', 'Glasgow', 'Gran Canaria', 'Grenoble', 'Göteborg Landvetter', 'Iasi', 'Ibiza', 'Katowice', 'Kaunas', 'Kerry', 'Kos', 'Kosice', 'La Rochelle', 'Lanzarote', 'Leeds Bradford', 'Lisbona', 'Liverpool', 'Lodz', 'Londra (Gatwick)', 'Londra (Luton)', 'Londra (Stansted)', 'Lourdes', 'Lublino', 'Lussemburgo', 'Madeira Funchal', 'Madrid', 'Malaga', 'Malta', 'Manchester', 'Marrakech', 'Marsiglia', 'Memmingen', 'Milano Bergamo', 'Milano Malpensa', 'Minorca', 'Murcia International', 'Nantes', 'Napoli', 'Newcastle', 'Newquay Cornovaglia', 'Nimes', 'Nizza', 'Olbia', 'Pafos', 'Palanga', 'Palermo', 'Palma', 'Parigi (Beauvais)', 'Pisa', 'Porto', 'Poznan', 'Praga', 'Riga', 'Rodez', 'Rodi', 'Roma (Fiumicino)', 'Rovaniemi - Lapponia', 'Rzeszow', 'Salisburgo', 'Salonicco', 'Santander', 'Santiago', 'Santorini Nazionale', 'Siviglia', 'Sofia', 'Spalato', 'Stettino', 'Stoccolma Arlanda', 'Tallinn', 'Tenerife (Sud)', 'Tolosa', 'Torino', 'Trieste', 'Valencia', 'Varsavia (Modlin)', 'Venezia M.Polo', 'Verona', 'Vienna', 'Vilnius', 'Zacinto', 'Zagabria', 'Zara'],
+    "Dubrovnik": ['Bari', 'Berlino Brandeburgo', 'Breslavia', 'Bruxelles (Charleroi)', 'Cracovia', 'Dublino', 'Düsseldorf (Weeze)', 'Helsinki', 'Karlsruhe / Baden-Baden', 'Londra (Stansted)', 'Manchester', 'Memmingen', 'Milano Bergamo', 'Oslo (Torp)', 'Parigi (Beauvais)', 'Poznan', 'Roma (Fiumicino)', 'Stoccolma Arlanda', 'Vienna'],
+    "Düsseldorf (Weeze)": ['Agadir', 'Alicante', 'Ancona', 'Asturie', 'Barcellona (Girona)', 'Barcellona (Reus)', 'Bari', 'Beziers', 'Cagliari', 'Castellon (Valencia)', 'Chania (Creta)', 'Copenaghen', 'Corfù', 'Dubrovnik', 'Edimburgo', 'Essaouira', 'Faro', 'Fez', 'Fuerteventura', 'Ibiza', 'Kos', 'Lanzarote', 'Malaga', 'Marrakech', 'Milano Bergamo', 'Nador', 'Oujda', 'Palma', 'Pescara', 'Pola', 'Porto', 'Rabat', 'Rodi', 'Salonicco', 'Siviglia', 'Tangeri', 'Tenerife (Sud)', 'Tirana', 'Trapani-Marsala', 'Zagabria', 'Zara'],
+    "East Midlands": ['Alicante', 'Barcellona (Girona)', 'Barcellona (Reus)', 'Barcellona El Prat', 'Belfast International', 'Bergerac', 'Berlino Brandeburgo', 'Breslavia', 'Budapest', 'Carcassonne', 'Chania (Creta)', 'Corfù', 'Cracovia', 'Dublino', 'Faro', 'Fuerteventura', 'Gran Canaria', 'Knock-Irlanda dell ovest', 'Lanzarote', 'Limoges', 'Lodz', 'Malaga', 'Malta', 'Milano Bergamo', 'Minorca', 'Murcia International', 'Palma', 'Pisa', 'Praga', 'Riga', 'Rodi', 'Roma (Ciampino)', 'Rzeszow', 'Tenerife (Sud)', 'Valencia', 'Venezia (Treviso)'],
+    "Edimburgo": ['Agadir', 'Alicante', 'Amburgo', 'Barcellona El Prat', 'Bari', 'Belfast International', 'Bergerac', 'Berlino Brandeburgo', 'Beziers', 'Biarritz', 'Billund', 'Bologna', 'Bordeaux', 'Bournemouth', 'Bratislava', 'Breslavia', 'Bruxelles (Charleroi)', 'Bucharest (Otopeni)', 'Budapest', 'Copenaghen', 'Corfù', 'Cork', 'Cracovia', 'Danzica', 'Dublino', 'Düsseldorf (Weeze)', 'Eindhoven', 'Faro', 'Fuerteventura', 'Gran Canaria', 'Göteborg Landvetter', 'Ibiza', 'Kaunas', 'Knock-Irlanda dell ovest', 'Lanzarote', 'Lisbona', 'Londra (Stansted)', 'Madrid', 'Malaga', 'Malta', 'Marrakech', 'Marsiglia', 'Milano Bergamo', 'Nantes', 'Napoli', 'Newquay Cornovaglia', 'Palermo', 'Palma', 'Parigi (Beauvais)', 'Pisa', 'Poitiers', 'Porto', 'Poznan', 'Praga', 'Riga', 'Rodi', 'Roma (Ciampino)', 'Santander', 'Shannon', 'Siviglia', 'Sofia', 'Tenerife (Sud)', 'Tirana', 'Tolosa', 'Valencia', 'Varsavia (Modlin)', 'Venezia M.Polo', 'Vienna', 'Zara'],
+    "Eindhoven": ['Alicante', 'Barcellona (Girona)', 'Barcellona (Reus)', 'Bologna', 'Bratislava', 'Brindisi', 'Catania', 'Cracovia', 'Dublino', 'Edimburgo', 'Faro', 'Fez', 'Ibiza', 'Lisbona', 'Londra (Stansted)', 'Madrid', 'Malaga', 'Malta', 'Manchester', 'Marrakech', 'Marsiglia', 'Milano Bergamo', 'Napoli', 'Pafos', 'Palma', 'Pisa', 'Porto', 'Roma (Fiumicino)', 'Salonicco', 'Siviglia', 'Sofia', 'Tangeri', 'Tenerife (Sud)', 'Valencia', 'Varsavia (Modlin)', 'Venezia (Treviso)', 'Vienna', 'Vilnius', 'Zagabria', 'Zara'],
+    "Errachidia": ["Marrakech"],
+    "Essaouira": ['Bruxelles (Charleroi)', 'Düsseldorf (Weeze)', 'Londra (Stansted)', 'Madrid', 'Marsiglia', 'Tangeri'],
+    "Exeter": ['Alicante', 'Faro', 'Malaga', 'Palma'],
+    "Faro": ['Aarhus', 'Aberdeen', 'Barcellona El Prat', 'Belfast International', 'Berlino Brandeburgo', 'Birmingham', 'Bordeaux', 'Bournemouth', 'Bristol', 'Bruxelles (Charleroi)', 'Budapest', 'Cardiff', 'Colonia', 'Copenaghen', 'Cork', 'Cracovia', 'Dublino', 'Düsseldorf (Weeze)', 'East Midlands', 'Edimburgo', 'Eindhoven', 'Exeter', 'Francoforte (Hahn)', 'Glasgow (Prestwick)', 'Karlsruhe / Baden-Baden', 'Kerry', 'Knock-Irlanda dell ovest', 'Leeds Bradford', 'Liverpool', 'Londra (Luton)', 'Londra (Stansted)', 'Lussemburgo', 'Madrid', 'Manchester', 'Marrakech', 'Marsiglia', 'Memmingen', 'Milano Bergamo', 'Newcastle', 'Newquay Cornovaglia', 'Norimberga', 'Norwich', 'Parigi (Beauvais)', 'Porto', 'Roma (Fiumicino)', 'Shannon', 'Teesside', 'Tolosa', 'Vienna'],
+    "Fez": ['Agadir', 'Alicante', 'Barcellona El Prat', 'Bologna', 'Bordeaux', 'Bruxelles (Charleroi)', 'Clermont Ferrand', 'Dole', 'Düsseldorf (Weeze)', 'Eindhoven', 'Francoforte (Hahn)', 'Karlsruhe / Baden-Baden', 'Londra (Stansted)', 'Madrid', 'Malaga', 'Marrakech', 'Marsiglia', 'Milano Bergamo', 'Nantes', 'Nimes', 'Palma', 'Parigi (Beauvais)', 'Roma (Ciampino)', 'Saragozza', 'Tolosa', 'Valencia'],
+    "Figari": ['Bordeaux', 'Bruxelles (Charleroi)', 'Parigi (Beauvais)', 'Tolosa'],
+    "Fiume": ['Bruxelles (Charleroi)', 'Londra (Stansted)', 'Stoccolma Arlanda', 'Vienna'],
     "Forlì": ["Katowice", "Palermo"],
+    "Francoforte (Hahn)": ['Agadir', 'Alghero', 'Alicante', 'Barcellona (Girona)', 'Barcellona El Prat', 'Bari', 'Budapest', 'Cagliari', 'Catania', 'Chania (Creta)', 'Dublino', 'Faro', 'Fez', 'Ibiza', 'Kerry', 'Lamezia', 'Londra (Stansted)', 'Malaga', 'Marrakech', 'Milano Bergamo', 'Nador', 'Palermo', 'Palma', 'Pescara', 'Porto', 'Roma (Fiumicino)', 'Salonicco', 'Siviglia', 'Tenerife (Sud)', 'Valencia', 'Venezia (Treviso)', 'Vilnius', 'Zagabria', 'Zara'],
+    "Fuerteventura": ['Barcellona El Prat', 'Berlino Brandeburgo', 'Birmingham', 'Bologna', 'Bristol', 'Bruxelles (Charleroi)', 'Colonia', 'Cork', 'Cracovia', 'Dublino', 'Düsseldorf (Weeze)', 'East Midlands', 'Edimburgo', 'Leeds Bradford', 'Liverpool', 'Londra (Luton)', 'Londra (Stansted)', 'Madrid', 'Manchester', 'Milano Bergamo', 'Newcastle', 'Pisa', 'Roma (Fiumicino)', 'Santiago', 'Shannon', 'Siviglia', 'Vienna'],
     "Genova": ["Bari", "Brindisi", "Bruxelles (Charleroi)", "Bucharest (Otopeni)", "Cagliari", "Catania", "Lamezia",
                "Londra (Stansted)", "Manchester", "Napoli", "Palermo"],
+    "Glasgow": ['Alicante', 'Breslavia', 'Bruxelles (Charleroi)', 'Cracovia', 'Dublino', 'Malaga'],
+    "Glasgow (Prestwick)": ['Alicante', 'Barcellona El Prat', 'Faro', 'Gran Canaria', 'Lanzarote', 'Malaga', 'Murcia International', 'Palma', 'Pisa', 'Tenerife (Sud)'],
+    "Gran Canaria": ['Barcellona El Prat', 'Berlino Brandeburgo', 'Birmingham', 'Bologna', 'Bournemouth', 'Bristol', 'Bruxelles (Charleroi)', 'Budapest', 'Colonia', 'Cork', 'Cracovia', 'Dublino', 'East Midlands', 'Edimburgo', 'Glasgow (Prestwick)', 'Karlsruhe / Baden-Baden', 'Londra (Luton)', 'Londra (Stansted)', 'Madrid', 'Malaga', 'Manchester', 'Marrakech', 'Memmingen', 'Milano Bergamo', 'Milano Malpensa', 'Newcastle', 'Palma', 'Pisa', 'Porto', 'Roma (Fiumicino)', 'Santiago', 'Shannon', 'Siviglia', 'Valencia', 'Venezia (Treviso)', 'Vienna'],
+    "Grenoble": ['Birmingham', 'Bristol', 'Dublino', 'Londra (Luton)', 'Londra (Stansted)', 'Manchester'],
+    "Göteborg Landvetter": ['Alicante', 'Banja Luka', 'Bruxelles (Charleroi)', 'Budapest', 'Cagliari', 'Cracovia', 'Danzica', 'Edimburgo', 'Kaunas', 'Londra (Stansted)', 'Malaga', 'Manchester', 'Milano Bergamo', 'Palma', 'Pisa', 'Praga', 'Riga', 'Roma (Fiumicino)', 'Sarajevo', 'Stoccolma Arlanda', 'Varsavia (Modlin)', 'Vienna', 'Zagabria', 'Zara'],
+    "Helsinki": ['Alicante', 'Barcellona (Girona)', 'Bruxelles (Charleroi)', 'Dubrovnik', 'Londra (Stansted)', 'Milano Bergamo', 'Parigi (Beauvais)', 'Salonicco', 'Varsavia (Modlin)', 'Venezia M.Polo', 'Vienna', 'Zara'],
+    "Heraklion Creta": ['Berlino Brandeburgo', 'Bologna', 'Bruxelles (Charleroi)', 'Catania', 'Milano Bergamo', 'Milano Malpensa', 'Salonicco', 'Vienna'],
+    "Iasi": ['Bruxelles (Charleroi)', 'Dublino', 'Milano Bergamo', 'Parigi (Beauvais)'],
+    "Ibiza": ['Alicante', 'Barcellona El Prat', 'Bari', 'Berlino Brandeburgo', 'Birmingham', 'Bologna', 'Bordeaux', 'Bristol', 'Bruxelles (Charleroi)', 'Dublino', 'Düsseldorf (Weeze)', 'Edimburgo', 'Eindhoven', 'Francoforte (Hahn)', 'Leeds Bradford', 'Liverpool', 'Londra (Stansted)', 'Madrid', 'Malaga', 'Manchester', 'Marsiglia', 'Milano Bergamo', 'Newcastle', 'Parigi (Beauvais)', 'Pisa', 'Porto', 'Roma (Fiumicino)', 'Santiago', 'Siviglia', 'Tolosa', 'Torino', 'Valencia', 'Venezia (Treviso)', 'Vienna'],
+    "Jerez": ["Barcellona El Prat", "Londra (Stansted)", "Palma"],
+    "Kalamata": ["Londra (Stansted)", "Milano Bergamo", "Vienna"],
+    "Karlsruhe / Baden-Baden": ['Agadir', 'Alicante', 'Banja Luka', 'Barcellona (Girona)', 'Bari', 'Cagliari', 'Corfù', 'Dubrovnik', 'Faro', 'Fez', 'Gran Canaria', 'Lamezia', 'Londra (Stansted)', 'Malaga', 'Milano Bergamo', 'Palermo', 'Palma', 'Porto', 'Salonicco', 'Siviglia', 'Sofia', 'Stoccolma Arlanda', 'Tangeri', 'Tel Aviv', 'Tenerife (Sud)', 'Trapani-Marsala', 'Valencia', 'Zagabria', 'Zara'],
+    "Katowice": ['Alghero', 'Alicante', 'Atene', 'Bari', 'Catania', 'Dortmund', 'Dublino', 'Forlí', 'Londra (Stansted)', 'Malta', 'Manchester', 'Milano Bergamo', 'Oslo', 'Pafos', 'Pola', 'Roma (Fiumicino)', 'Trapani-Marsala', 'Varna', 'Venezia (Treviso)', 'Zara'],
+    "Kaunas": ['Alicante', 'Bari', 'Berlino Brandeburgo', 'Bratislava', 'Bristol', 'Bruxelles (Charleroi)', 'Burgas', 'Colonia', 'Copenaghen', 'Dublino', 'Edimburgo', 'Göteborg Landvetter', 'Liverpool', 'Londra (Luton)', 'Londra (Stansted)', 'Madrid', 'Malaga', 'Milano Bergamo', 'Napoli', 'Pafos', 'Palma', 'Pisa', 'Rimini', 'Rodi', 'Shannon', 'Stoccolma Arlanda', 'Varsavia (Modlin)', 'Zara'],
+    "Kerry": ['Alicante', 'Dublino', 'Faro', 'Francoforte (Hahn)', 'Londra (Luton)', 'Londra (Stansted)', 'Manchester'],
+    "Klagenfurt": ["Alicante", "Londra (Stansted)", "Palma"],
+    "Knock-Irlanda dell ovest": ['Alicante', 'Barcellona (Girona)', 'Birmingham', 'Bristol', 'Colonia', 'East Midlands', 'Edimburgo', 'Faro', 'Lanzarote', 'Liverpool', 'Londra (Luton)', 'Londra (Stansted)', 'Malaga', 'Manchester', 'Milano Bergamo', 'Palma', 'Tenerife (Sud)'],
+    "Kos": ['Bari', 'Berlino Brandeburgo', 'Bologna', 'Dublino', 'Düsseldorf (Weeze)', 'Londra (Stansted)', 'Milano Bergamo', 'Milano Malpensa', 'Pisa', 'Roma (Fiumicino)', 'Venezia (Treviso)', 'Vienna', 'Zagabria'],
+    "Kosice": ['Dublino', 'Liverpool', 'Londra (Stansted)', 'Praga', 'Zara'],
+    "La Rochelle": ['Bruxelles (Charleroi)', 'Cork', 'Dublino', 'Londra (Stansted)', 'Marrakech', 'Marsiglia', 'Porto'],
     "Lamezia": ["Bologna", "Bruxelles (Charleroi)", "Cracovia", "Francoforte (Hahn)", "Genova",
                 "Karlsruhe / Baden-Baden", "Londra (Stansted)", "Malta", "Memmingen",
                 "Milano Bergamo", "Milano Malpensa", "Norimberga", "Pisa", "Torino", "Valencia", "Venezia M.Polo",
                 "Verona", "Vienna"],
+    "Lanzarote": ['Alicante', 'Barcellona El Prat', 'Belfast International', 'Berlino Brandeburgo', 'Birmingham', 'Bologna', 'Bournemouth', 'Bratislava', 'Brema', 'Bristol', 'Bruxelles (Charleroi)', 'Budapest', 'Colonia', 'Cork', 'Dublino', 'Düsseldorf (Weeze)', 'East Midlands', 'Edimburgo', 'Glasgow (Prestwick)', 'Knock-Irlanda dell ovest', 'Leeds Bradford', 'Liverpool', 'Londra (Luton)', 'Londra (Stansted)', 'Madrid', 'Malaga', 'Manchester', 'Marrakech', 'Marsiglia', 'Memmingen', 'Milano Bergamo', 'Milano Malpensa', 'Newcastle', 'Norimberga', 'Santiago', 'Shannon', 'Siviglia', 'Torino', 'Valencia', 'Venezia M.Polo', 'Vienna', 'Zagabria'],
+    "Lappeenranta": ["Milano Bergamo"],
+    "Larnaca": ["Vienna"],
+    "Leeds Bradford": ['Alicante', 'Barcellona (Girona)', 'Barcellona (Reus)', 'Bratislava', 'Breslavia', 'Bucharest (Otopeni)', 'Chania (Creta)', 'Cracovia', 'Danzica', 'Dublino', 'Faro', 'Fuerteventura', 'Ibiza', 'Lanzarote', 'Limoges', 'Malaga', 'Marrakech', 'Palma', 'Parigi (Beauvais)', 'Perpignan', 'Porto', 'Poznan', 'Riga', 'Tenerife (Sud)', 'Varsavia (Modlin)', 'Zara'],
+    "Lille": ["Cracovia", "Marsiglia", "Porto"],
+    "Limoges": ['Bristol', 'East Midlands', 'Leeds Bradford', 'Londra (Stansted)', 'Manchester', 'Marrakech', 'Marsiglia'],
+    "Lipsia": ["Londra (Stansted)"],
+    "Lisbona": ['Agadir', 'Alicante', 'Barcellona El Prat', 'Berlino Brandeburgo', 'Birmingham', 'Bologna', 'Bordeaux', 'Breslavia', 'Bruxelles (Charleroi)', 'Budapest', 'Colonia', 'Cracovia', 'Dublino', 'Edimburgo', 'Eindhoven', 'Londra (Stansted)', 'Lussemburgo', 'Madeira Funchal', 'Madrid', 'Malaga', 'Malta', 'Manchester', 'Marrakech', 'Marsiglia', 'Milano Bergamo', 'Napoli', 'Parigi (Beauvais)', 'Pisa', 'Ponta Delgada', 'Poznan', 'Roma (Fiumicino)', 'Siviglia', 'Tangeri', 'Terceira Lajes', 'Tolosa', 'Valencia', 'Varsavia (Modlin)', 'Venezia M.Polo', 'Vienna'],
+    "Liverpool": ['Alicante', 'Barcellona (Reus)', 'Barcellona El Prat', 'Bergerac', 'Breslavia', 'Corfù', 'Cork', 'Cracovia', 'Dublino', 'Faro', 'Fuerteventura', 'Ibiza', 'Kaunas', 'Knock-Irlanda dell ovest', 'Kosice', 'Lanzarote', 'Madrid', 'Malaga', 'Malta', 'Milano Bergamo', 'Pafos', 'Palma', 'Porto', 'Poznan', 'Roma (Ciampino)', 'Rovaniemi - Lapponia', 'Shannon', 'Sofia', 'Stettino', 'Stoccolma Arlanda', 'Tenerife (Sud)', 'Varsavia (Modlin)', 'Zara'],
+    "Lodz": ['Alicante', 'Bruxelles (Charleroi)', 'Dublino', 'East Midlands', 'Londra (Stansted)', 'Malaga', 'Milano Bergamo'],
+    "Londra (Gatwick)": ["Alicante", "Cork", "Dublino", "Shannon"],
+    "Londra (Luton)": ['Alicante', 'Atene', 'Barcellona El Prat', 'Beziers', 'Bologna', 'Burgas', 'Bydgoszcz', 'Catania', 'Cork', 'Cracovia', 'Dublino', 'Faro', 'Fuerteventura', 'Gran Canaria', 'Grenoble', 'Kaunas', 'Kerry', 'Knock-Irlanda dell ovest', 'Lanzarote', 'Lublino', 'Malaga', 'Malta', 'Murcia International', 'Napoli', 'Palma', 'Rzeszow', 'Siviglia', 'Tenerife (Sud)', 'Torino', 'Venezia (Treviso)', 'Vilnius'],
+    "Londra (Stansted)": ['Aalborg', 'Aarhus', 'Agadir', 'Alghero', 'Alicante', 'Almeria', 'Amburgo', 'Ancona', 'Asturie', 'Atene', 'Barcellona (Girona)', 'Barcellona (Reus)', 'Barcellona El Prat', 'Bari', 'Basilea', 'Belfast International', 'Bergerac', 'Berlino Brandeburgo', 'Beziers', 'Biarritz', 'Billund', 'Bologna', 'Bordeaux', 'Bratislava', 'Brema', 'Breslavia', 'Brindisi', 'Brive', 'Brno', 'Bucharest (Otopeni)', 'Budapest', 'Bydgoszcz', 'Cagliari', 'Carcassonne', 'Castellon (Valencia)', 'Catania', 'Cefalonia', 'Chania (Creta)', 'Cluj', 'Colonia', 'Copenaghen', 'Corfù', 'Cork', 'Cracovia', 'Danzica', 'Dortmund', 'Dublino', 'Dubrovnik', 'Edimburgo', 'Eindhoven', 'Essaouira', 'Faro', 'Fez', 'Fiume', 'Francoforte (Hahn)', 'Fuerteventura', 'Genova', 'Gran Canaria', 'Grenoble', 'Göteborg Landvetter', 'Helsinki', 'Ibiza', 'Jerez', 'Kalamata', 'Karlsruhe / Baden-Baden', 'Katowice', 'Kaunas', 'Kerry', 'Klagenfurt', 'Knock-Irlanda dell ovest', 'Kos', 'Kosice', 'La Rochelle', 'Lamezia', 'Lanzarote', 'Limoges', 'Lipsia', 'Lisbona', 'Lodz', 'Lourdes', 'Lussemburgo', 'Madeira Funchal', 'Madrid', 'Malaga', 'Malta', 'Marrakech', 'Marsiglia', 'Memmingen', 'Milano Bergamo', 'Milano Malpensa', 'Minorca', 'Murcia International', 'Nantes', 'Napoli', 'Newquay Cornovaglia', 'Nimes', 'Nizza', 'Norimberga', 'Olbia', 'Olsztyn - Mazury', 'Osijek', 'Oslo', 'Oslo (Torp)', 'Ostrava', 'Ouarzazate', 'Pafos', 'Palanga', 'Palermo', 'Palma', 'Perpignan', 'Perugia', 'Pescara', 'Pisa', 'Plovdiv', 'Podgorica', 'Poitiers', 'Pola', 'Ponta Delgada', 'Poprad - Tatry (Tatra Mountains)', 'Porto', 'Poznan', 'Praga', 'Preveza - Aktion', 'Rabat', 'Riga', 'Rimini', 'Rodez', 'Rodi', 'Roma (Ciampino)', 'Rovaniemi - Lapponia', 'Rzeszow', 'Salisburgo', 'Salonicco', 'Santander', 'Santiago', 'Santorini Nazionale', 'Saragozza', 'Sarajevo', 'Shannon', 'Siviglia', 'Sofia', 'Stettino', 'Stoccolma Arlanda', 'Stoccolma Västerås', 'Tallinn', 'Tangeri', 'Tenerife (Sud)', 'Tirana', 'Tolosa', 'Torino', 'Tours Valle della Loira', 'Trapani-Marsala', 'Trieste', 'Valencia', 'Varsavia (Modlin)', 'Venezia M.Polo', 'Verona', 'Vienna', 'Vigo', 'Vilnius', 'Zacinto', 'Zagabria', 'Zara', 'Örebro'],
+    "Lourdes": ['Bruxelles (Charleroi)', 'Cracovia', 'Dublino', 'Londra (Stansted)', 'Malta', 'Milano Bergamo', 'Roma (Ciampino)'],
+    "Lublino": ["Danzica", "Dublino", "Londra (Luton)", "Milano Bergamo"],
+    "Lussemburgo": ['Barcellona El Prat', 'Berlino Brandeburgo', 'Dublino', 'Faro', 'Lisbona', 'Londra (Stansted)', 'Madrid', 'Malta', 'Marsiglia', 'Milano Bergamo', 'Palma', 'Porto', 'Siviglia', 'Tolosa'],
+    "Maastricht"
+    "Madeira Funchal"
+    "Madrid"
+    "Malaga"
+    "Malmö"
+    "Malta"
+    "Manchester"
+    "Marrakech"
+    "Marsiglia"
+    "Memmingen"
     "Milano Bergamo": ['Agadir', 'Alghero', 'Alicante', 'Amburgo', 'Amman Giordania', 'AteneBarcellona El Prat', 'Bari',
                        'Belfast International', 'Beni Mellal',
                        'Berlino Brandeburgo', 'Biarritz', 'Billund', 'Birmingham', 'Bordeaux', 'Bratislava',
@@ -88,6 +364,12 @@ routes = {
                         "Manchester", "Marrakech", "Napoli", "Palermo", "Palma", "Parigi (Beauvais)", "Porto",
                         "Santorini Nazionale", "Siviglia", "Tallinn",
                         "Tenerife (Sud)", "Trapani-Marsala", "Valencia", "Vienna", "Zara"],
+    "Minorca"
+    "Murcia International"
+    "Mykonos"
+    "Münster"
+    "Nador"
+    "Nantes"
     "Napoli": ['Alghero', 'Barcellona El Prat', 'Bordeaux', 'Breslavia', 'Bruxelles (Charleroi)', 'Bucharest (Otopeni)',
                'Budapest', 'Cagliari', 'Catania',
                'Chania (Creta)', 'Copenaghen', 'Corfù', 'Cracovia', 'Danzica', 'Dublino', 'Edimburgo', 'Eindhoven',
@@ -99,8 +381,25 @@ routes = {
                'Sofia', 'Tel Aviv', 'Tenerife (Sud)', 'Tolosa', 'Torino', 'Trapani-Marsala', 'Trieste', 'Valencia',
                'Varsavia (Modlin)', 'Venezia M.Polo', 'Verona',
                'Vienna', 'Zacinto', 'Zagabria'],
+    "Newcastle"
+    "Newquay Cornovaglia"
+    "Nimes"
+    "Nis"
+    "Nizza"
+    "Norimberga"
+    "Norwich"
     "Olbia": ['Bologna', 'Bruxelles (Charleroi)', 'Copenaghen', 'Cracovia', 'Dublino', 'Londra (Stansted)',
               'Milano Bergamo', 'Parigi (Beauvais)', 'Trieste', 'Vienna'],
+    "Olsztyn - Mazury"
+    "Osijek"
+    "Oslo"
+    "Oslo (Torp)"
+    "Ostrava"
+    "Ouarzazate"
+    "Oujda"
+    "Paderborn"
+    "Pafos"
+    "Palanga"
     "Palermo": ['Alghero', 'Barcellona El Prat', 'Bari', 'Berlino Brandeburgo', 'Bologna', 'Breslavia', 'Brindisi',
                 'Bruxelles (Charleroi)', 'Bucharest (Otopeni)',
                 'Budapest', 'Cagliari', 'Colonia', 'Cracovia', 'Cuneo', 'Dublino', 'Edimburgo', 'Forlì',
@@ -109,7 +408,12 @@ routes = {
                 'Norimberga', 'Parigi (Beauvais)', 'Parma',
                 'Perugia', 'Pisa', 'Poznan', 'Rimini', 'Roma (Fiumicino)', 'Torino', 'Trieste', 'Valencia',
                 'Venezia M.Polo', 'Verona', 'Vienna'],
+    "Palma"
+    "Pardubice"
+    "Parigi (Beauvais)"
+    "Parigi (Vatry)"
     "Parma": ["Cagliari", "Malta", "Palermo"],
+    "Perpignan"
     "Perugia": ['Barcellona El Prat', 'Brindisi', 'Bruxelles (Charleroi)', 'Bucharest (Otopeni)', 'Cagliari', 'Catania',
                 'Cracovia', 'Londra (Stansted)', 'Malta', 'Palermo'],
     "Pescara": ['Alghero', 'Barcellona (Girona)', 'Bruxelles (Charleroi)', 'Bucharest (Otopeni)', 'Catania', 'Cracovia',
@@ -125,9 +429,23 @@ routes = {
              'Memmingen', 'Oslo (Torp)', 'Palermo', 'Palma', 'Parigi (Beauvais)', 'Porto', 'Praga', 'Rodi', 'Siviglia',
              'Skiathos', 'Stoccolma Arlanda', 'Tenerife (Sud)', 'Tirana', 'Trapani-Marsala', 'Valencia', 'Zagabria',
              'Zara'],
+    "Plovdiv"
+    "Podgorica"
+    "Poitiers"
+    "Pola"
+    "Ponta Delgada"
+    "Poprad - Tatry (Tatra Mountains)"
+    "Porto"
+    "Poznan"
+    "Praga"
+    "Preveza - Aktion"
+    "Rabat"
     "Reggio Calabria": ['Barcellona El Prat', 'Berlino Brandeburgo', 'Bologna', 'Manchester', 'Marsiglia', 'Tirana',
                         'Torino', 'Venezia M.Polo'],
+    "Riga"
     "Rimini": ['Budapest', 'Cagliari', 'Cracovia', 'Kaunas', 'Londra (Stansted)', 'Palermo', 'Praga', 'Vienna'],
+    "Rodez"
+    "Rodi"
     "Roma (Ciampino)": ['Amman Giordania', 'Bratislava', 'Breslavia', 'Bruxelles (Charleroi)', 'Bucharest (Otopeni)',
                         'Budapest',
                         'Cagliari', 'Corfù', 'Cracovia', 'Danzica', 'East Midlands', 'Edimburgo', 'Fez', 'Liverpool',
@@ -148,22 +466,53 @@ routes = {
                          'Santander', 'Santorini Nazionale', 'Skiathos', 'Spalato', 'Stoccolma Arlanda', 'Tel Aviv',
                          'Tenerife (Sud)',
                          'Tolosa', 'Trapani-Marsala', 'Valencia', 'Vienna', 'Vilnius', 'Zacinto', 'Zagabria'],
+    "Rovaniemi - Lapponia"
+    "Rzeszow"
+    "Salisburgo"
+    "Salonicco"
+    "Santander"
+    "Santiago"
+    "Santorini Nazionale"
+    "Saragozza"
+    "Sarajevo"
+    "Shannon"
+    "Siviglia"
+    "Skelleftea"
+    "Skiathos"
+    "Sofia"
+    "Spalato"
+    "Stettino"
+    "Stoccolma Arlanda"
+    "Stoccolma Västerås"
+    "Strasbourg"
+    "Tallinn"
+    "Tangeri"
+    "Teesside"
+    "Tel Aviv"
+    "Tenerife (Nord)"
+    "Tenerife (Sud)"
+    "Terceira Lajes"
+    "Tirana"
+    "Tolosa"
     "Torino": ['Alicante', 'Barcellona El Prat', 'Bari', 'Belfast International', 'Birmingham', 'Brindisi', 'Bristol',
                'Bruxelles (Charleroi)', 'Cagliari', 'Catania', 'Copenaghen', 'Corfù', 'Cracovia', 'Crotone', 'Dublino',
                'Ibiza', 'Lamezia', 'Lanzarote', 'Londra (Luton)', 'Londra (Stansted)', 'Madrid', 'Malaga', 'Malta',
-               'Manchester',
-               'Marrakech', 'Napoli', 'Palermo', 'Parigi (Beauvais)', 'Pescara', 'Porto', 'Praga', 'Reggio Calabria',
-               'Shannon',
-               'Siviglia', 'Stoccolma Arlanda', 'Tel Aviv', 'Trapani-Marsala', 'Valencia', 'Vilnius'],
+               'Manchester', 'Marrakech', 'Napoli', 'Palermo', 'Parigi (Beauvais)', 'Pescara', 'Porto', 'Praga', 'Reggio Calabria',
+               'Shannon', 'Siviglia', 'Stoccolma Arlanda', 'Tel Aviv', 'Trapani-Marsala', 'Valencia', 'Vilnius'],
+    "Tours Valle della Loira"
     "Trapani-Marsala": ['Billund', 'Bologna', 'Bordeaux', 'Bratislava', 'Bruxelles (Charleroi)', 'Düsseldorf (Weeze)',
                         'Karlsruhe / Baden-Baden', 'Katowice', 'Londra (Stansted)', 'Malta', 'Manchester',
-                        'Milano Bergamo',
-                        'Milano Malpensa', 'Napoli', 'Pescara', 'Pisa', 'Porto', 'Riga', 'Roma (Fiumicino)', 'Siviglia',
+                        'Milano Bergamo', 'Milano Malpensa', 'Napoli', 'Pescara', 'Pisa', 'Porto', 'Riga', 'Roma (Fiumicino)', 'Siviglia',
                         'Tolosa', 'Torino', 'Venezia (Treviso)'],
     "Trieste": ['Barcellona El Prat', 'Bari', 'Berlino Brandeburgo', 'Brindisi', 'Bruxelles (Charleroi)', 'Budapest',
                 'Cagliari', 'Catania', 'Cracovia', 'Dublino', 'Londra (Stansted)', 'Malta', 'Napoli', 'Olbia',
-                'Palermo',
-                'Parigi (Beauvais)', 'Siviglia', 'Valencia'],
+                'Palermo', 'Parigi (Beauvais)', 'Siviglia', 'Valencia'],
+    "Tétouan"
+    "Valencia"
+    "Valladolid"
+    "Varna"
+    "Varsavia (Chopin)"
+    "Varsavia (Modlin)"
     "Venezia (Treviso)": ['Alicante', 'Amman Giordania', 'Berlino Brandeburgo', 'Billund', 'Breslavia',
                           'Bruxelles (Charleroi)',
                           'Bucharest (Otopeni)', 'Budapest', 'Chania (Creta)', 'Corfù', 'Cork', 'Cracovia', 'Crotone',
@@ -182,6 +531,14 @@ routes = {
                        'Londra (Stansted)', 'Madrid', 'Manchester', 'Napoli', 'Palermo', 'Reggio Calabria',
                        'Stoccolma Arlanda', 'Vienna'],
     "Verona": ['Bari', 'Birmingham', 'Brindisi', 'Bruxelles (Charleroi)', 'Cagliari', 'Catania', 'Corfù', 'Dublino',
-               'Lamezia',
-               'Londra (Stansted)', 'Madrid', 'Manchester', 'Napoli', 'Palermo', 'Palma', 'Porto', 'Valencia']
+               'Lamezia', 'Londra (Stansted)', 'Madrid', 'Manchester', 'Napoli', 'Palermo', 'Palma', 'Porto', 'Valencia'],
+    "Vienna"
+    "Vigo"
+    "Vilnius"
+    "Vitoria"
+    "Växjö Småland"
+    "Zacinto"
+    "Zagabria"
+    "Zara"
+    "Örebro":[]
 }

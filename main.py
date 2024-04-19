@@ -59,14 +59,27 @@ def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
         plt.show()
         plt.draw()
 
+def leggi_file_txt(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        # Leggi tutte le righe del file e rimuovi eventuali spazi bianchi
+        elementi = [line.strip() for line in file.readlines()]
+    return elementi
+
 
 if __name__ == "__main__":
+
+    file_path = "elenco.txt"  # Assicurati che il percorso sia corretto
+    elementi = leggi_file_txt(file_path)
+    print(elementi)
+
+    """
     app = Home()
     app.mainloop()
-    """
-    get_prices("BDS", "TRN", ["2024-05-15"], '1')
+    
+    #get_prices("BDS", "TRN", ["2024-05-15"], '1')
 
-    get_prices("BDS", "MXP", ["2024-05-15"], '1')
-    get_prices("BGY", "BDS", ["2024-05-20"], '1')
-    get_prices("MXP", "BDS", ["2024-05-20"], '1')
+    #get_prices("BDS", "MXP", ["2024-05-15"], '1')
+    #get_prices("BGY", "BDS", ["2024-05-20"], '1')
+    #get_prices("MXP", "BDS", ["2024-05-20"], '1')
+
     """

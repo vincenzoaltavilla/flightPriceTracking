@@ -97,17 +97,32 @@ class Home(tk.Tk):
                                                 bg = "#073693", fg = "white")
         self.label_number_of_persons.grid(row=5, column=0, padx=10, pady=10, sticky="e")
 
-        # Number of persons field
-        self.number_of_persons_field = tk.Entry(self.frame_gui, width=32, font=("Arial", 12), borderwidth=2)
-        self.number_of_persons_field.grid(row=5, column=1, padx=10, pady=10)
-        self.number_of_persons_field.insert(0, "1")  # default
-        self.number_of_persons_field.config(validate="key", validatecommand=(
-            self.number_of_persons_field.register(validate_input), "%P"))
+        # Spinbox for number of persons
+        self.number_of_persons_spinbox = tk.Spinbox(self.frame_gui, from_=1, to=25, font=("Arial", 12), width=31)
+        self.number_of_persons_spinbox.grid(row=5, column=1, padx=10, pady=10, sticky="ns")
+        self.number_of_persons_spinbox.delete(0, tk.END)
+        self.number_of_persons_spinbox.insert(0, "1")
+        self.number_of_persons_spinbox.bind("<KeyRelease>", self.validate_spinbox_input)
+
+        # Aggiungi qui altre parti del codice...
 
         # Look for prices button
         self.look_for_prices = tk.Button(self.frame_gui, text="Cerca prezzi", command=self.look_for_prices,
                                          font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
         self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=30)
+
+    def validate_spinbox_input(self, event):
+        new_value = self.number_of_persons_spinbox.get()
+        if new_value.isdigit():
+            new_value = int(new_value)
+            if new_value < 1:
+                self.number_of_persons_spinbox.delete(0, tk.END)
+                self.number_of_persons_spinbox.insert(0, "1")
+            elif new_value > 25:
+                self.number_of_persons_spinbox.delete(0, tk.END)
+                self.number_of_persons_spinbox.insert(0, "25")
+        else:
+            self.number_of_persons_spinbox.delete(0, tk.END)
 
     def update_airport_to_menu(self, event):
         new_airport_from = self.var_1.get()
@@ -176,13 +191,9 @@ class Home(tk.Tk):
             messagebox.showerror("Errore", "Il campo delle date selezionate non può essere vuoto.")
             return
 
-        selected_n_of_persons = self.number_of_persons_field.get()
+        selected_n_of_persons = self.number_of_persons_spinbox.get()
         if not selected_n_of_persons:
             messagebox.showerror("Errore", "Il campo del numero di persone non può essere vuoto.")
-            return
-
-        if int(selected_n_of_persons) > 25:
-            messagebox.showerror("Errore", "Massimo 25 persone")
             return
 
         print("Aeroporto di partenza:", selected_airport_from)

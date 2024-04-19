@@ -1,0 +1,11 @@
+python==3.12.2
+pandas~=2.2.2
+pillow~=10.3.0
+matplotlib~=3.8.4
+keyboard~=0.13.5
+bs4~=0.0.2
+beautifulsoup4~=4.12.3
+selenium~=4.19.0
+webdriver-manager~=4.0.1
+openpyxl~=3.1.2
+tkcalendar~=1.6.1

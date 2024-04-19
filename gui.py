@@ -48,7 +48,7 @@ class Home(tk.Tk):
                                 fg = "white")
         self.label_1.grid(row=1, column=0, padx=10, pady=10, sticky="e")
         airport_from = list(routes)
-        self.var_1 = tk.StringVar(value=airport_from[24])
+        self.var_1 = tk.StringVar(value=airport_from[184])
         self.menu_airport_from = ttk.Combobox(self.frame_gui, values=airport_from, textvariable=self.var_1, state="readonly",
                                               font=("Arial", 12), width=30)
         self.menu_airport_from.grid(row=1, column=1, padx=10, pady=10)

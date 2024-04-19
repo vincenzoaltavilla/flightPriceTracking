@@ -144,7 +144,7 @@
       <workItem from="1713022636581" duration="28000" />
       <workItem from="1713277079609" duration="1170000" />
       <workItem from="1713370742083" duration="5580000" />
-      <workItem from="1713430129007" duration="21809000" />
+      <workItem from="1713430129007" duration="21968000" />
     </task>
     <task id="LOCAL-00001" summary="Gained prices from URL flight">
       <option name="closed" value="true" />
@@ -362,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713456883399</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="GUI home ready">
+      <option name="closed" value="true" />
+      <created>1713457085472</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1713457085472</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -15,6 +15,7 @@ def validate_input(new_text):
         return False
 
 
+# noinspection PyUnusedLocal
 class Home(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -174,7 +175,7 @@ class Home(tk.Tk):
             else:
                 messagebox.showwarning("Data non trovata", "La data selezionata non è presente nella lista.")
 
-    def delete_date_wrapper(self, event=None):
+    def delete_date_wrapper(self, event):
         self.delete_date()
 
     def look_for_prices(self):

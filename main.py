@@ -59,13 +59,12 @@ def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
         plt.show()
         plt.draw()
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     app = Home()
     app.mainloop()
-    
+
     #get_prices("BDS", "TRN", ["2024-05-15"], '1')
     #get_prices("BDS", "MXP", ["2024-05-15"], '1')
     #get_prices("BGY", "BDS", ["2024-05-20"], '1')
     #get_prices("MXP", "BDS", ["2024-05-20"], '1')
-

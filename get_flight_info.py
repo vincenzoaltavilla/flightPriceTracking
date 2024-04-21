@@ -46,11 +46,10 @@ def get_flight_info(url):
             prices = []
 
             for flight_price in soup.find_all('flights-price-simple'):
-                prices.append(flight_price.getText(strip=True))
+                if 'flight-card-summary__old-value' not in flight_price.parent.get('class', []):
+                    prices.append(flight_price.getText(strip=True))
             for flight_time in soup.find_all('span', class_='flight-info__hour'):
                 times.append(flight_time.get_text(strip=True))
-
-            ############BUGFIX SCONTI
 
             info = []
 

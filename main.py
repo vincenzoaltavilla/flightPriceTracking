@@ -60,11 +60,34 @@ def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
         plt.draw()
 
 
+def scrivi_parole_tra_virgolette(file_input, file_output):
+    try:
+        with open(file_input, 'r', encoding='utf-8') as file:
+            # Leggi tutte le righe del file di input
+            righe = file.readlines()
+
+        with open(file_output, 'w', encoding='utf-8') as output_file:
+            # Scrivi le righe tra virgolette con uno spazio e duepunti dopo la virgoletta di chiusura
+            for riga in righe:
+                output_file.write(f'"{riga.strip()}": \"\", \n')
+
+        print(f"Righe tra virgolette con spazio e duepunti scritte nel file '{file_output}'.")
+    except FileNotFoundError:
+        print("Il file non è stato trovato.")
+    except Exception as e:
+        print("Si è verificato un errore durante la scrittura del file:", e)
+
+
 if __name__ == "__main__":
-    app = Home()
-    app.mainloop()
+    #app = Home()
+    #app.mainloop()
 
     #get_prices("BDS", "TRN", ["2024-05-15"], '1')
     #get_prices("BDS", "MXP", ["2024-05-15"], '1')
     #get_prices("BGY", "BDS", ["2024-05-20"], '1')
     #get_prices("MXP", "BDS", ["2024-05-20"], '1')
+
+    # Esempio di utilizzo
+    file_input = "elenco.txt"  # Assicurati che il percorso sia corretto
+    file_output = "righe_tra_virgolette.txt"  # Specifica il nome del file di output
+    scrivi_parole_tra_virgolette(file_input, file_output)

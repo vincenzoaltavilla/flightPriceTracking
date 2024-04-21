@@ -50,6 +50,8 @@ def get_flight_info(url):
             for flight_time in soup.find_all('span', class_='flight-info__hour'):
                 times.append(flight_time.get_text(strip=True))
 
+            ############BUGFIX SCONTI
+
             info = []
 
             for i in range(len(prices)):

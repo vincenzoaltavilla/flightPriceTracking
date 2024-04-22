@@ -20,10 +20,10 @@ def validate_input(new_text):
 
 
 # noinspection PyUnusedLocal
-def execute_get_prices(finestra_secondaria, selected_airport_from, selected_airport_to, selected_dates,
+def execute_get_prices(searching_window, selected_airport_from, selected_airport_to, selected_dates,
                        selected_n_of_persons):
     get_prices(alias[selected_airport_from], alias[selected_airport_to], selected_dates, selected_n_of_persons)
-    finestra_secondaria.destroy()  # Distruggi la finestra secondaria dopo l'esecuzione di get_prices
+    searching_window.destroy()
 
 
 class Home(tk.Tk):
@@ -113,8 +113,6 @@ class Home(tk.Tk):
         self.number_of_persons_spinbox.delete(0, tk.END)
         self.number_of_persons_spinbox.insert(0, "1")
         self.number_of_persons_spinbox.bind("<KeyRelease>", self.validate_spinbox_input)
-
-        # Aggiungi qui altre parti del codice...
 
         # Look for prices button
         self.look_for_prices = tk.Button(self.frame_gui, text="Cerca prezzi", command=self.look_for_prices,
@@ -221,10 +219,7 @@ class Home(tk.Tk):
         label = tk.Label(searching_window, text="Questa è la finestra secondaria")
         label.pack(padx=10, pady=10)
 
-        # Aggiorna la GUI prima di continuare con l'esecuzione
         self.update()
-
-        # Esegui la funzione get_prices dopo 1 millisecondo
         searching_window.after(1, lambda: execute_get_prices(searching_window, selected_airport_from,
-                                                                     selected_airport_to, selected_dates,
-                                                                     selected_n_of_persons))
+                                                             selected_airport_to, selected_dates,
+                                                             selected_n_of_persons))

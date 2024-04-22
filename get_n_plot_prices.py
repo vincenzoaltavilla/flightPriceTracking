@@ -6,9 +6,6 @@ import pandas as pd
 import os
 import matplotlib.pyplot as plt
 import matplotlib.backends.backend_pdf
-import keyboard
-import sys
-import time
 
 
 def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):

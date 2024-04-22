@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="searching window fatta.">
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="searching window con animazione puntini.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/get_n_plot_prices.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_n_plot_prices.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
@@ -162,7 +162,8 @@
       <workItem from="1713711918385" duration="99000" />
       <workItem from="1713726671576" duration="475000" />
       <workItem from="1713771165075" duration="3414000" />
-      <workItem from="1713778952522" duration="2965000" />
+      <workItem from="1713778952522" duration="3279000" />
+      <workItem from="1713787933585" duration="372000" />
     </task>
     <task id="LOCAL-00001" summary="Gained prices from URL flight">
       <option name="closed" value="true" />
@@ -484,7 +485,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713774414180</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="searching window con animazione puntini.">
+      <option name="closed" value="true" />
+      <created>1713782243019</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1713782243019</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,10 +521,11 @@
     <MESSAGE value="BUGFIX SCONTI TO DO" />
     <MESSAGE value="BUGFIX voli scontati fatto" />
     <MESSAGE value="searching window fatta." />
-    <option name="LAST_COMMIT_MESSAGE" value="searching window fatta." />
+    <MESSAGE value="searching window con animazione puntini." />
+    <option name="LAST_COMMIT_MESSAGE" value="searching window con animazione puntini." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1713781936159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1713788303055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713695870394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

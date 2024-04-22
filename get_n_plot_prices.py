@@ -11,26 +11,6 @@ import sys
 import time
 
 
-def print_animation():
-    while True:
-        sys.stdout.write(".")  # Stampiamo il primo punto
-        sys.stdout.flush()  # Assicuriamoci che l'output sia visualizzato immediatamente
-        time.sleep(1)  # Attendiamo 1 secondo
-
-        sys.stdout.write(".")  # Aggiungiamo il secondo punto
-        sys.stdout.flush()
-        time.sleep(1)
-
-        sys.stdout.write(".")  # Aggiungiamo il terzo punto
-        sys.stdout.flush()
-        time.sleep(1)
-
-        # Cancella la console e torna all'inizio
-        sys.stdout.write('\r' + ' '*3 + '\r')  # Pulisce la riga
-        sys.stdout.flush()
-        time.sleep(1)
-
-
 def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
     sheet_name = airport_from + '-' + airport_to
     excel_file = n_of_persons + '-' + sheet_name + "-" + ",".join(date_of_flights) + ".xlsx"
@@ -84,4 +64,3 @@ def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
 if __name__ == "__main__":
     app = Home()
     app.mainloop()
-    #print_animation()

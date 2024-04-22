@@ -10,6 +10,25 @@ from get_n_plot_prices import get_prices
 from PIL import Image, ImageTk
 from time import sleep
 import babel.numbers
+import time
+
+
+def print_animation(label):
+    try:
+        while True:
+            label.config(text=".")
+            label.update()
+            time.sleep(1)
+
+            label.config(text="..")
+            label.update()
+            time.sleep(1)
+
+            label.config(text="...")
+            label.update()
+            time.sleep(1)
+    except tk.TclError:
+        pass
 
 
 def validate_input(new_text):
@@ -207,6 +226,7 @@ class Home(tk.Tk):
         searching_window = tk.Toplevel(self)
         searching_window.title("Ricercando prezzi...")
         searching_window.iconbitmap("icon.ico")
+        searching_window.configure(background='#073693')
         searching_window.resizable(False, False)
 
         # window sizes and position
@@ -222,11 +242,12 @@ class Home(tk.Tk):
 
         searching_window.label1 = tk.Label(searching_window.frame_gui, text=f"Numero di persone: {selected_n_of_persons}",
                                            font=("Arial", 12), bg="#073693", fg="white", padx=5, pady=5)
-        searching_window.label1.grid(row=0, column=0, padx=100, pady=10)
+        searching_window.label1.grid(row=0, column=0, padx=100, pady=5)
 
-        searching_window.label2 = tk.Label(searching_window.frame_gui, text=f"{selected_airport_from} ➜ {selected_airport_to}",
-                                           font=("Arial", 12), bg="#073693", fg="white", padx=5, pady=5)
-        searching_window.label2.grid(row=1, column=0, padx=5, pady=10)
+        searching_window.label2 = tk.Label(searching_window.frame_gui,
+                                           text=f"{selected_airport_from} ➜ {selected_airport_to}",
+                                           font=("Arial", 12), bg="#073693", fg="white", padx=5, pady=2)
+        searching_window.label2.grid(row=1, column=0, padx=5, pady=2)
 
         text_selected_date = ""
         for selected_date in selected_dates:
@@ -234,8 +255,13 @@ class Home(tk.Tk):
 
         searching_window.label3 = tk.Label(searching_window.frame_gui,
                                            text=text_selected_date, font=("Arial", 12),
-                                           bg="#073693", fg="white", padx=5, pady=5)
-        searching_window.label3.grid(row=2, column=0, padx=5, pady=70)
+                                           bg="#073693", fg="white", padx=5)
+        searching_window.label3.grid(row=2, column=0, padx=5)
+
+        searching_window.label4 = tk.Label(searching_window.frame_gui,
+                                           font=("Arial", 22), bg="#073693", fg="white", padx=5)
+        searching_window.label4.grid(row=3, column=0, padx=5)
+        print_animation(searching_window.label4)
 
         self.update()
         searching_window.after(1, lambda: execute_get_prices(searching_window, selected_airport_from,

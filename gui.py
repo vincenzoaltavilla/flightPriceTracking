@@ -31,6 +31,7 @@ class Home(tk.Tk):
         super().__init__()
         self.title("Ryanair Flight Prices")
         self.iconbitmap("icon.ico")
+        self.resizable(False, False)
 
         # window sizes and position
         window_width = 700
@@ -41,7 +42,6 @@ class Home(tk.Tk):
 
         # frame
         self.frame_gui = tk.Frame(self, padx=40, pady=30, bg="#073693")
-        self.resizable(False, False)
         self.frame_gui.pack()
 
         # header
@@ -215,9 +215,27 @@ class Home(tk.Tk):
         x_position = (searching_window.winfo_screenwidth() - window_width) // 2
         y_position = (searching_window.winfo_screenheight() - window_height) // 2
         searching_window.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
-        # Aggiungi altri widget o contenuti alla finestra secondaria
-        label = tk.Label(searching_window, text="Questa è la finestra secondaria")
-        label.pack(padx=10, pady=10)
+
+        # frame
+        searching_window.frame_gui = tk.Frame(searching_window, bg="#073693")
+        searching_window.frame_gui.pack()
+
+        searching_window.label1 = tk.Label(searching_window.frame_gui, text=f"Numero di persone: {selected_n_of_persons}",
+                                           font=("Arial", 12), bg="#073693", fg="white", padx=5, pady=5)
+        searching_window.label1.grid(row=0, column=0, padx=100, pady=10)
+
+        searching_window.label2 = tk.Label(searching_window.frame_gui, text=f"{selected_airport_from} ➜ {selected_airport_to}",
+                                           font=("Arial", 12), bg="#073693", fg="white", padx=5, pady=5)
+        searching_window.label2.grid(row=1, column=0, padx=5, pady=10)
+
+        text_selected_date = ""
+        for selected_date in selected_dates:
+            text_selected_date = text_selected_date + selected_date + "\n"
+
+        searching_window.label3 = tk.Label(searching_window.frame_gui,
+                                           text=text_selected_date, font=("Arial", 12),
+                                           bg="#073693", fg="white", padx=5, pady=5)
+        searching_window.label3.grid(row=2, column=0, padx=5, pady=70)
 
         self.update()
         searching_window.after(1, lambda: execute_get_prices(searching_window, selected_airport_from,

@@ -11,6 +11,7 @@ from PIL import Image, ImageTk
 from time import sleep
 import babel.numbers
 import time
+import threading
 
 
 def print_animation(label):
@@ -31,6 +32,10 @@ def print_animation(label):
         pass
 
 
+def start_animation(label):
+    threading.Thread(target=print_animation, args=(label,)).start()
+
+
 def validate_input(new_text):
     if new_text.isdigit() or new_text == "":
         return True
@@ -38,11 +43,14 @@ def validate_input(new_text):
         return False
 
 
-# noinspection PyUnusedLocal
 def execute_get_prices(searching_window, selected_airport_from, selected_airport_to, selected_dates,
                        selected_n_of_persons):
-    get_prices(alias[selected_airport_from], alias[selected_airport_to], selected_dates, selected_n_of_persons)
-    searching_window.destroy()
+    try:
+        get_prices(alias[selected_airport_from], alias[selected_airport_to], selected_dates, selected_n_of_persons)
+        searching_window.destroy()
+    except Exception as e:
+        print("Errore durante l'ottenimento dei prezzi:", e)
+        searching_window.destroy()
 
 
 class Home(tk.Tk):
@@ -240,30 +248,40 @@ class Home(tk.Tk):
         searching_window.frame_gui = tk.Frame(searching_window, bg="#073693")
         searching_window.frame_gui.pack()
 
-        searching_window.label1 = tk.Label(searching_window.frame_gui, text=f"Numero di persone: {selected_n_of_persons}",
-                                           font=("Arial", 12), bg="#073693", fg="white", padx=5, pady=5)
-        searching_window.label1.grid(row=0, column=0, padx=100, pady=5)
+        searching_window.sw_label_n_of_persons = tk.Label(searching_window.frame_gui, text=f"Numero di persone: {selected_n_of_persons}",
+                                                          font=("Arial", 12), bg="#073693", fg="white", padx=5, pady=5)
+        searching_window.sw_label_n_of_persons.grid(row=0, column=0, padx=100, pady=5)
 
-        searching_window.label2 = tk.Label(searching_window.frame_gui,
-                                           text=f"{selected_airport_from} ➜ {selected_airport_to}",
-                                           font=("Arial", 12), bg="#073693", fg="white", padx=5, pady=2)
-        searching_window.label2.grid(row=1, column=0, padx=5, pady=2)
+        searching_window.sw_route = tk.Label(searching_window.frame_gui,
+                                             text=f"{selected_airport_from} ➜ {selected_airport_to}",
+                                             font=("Arial", 12), bg="#073693", fg="white", padx=5, pady=2)
+        searching_window.sw_route.grid(row=1, column=0, padx=5, pady=2)
 
         text_selected_date = ""
         for selected_date in selected_dates:
             text_selected_date = text_selected_date + selected_date + "\n"
 
-        searching_window.label3 = tk.Label(searching_window.frame_gui,
-                                           text=text_selected_date, font=("Arial", 12),
-                                           bg="#073693", fg="white", padx=5)
-        searching_window.label3.grid(row=2, column=0, padx=5)
+        searching_window.sw_dates = tk.Label(searching_window.frame_gui,
+                                             text=text_selected_date, font=("Arial", 12),
+                                             bg="#073693", fg="white", padx=5)
+        searching_window.sw_dates.grid(row=2, column=0, padx=5)
 
-        searching_window.label4 = tk.Label(searching_window.frame_gui,
-                                           font=("Arial", 22), bg="#073693", fg="white", padx=5)
-        searching_window.label4.grid(row=3, column=0, padx=5)
-        print_animation(searching_window.label4)
+        searching_window.sw_loading = tk.Label(searching_window.frame_gui,
+                                               font=("Arial", 22), bg="#073693", fg="white", padx=5)
+        searching_window.sw_loading.grid(row=3, column=0, padx=5)
+        start_animation(searching_window.sw_loading)
 
-        self.update()
-        searching_window.after(1, lambda: execute_get_prices(searching_window, selected_airport_from,
-                                                             selected_airport_to, selected_dates,
-                                                             selected_n_of_persons))
+        thread = threading.Thread(target=execute_get_prices,
+                                  args=(searching_window, selected_airport_from, selected_airport_to, selected_dates,
+                                        selected_n_of_persons))
+        thread.start()
+
+        # wait for the end of the thread
+        self.after(100, self.wait_for_thread, thread, searching_window)
+
+    def wait_for_thread(self, thread, searching_window):
+        if thread.is_alive():
+            self.after(100, self.wait_for_thread, thread, searching_window)
+        else:
+            messagebox.showinfo("Report excel generato", "Report excel generato")
+            searching_window.destroy()

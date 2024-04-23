@@ -39,8 +39,7 @@ def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
         df.loc["Prezzi al " + str(date.today())] = [float(price.replace(' €', '').replace(',', '.')) for price in prices]
         df.to_excel(excel_file, sheet_name=sheet_name)
         adapt_columns(excel_file, sheet_name)
-
-        print("\n\n" + df.to_string())
+        # print("\n\n" + df.to_string())
 
         x = df.index.values.tolist()
         y = df.values.tolist()

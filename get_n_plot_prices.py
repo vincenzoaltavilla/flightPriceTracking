@@ -10,9 +10,19 @@ matplotlib.use('agg')
 
 
 def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
+
+    # Specifica il percorso della cartella da creare
+    excel_folder = "tabella_prezzi"
+    plot_folder = "grafici"
+
+    if not os.path.exists(excel_folder):
+        os.makedirs(excel_folder)
+    if not os.path.exists(plot_folder):
+        os.makedirs(plot_folder)
+
     sheet_name = airport_from + '-' + airport_to
-    excel_file = n_of_persons + '-' + sheet_name + "-" + ",".join(date_of_flights) + ".xlsx"
-    plot_file = excel_file.replace(".xlsx", ".pdf")
+    excel_file = excel_folder + '/' + n_of_persons + '-' + sheet_name + "-" + ",".join(date_of_flights) + ".xlsx"
+    plot_file = excel_file.replace(".xlsx", ".pdf").replace(excel_folder, plot_folder)
 
     columns_complete_flight, prices = [], []
 
@@ -47,8 +57,11 @@ def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
         plt.savefig(plot_file)  # Salva il plot su un file
         plt.close()  # Chiude la figura per liberare la memoria
 
-        open_file(plot_file)
-        open_file(excel_file)
+        try:
+            open_file(plot_file)
+            open_file(excel_file)
+        except FileNotFoundError:
+            print("file not found.")
 
 
 def open_file(file_path):

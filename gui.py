@@ -281,7 +281,7 @@ class Home(tk.Tk):
         thread.start()
 
         sheet_name = alias[selected_airport_from] + '-' + alias[selected_airport_to]
-        self.excel_file = selected_n_of_persons + '-' + sheet_name + "-" + ",".join(selected_dates) + ".xlsx"
+        self.excel_file = "tabella_prezzi/" + selected_n_of_persons + '-' + sheet_name + "-" + ",".join(selected_dates) + ".xlsx"
 
         # wait for the end of the thread
         self.after(100, self.wait_for_thread, thread, searching_window)

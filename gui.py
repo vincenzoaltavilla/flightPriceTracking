@@ -292,6 +292,7 @@ class Home(tk.Tk):
         else:
             if os.path.exists(self.excel_file):
                 messagebox.showinfo("Fatto!", "Controlla file Excel e grafico.")
+
             else:
                 messagebox.showerror("Errore", "Volo inesistente.")
 

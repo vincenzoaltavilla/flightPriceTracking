@@ -47,6 +47,18 @@ def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
         plt.savefig(plot_file)  # Salva il plot su un file
         plt.close()  # Chiude la figura per liberare la memoria
 
+        open_file(plot_file)
+        open_file(excel_file)
+
+
+def open_file(file_path):
+    if os.name == 'posix':  # macOS e Linux
+        os.system('open "{}"'.format(file_path))
+    elif os.name == 'nt':  # Windows
+        os.system('start "" "{}"'.format(file_path))
+    else:
+        raise OSError("Sistema operativo non supportato")
+
 
 def plot_prices(df, columns_complete_flight):
     fig = plt.figure()

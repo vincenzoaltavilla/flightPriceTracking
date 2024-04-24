@@ -54,8 +54,8 @@ def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
         # print("\n\n" + df.to_string())
 
         plot_prices(df, columns_complete_flight)
-        plt.savefig(plot_file)  # Salva il plot su un file
-        plt.close()  # Chiude la figura per liberare la memoria
+        plt.savefig(plot_file)
+        plt.close()
 
         try:
             open_file(plot_file)

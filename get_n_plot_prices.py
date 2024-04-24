@@ -12,7 +12,7 @@ matplotlib.use('agg')
 def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
     sheet_name = airport_from + '-' + airport_to
     excel_file = n_of_persons + '-' + sheet_name + "-" + ",".join(date_of_flights) + ".xlsx"
-    plot_file = n_of_persons + '-' + sheet_name + "-" + ",".join(date_of_flights) + ".pdf"
+    plot_file = excel_file.replace(".xlsx", ".pdf")
 
     columns_complete_flight, prices = [], []
 

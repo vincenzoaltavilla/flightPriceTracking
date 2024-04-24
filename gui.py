@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
@@ -12,6 +13,7 @@ from time import sleep
 import babel.numbers
 import time
 import threading
+import os
 
 
 def print_animation(label):
@@ -56,6 +58,7 @@ def execute_get_prices(searching_window, selected_airport_from, selected_airport
 class Home(tk.Tk):
     def __init__(self):
         super().__init__()
+        self.excel_file = None
         self.title("Ryanair Flight Prices")
         self.iconbitmap("icon.ico")
         self.resizable(False, False)
@@ -248,7 +251,8 @@ class Home(tk.Tk):
         searching_window.frame_gui = tk.Frame(searching_window, bg="#073693")
         searching_window.frame_gui.pack()
 
-        searching_window.sw_label_n_of_persons = tk.Label(searching_window.frame_gui, text=f"Numero di persone: {selected_n_of_persons}",
+        searching_window.sw_label_n_of_persons = tk.Label(searching_window.frame_gui,
+                                                          text=f"Numero di persone: {selected_n_of_persons}",
                                                           font=("Arial", 12), bg="#073693", fg="white", padx=5, pady=5)
         searching_window.sw_label_n_of_persons.grid(row=0, column=0, padx=100, pady=5)
 
@@ -276,6 +280,9 @@ class Home(tk.Tk):
                                         selected_n_of_persons))
         thread.start()
 
+        sheet_name = alias[selected_airport_from] + '-' + alias[selected_airport_to]
+        self.excel_file = selected_n_of_persons + '-' + sheet_name + "-" + ",".join(selected_dates) + ".xlsx"
+
         # wait for the end of the thread
         self.after(100, self.wait_for_thread, thread, searching_window)
 
@@ -283,5 +290,9 @@ class Home(tk.Tk):
         if thread.is_alive():
             self.after(100, self.wait_for_thread, thread, searching_window)
         else:
-            messagebox.showinfo("Fatto!", "Controlla file Excel e grafico.")
+            if os.path.exists(self.excel_file):
+                messagebox.showinfo("Fatto!", "Controlla file Excel e grafico.")
+            else:
+                messagebox.showerror("Errore", "Volo inesistente.")
+
             searching_window.destroy()

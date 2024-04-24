@@ -283,5 +283,5 @@ class Home(tk.Tk):
         if thread.is_alive():
             self.after(100, self.wait_for_thread, thread, searching_window)
         else:
-            messagebox.showinfo("Report excel generato", "Report excel generato")
+            messagebox.showinfo("Fatto!", "Controlla file Excel e grafico.")
             searching_window.destroy()

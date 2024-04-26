@@ -1,5 +1,3 @@
-from idlelib import history
-
 import babel.numbers
 import os
 import threading
@@ -59,7 +57,7 @@ def execute_get_prices(searching_window, selected_airport_from, selected_airport
 
 
 def get_excel_files(folder_path):
-    excel_files = [file for file in os.listdir(folder_path) if file.endswith('.xlsx')]
+    excel_files = [file for file in os.listdir(folder_path)] # if file.endswith('.xlsx')
     print(excel_files)
     return excel_files
 
@@ -342,9 +340,12 @@ class Home(tk.Tk):
     def populate_excel_files_listbox(self):
         excel_folder = "tabella_prezzi"
         try:
-            self.history.delete(0, tk.END)  # Elimina tutti gli elementi dalla Listbox
+            self.history.delete(0, tk.END)
             excel_files = get_excel_files(excel_folder)
-            for file in excel_files:
-                self.history.insert(tk.END, file)
+            if not excel_files:
+                self.history.insert(tk.END, "Nessuna ricerca aperta al momento")
+            else:
+                for file in excel_files:
+                    self.history.insert(tk.END, file)
         except FileNotFoundError:
             print("Cartella prezzi non trovata")

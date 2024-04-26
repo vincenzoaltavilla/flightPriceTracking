@@ -91,20 +91,20 @@ class Home(tk.Tk):
             header_label.grid(row=0, column=0, columnspan=3, pady=30)
 
         # Airport from
-        self.label_1 = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12), bg="#073693",
-                                fg="white")
-        self.label_1.grid(row=1, column=0, padx=10, pady=10, sticky="e")
-        airport_from = list(routes)
-        self.var_1 = tk.StringVar(value=airport_from[184])
-        self.menu_airport_from = ttk.Combobox(self.frame_gui, values=airport_from, textvariable=self.var_1, state="readonly",
+        self.label_airport_from = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12), bg="#073693",
+                                           fg="white")
+        self.label_airport_from.grid(row=1, column=0, padx=10, pady=10, sticky="e")
+        self.airport_from = list(routes)
+        self.var_airport_from = tk.StringVar(value=self.airport_from[184])
+        self.menu_airport_from = ttk.Combobox(self.frame_gui, values=self.airport_from, textvariable=self.var_airport_from, state="readonly",
                                               font=("Arial", 12), width=30)
         self.menu_airport_from.grid(row=1, column=1, padx=10, pady=10)
 
         # Airport to
-        self.label_2 = tk.Label(self.frame_gui, text="Aeroporto di arrivo:", font=("Arial", 12), bg="#073693", fg="white")
-        self.label_2.grid(row=2, column=0, padx=10, pady=10, sticky="e")
+        self.label_airport_to = tk.Label(self.frame_gui, text="Aeroporto di arrivo:", font=("Arial", 12), bg="#073693", fg="white")
+        self.label_airport_to.grid(row=2, column=0, padx=10, pady=10, sticky="e")
         self.airport_to = routes
-        self.var_2 = tk.StringVar(value=self.airport_to[airport_from[24]])
+        self.var_airport_to = tk.StringVar(value=self.airport_to[self.airport_from[24]])
         self.menu_airport_to = ttk.Combobox(self.frame_gui, state="readonly", font=("Arial", 12), width=30)
         self.menu_airport_to.grid(row=2, column=1, padx=10, pady=10)
         # callback to update airport to menu
@@ -172,10 +172,10 @@ class Home(tk.Tk):
             self.number_of_persons_spinbox.delete(0, tk.END)
 
     def update_airport_to_menu(self, event):
-        new_airport_from = self.var_1.get()
+        new_airport_from = self.var_airport_from.get()
         self.menu_airport_to.config(values=self.airport_to[new_airport_from])
 
-        self.var_2.set("")
+        self.var_airport_to.set("")
         self.menu_airport_to.set("")
 
     def add_date(self):

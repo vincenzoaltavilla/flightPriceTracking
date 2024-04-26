@@ -65,7 +65,7 @@ def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
 
 
 def open_file(file_path):
-    if os.name == 'posix':  # macOS e Linux
+    if os.name == 'posix':  # macOS and Linux
         os.system('open "{}"'.format(file_path))
     elif os.name == 'nt':  # Windows
         os.system('start "" "{}"'.format(file_path))

@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="import and output adjustments">
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="More exceptions">
+      <change afterPath="$PROJECT_DIR$/icon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon.ico" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,23 +182,7 @@
       <workItem from="1713967509590" duration="789000" />
       <workItem from="1713981680086" duration="1923000" />
       <workItem from="1713983863708" duration="57000" />
-      <workItem from="1714116773134" duration="2958000" />
-    </task>
-    <task id="LOCAL-00004" summary="Gained dep, arr and price">
-      <option name="closed" value="true" />
-      <created>1712566138474</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1712566138474</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Gained dep, arr and price">
-      <option name="closed" value="true" />
-      <created>1712566350522</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1712566350522</updated>
+      <workItem from="1714116773134" duration="4852000" />
     </task>
     <task id="LOCAL-00006" summary="Gained dep, arr and price">
       <option name="closed" value="true" />
@@ -578,14 +560,29 @@
       <option name="project" value="LOCAL" />
       <updated>1714118053274</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="More exceptions">
+      <option name="closed" value="true" />
+      <created>1714119826988</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1714119826988</updated>
+    </task>
+    <task id="LOCAL-00054" summary="More exceptions">
+      <option name="closed" value="true" />
+      <created>1714119891395</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1714119891395</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add following days" />
     <MESSAGE value="VISUALIZATION OK" />
     <MESSAGE value="run=update" />
     <MESSAGE value="small changes" />
@@ -610,10 +607,11 @@
     <MESSAGE value="folders for excel and plot.pdf" />
     <MESSAGE value="manca qualche last dance" />
     <MESSAGE value="import and output adjustments" />
-    <option name="LAST_COMMIT_MESSAGE" value="import and output adjustments" />
+    <MESSAGE value="More exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="More exceptions" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714119753884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714120209278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713695870394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

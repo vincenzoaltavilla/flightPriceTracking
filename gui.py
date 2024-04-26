@@ -85,7 +85,7 @@ class Home(tk.Tk):
             header_label = tk.Label(self.frame_gui, image=photo, borderwidth=0)
             header_label.image = photo
         except FileNotFoundError:
-            header_label = tk.Label(self.frame_gui, text="RYANAIR FLIGHT PRICES", font=("Arial", 15), bg="#073693",
+            header_label = tk.Label(self.frame_gui, text="RYANAIR FLIGHT PRICES", font=("Arial", 15, "bold"), bg="#073693",
                                     fg="#cdab2a")
         finally:
             header_label.grid(row=0, column=0, columnspan=3, pady=30)

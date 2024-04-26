@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="obtain list of excel files">
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="todo: aggiustare titoli xlsx per rendere più comprensibile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_n_plot_prices.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_n_plot_prices.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,31 +188,7 @@
       <workItem from="1714125987894" duration="1085000" />
       <workItem from="1714131341415" duration="26000" />
       <workItem from="1714132415200" duration="3575000" />
-      <workItem from="1714140369428" duration="323000" />
-    </task>
-    <task id="LOCAL-00010" summary="add following days">
-      <option name="closed" value="true" />
-      <created>1712582563916</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1712582563916</updated>
-    </task>
-    <task id="LOCAL-00011" summary="add following days">
-      <option name="closed" value="true" />
-      <created>1712583259466</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1712583259466</updated>
-    </task>
-    <task id="LOCAL-00012" summary="add following days">
-      <option name="closed" value="true" />
-      <created>1712583271214</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1712583271214</updated>
+      <workItem from="1714140369428" duration="2378000" />
     </task>
     <task id="LOCAL-00013" summary="VISUALIZATION OK">
       <option name="closed" value="true" />
@@ -581,14 +558,37 @@
       <option name="project" value="LOCAL" />
       <updated>1714136001311</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="todo: aggiustare titoli xlsx per rendere più comprensibile">
+      <option name="closed" value="true" />
+      <created>1714140825708</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1714140825708</updated>
+    </task>
+    <task id="LOCAL-00060" summary="todo: aggiustare titoli xlsx per rendere più comprensibile">
+      <option name="closed" value="true" />
+      <created>1714140985648</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1714140985648</updated>
+    </task>
+    <task id="LOCAL-00061" summary="todo: aggiustare titoli xlsx per rendere più comprensibile">
+      <option name="closed" value="true" />
+      <created>1714140998678</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1714140998678</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="pdf download and new xlsx file name" />
     <MESSAGE value="Press any key to close" />
     <MESSAGE value="GUI home ready" />
     <MESSAGE value="add requirements" />
@@ -613,10 +613,11 @@
     <MESSAGE value="small changes" />
     <MESSAGE value="defined final structure" />
     <MESSAGE value="obtain list of excel files" />
-    <option name="LAST_COMMIT_MESSAGE" value="obtain list of excel files" />
+    <MESSAGE value="todo: aggiustare titoli xlsx per rendere più comprensibile" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo: aggiustare titoli xlsx per rendere più comprensibile" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714140690616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714142399026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713695870394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

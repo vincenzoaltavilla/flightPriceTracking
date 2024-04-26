@@ -170,18 +170,31 @@ class Home(tk.Tk):
         self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=30)
 
         # History section
-        self.label_history = tk.Label(self.frame_gui, text="Ricerche aperte", font=("Arial", 12), bg="#073693", fg="white")
-        self.label_history.grid(row=7, columnspan=3, padx=10, pady=1, sticky="ns")
+        self.label_history = tk.Label(self.frame_gui, text="Cronologia ricerche:", font=("Arial", 12), bg="#073693", fg="white")
+        self.label_history.grid(row=7, columnspan=3, padx=60, sticky="nsw")
         self.history = Listbox(self.frame_gui, selectmode=tk.SINGLE, width=55, height=5, font=("Arial", 12), borderwidth=2)
         self.history_scrollbar = Scrollbar(self.frame_gui, orient=tk.VERTICAL, command=self.history.yview)
         self.history.config(yscrollcommand=self.history_scrollbar.set)
-        self.history.grid(row=8, column=0, padx=10, pady=10, columnspan=3)
-        self.history_scrollbar.grid(row=8, column=2, padx=10, pady=10, sticky="ns")
+        self.history.grid(row=8, column=0, padx=10, pady=5, columnspan=3)
+        self.history_scrollbar.grid(row=8, column=2, padx=10, pady=5, sticky="ns")
         self.populate_excel_files_listbox()
 
-        self.reload_button = tk.Button(self.frame_gui, text="Aggiorna ricerche aperte", command=self.populate_excel_files_listbox,
+        self.history.bind("<<ListboxSelect>>", self.set_history_flight)
+
+        self.reload_button = tk.Button(self.frame_gui, text="Aggiorna cronologia", command=self.populate_excel_files_listbox,
                                        font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
         self.reload_button.grid(row=9, columnspan=3, padx=10, pady=10)
+
+    def set_history_flight(self, event):
+        selected_item = self.history.get(self.history.curselection())
+
+        try:
+            selected_n_of_persons = selected_item.split('-')[0]
+            self.number_of_persons_spinbox.delete(0, tk.END)
+            self.number_of_persons_spinbox.insert(0, selected_n_of_persons)
+        except IndexError:
+            # Gestione dell'errore nel caso in cui il formato dell'elemento selezionato non sia corretto
+            print("Errore: formato cronologia non valido")
 
     def validate_spinbox_input(self, event):
         new_value = self.number_of_persons_spinbox.get()
@@ -344,7 +357,7 @@ class Home(tk.Tk):
             self.history.delete(0, tk.END)
             excel_files = get_excel_files(excel_folder)
             if not excel_files:
-                self.history.insert(tk.END, "Nessuna ricerca aperta al momento")
+                self.history.insert(tk.END, "                                                Cronologia vuota")
             else:
                 for file in excel_files:
                     self.history.insert(tk.END, file)

@@ -28,6 +28,8 @@ def print_animation(label):
             sleep(1)
     except tk.TclError:
         pass
+    except RuntimeError:
+        pass
 
 
 def start_animation(label):
@@ -48,7 +50,10 @@ def execute_get_prices(searching_window, selected_airport_from, selected_airport
         searching_window.destroy()
     except Exception as e:
         print("Errore durante l'ottenimento dei prezzi:", e)
-        searching_window.destroy()
+        try:
+            searching_window.destroy()
+        except RuntimeError:
+            print("Runtime error")
 
 
 class Home(tk.Tk):
@@ -56,7 +61,10 @@ class Home(tk.Tk):
         super().__init__()
         self.excel_file = None
         self.title("Ryanair Flight Prices")
-        self.iconbitmap("icon.ico")
+        try:
+            self.iconphoto(False, tk.PhotoImage(file='icon.png'))
+        except tk.TclError:
+            print("Errore: icona non trovata")
         self.resizable(False, False)
 
         # window sizes and position
@@ -71,11 +79,16 @@ class Home(tk.Tk):
         self.frame_gui.pack()
 
         # header
-        image = Image.open("header.png")
-        photo = ImageTk.PhotoImage(image)
-        header_label = tk.Label(self.frame_gui, image=photo, borderwidth=0)
-        header_label.image = photo
-        header_label.grid(row=0, column=0, columnspan=3, pady=30)
+        try:
+            image = Image.open("header.png")
+            photo = ImageTk.PhotoImage(image)
+            header_label = tk.Label(self.frame_gui, image=photo, borderwidth=0)
+            header_label.image = photo
+        except FileNotFoundError:
+            header_label = tk.Label(self.frame_gui, text="RYANAIR FLIGHT PRICES", font=("Arial", 15), bg="#073693",
+                                    fg="#cdab2a")
+        finally:
+            header_label.grid(row=0, column=0, columnspan=3, pady=30)
 
         # Airport from
         self.label_1 = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12), bg="#073693",
@@ -232,7 +245,10 @@ class Home(tk.Tk):
 
         searching_window = tk.Toplevel(self)
         searching_window.title("Ricercando prezzi...")
-        searching_window.iconbitmap("icon.ico")
+        try:
+            searching_window.iconphoto(False, tk.PhotoImage(file='icon.png'))
+        except tk.TclError:
+            print("Errore: icona non trovata")
         searching_window.configure(background='#073693')
         searching_window.resizable(False, False)
 

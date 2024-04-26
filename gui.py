@@ -1,19 +1,15 @@
+import babel.numbers
 import os
+import threading
 import tkinter as tk
-from tkinter import ttk
-from tkinter import *
-from tkcalendar import DateEntry
-from tkinter import messagebox
-from datetime import date
-from routes import routes
 from alias import alias
 from get_n_plot_prices import get_prices
+from routes import routes
+from datetime import date
 from PIL import Image, ImageTk
 from time import sleep
-import babel.numbers
-import time
-import threading
-import os
+from tkcalendar import DateEntry
+from tkinter import ttk, messagebox, Scrollbar, Listbox
 
 
 def print_animation(label):
@@ -21,15 +17,15 @@ def print_animation(label):
         while True:
             label.config(text=".")
             label.update()
-            time.sleep(1)
+            sleep(1)
 
             label.config(text="..")
             label.update()
-            time.sleep(1)
+            sleep(1)
 
             label.config(text="...")
             label.update()
-            time.sleep(1)
+            sleep(1)
     except tk.TclError:
         pass
 
@@ -119,7 +115,7 @@ class Home(tk.Tk):
         self.label_selected_dates = tk.Label(self.frame_gui, text="Date selezionate:", font=("Arial", 12), bg="#073693",
                                              fg="white")
         self.label_selected_dates.grid(row=3, column=0, padx=10, pady=10, sticky="e")
-        self.scrollbar = Scrollbar(self.frame_gui, orient=VERTICAL)
+        self.scrollbar = Scrollbar(self.frame_gui, orient=tk.VERTICAL)
         self.dates_list = Listbox(self.frame_gui, width=30, height=5, font=("Arial", 12), borderwidth=2,
                                   yscrollcommand=self.scrollbar.set)
         self.scrollbar.config(command=self.dates_list.yview)
@@ -145,8 +141,8 @@ class Home(tk.Tk):
         self.number_of_persons_spinbox.bind("<KeyRelease>", self.validate_spinbox_input)
 
         # Look for prices button
-        self.look_for_prices = tk.Button(self.frame_gui, text="Cerca prezzi", command=self.look_for_prices,
-                                         font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
+        self.look_for_prices = tk.Button(self.frame_gui, text="CERCA PREZZI", command=self.look_for_prices,
+                                         font=("Arial", 14), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
         self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=30)
 
     def validate_spinbox_input(self, event):
@@ -294,6 +290,7 @@ class Home(tk.Tk):
                 messagebox.showinfo("Fatto!", "Controlla file Excel e grafico.")
 
             else:
-                messagebox.showerror("Errore", "Volo inesistente.")
+                messagebox.showerror("Volo inesistente",
+                                     "Assicurati che un volo esista tuttora prima di cercarne i prezzi.")
 
             searching_window.destroy()

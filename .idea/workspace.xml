@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="folders for excel and plot.pdf">
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="manca qualche last dance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_flight_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_flight_info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_n_plot_prices.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_n_plot_prices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,14 +183,8 @@
       <workItem from="1713966952665" duration="239000" />
       <workItem from="1713967509590" duration="789000" />
       <workItem from="1713981680086" duration="1923000" />
-    </task>
-    <task id="LOCAL-00002" summary="Gained prices from URL flight">
-      <option name="closed" value="true" />
-      <created>1712406730019</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1712406730019</updated>
+      <workItem from="1713983863708" duration="57000" />
+      <workItem from="1714116773134" duration="1186000" />
     </task>
     <task id="LOCAL-00003" summary="Sleep(1)">
       <option name="closed" value="true" />
@@ -573,14 +570,21 @@
       <option name="project" value="LOCAL" />
       <updated>1713983231482</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="manca qualche last dance">
+      <option name="closed" value="true" />
+      <created>1713983911408</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1713983911408</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Gained dep, arr and price" />
     <MESSAGE value="€ bugfix" />
     <MESSAGE value="add following days" />
     <MESSAGE value="VISUALIZATION OK" />
@@ -605,10 +609,11 @@
     <MESSAGE value="voli esistenti e non" />
     <MESSAGE value="open pdf e xlsx" />
     <MESSAGE value="folders for excel and plot.pdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="folders for excel and plot.pdf" />
+    <MESSAGE value="manca qualche last dance" />
+    <option name="LAST_COMMIT_MESSAGE" value="manca qualche last dance" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1713982945472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714117968597" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713695870394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

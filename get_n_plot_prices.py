@@ -1,11 +1,11 @@
-from get_flight_info import *
-from format import *
-from gui import *
-from datetime import date
-import pandas as pd
 import os
 import matplotlib.pyplot as plt
 import matplotlib.backends.backend_pdf
+import pandas as pd
+from format import adapt_columns
+from get_flight_info import get_flight_info
+from gui import *
+from datetime import date
 matplotlib.use('agg')
 
 

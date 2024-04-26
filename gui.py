@@ -58,6 +58,12 @@ def execute_get_prices(searching_window, selected_airport_from, selected_airport
             print("Runtime error")
 
 
+def get_excel_files(folder_path):
+    excel_files = [file for file in os.listdir(folder_path) if file.endswith('.xlsx')]
+    print(excel_files)
+    return excel_files
+
+
 class Home(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -73,7 +79,7 @@ class Home(tk.Tk):
 
         # window sizes and position
         window_width = 700
-        window_height = 650
+        window_height = 680
         x_position = (self.winfo_screenwidth() - window_width) // 2
         y_position = ((self.winfo_screenheight() - window_height) // 2)-40
         self.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
@@ -172,6 +178,11 @@ class Home(tk.Tk):
         self.history.config(yscrollcommand=self.history_scrollbar.set)
         self.history.grid(row=8, column=0, padx=10, pady=10, columnspan=3)
         self.history_scrollbar.grid(row=8, column=2, padx=10, pady=10, sticky="ns")
+        self.populate_excel_files_listbox()
+
+        self.reload_button = tk.Button(self.frame_gui, text="Aggiorna ricerche aperte", command=self.populate_excel_files_listbox,
+                                       font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
+        self.reload_button.grid(row=9, columnspan=3, padx=10, pady=10)
 
     def validate_spinbox_input(self, event):
         new_value = self.number_of_persons_spinbox.get()
@@ -326,3 +337,14 @@ class Home(tk.Tk):
                                      "Assicurati che un volo esista tuttora prima di cercarne i prezzi.")
 
             searching_window.destroy()
+            self.populate_excel_files_listbox()
+
+    def populate_excel_files_listbox(self):
+        excel_folder = "tabella_prezzi"
+        try:
+            self.history.delete(0, tk.END)  # Elimina tutti gli elementi dalla Listbox
+            excel_files = get_excel_files(excel_folder)
+            for file in excel_files:
+                self.history.insert(tk.END, file)
+        except FileNotFoundError:
+            print("Cartella prezzi non trovata")

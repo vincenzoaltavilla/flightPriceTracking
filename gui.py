@@ -1,3 +1,5 @@
+from idlelib import history
+
 import babel.numbers
 import os
 import threading
@@ -65,13 +67,15 @@ class Home(tk.Tk):
             self.iconphoto(False, tk.PhotoImage(file='icon.png'))
         except tk.TclError:
             print("Errore: icona non trovata")
+
+        self.configure(background='#073693')
         self.resizable(False, False)
 
         # window sizes and position
         window_width = 700
-        window_height = 520
+        window_height = 650
         x_position = (self.winfo_screenwidth() - window_width) // 2
-        y_position = (self.winfo_screenheight() - window_height) // 2
+        y_position = ((self.winfo_screenheight() - window_height) // 2)-40
         self.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
 
         # frame
@@ -88,20 +92,22 @@ class Home(tk.Tk):
             header_label = tk.Label(self.frame_gui, text="RYANAIR FLIGHT PRICES", font=("Arial", 15, "bold"), bg="#073693",
                                     fg="#cdab2a")
         finally:
-            header_label.grid(row=0, column=0, columnspan=3, pady=30)
+            header_label.grid(row=0, column=0, columnspan=3, pady=10)
 
         # Airport from
         self.label_airport_from = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12), bg="#073693",
                                            fg="white")
-        self.label_airport_from.grid(row=1, column=0, padx=10, pady=10, sticky="e")
+        self.label_airport_from.grid(row=1, column=0, padx=10, pady=5, sticky="e")
         self.airport_from = list(routes)
         self.var_airport_from = tk.StringVar(value=self.airport_from[184])
-        self.menu_airport_from = ttk.Combobox(self.frame_gui, values=self.airport_from, textvariable=self.var_airport_from, state="readonly",
+        self.menu_airport_from = ttk.Combobox(self.frame_gui, values=self.airport_from, textvariable=self.var_airport_from,
+                                              state="readonly",
                                               font=("Arial", 12), width=30)
         self.menu_airport_from.grid(row=1, column=1, padx=10, pady=10)
 
         # Airport to
-        self.label_airport_to = tk.Label(self.frame_gui, text="Aeroporto di arrivo:", font=("Arial", 12), bg="#073693", fg="white")
+        self.label_airport_to = tk.Label(self.frame_gui, text="Aeroporto di arrivo:", font=("Arial", 12), bg="#073693",
+                                         fg="white")
         self.label_airport_to.grid(row=2, column=0, padx=10, pady=10, sticky="e")
         self.airport_to = routes
         self.var_airport_to = tk.StringVar(value=self.airport_to[self.airport_from[24]])
@@ -157,6 +163,15 @@ class Home(tk.Tk):
         self.look_for_prices = tk.Button(self.frame_gui, text="CERCA PREZZI", command=self.look_for_prices,
                                          font=("Arial", 14), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
         self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=30)
+
+        # History section
+        self.label_history = tk.Label(self.frame_gui, text="Ricerche aperte", font=("Arial", 12), bg="#073693", fg="white")
+        self.label_history.grid(row=7, columnspan=3, padx=10, pady=1, sticky="ns")
+        self.history = Listbox(self.frame_gui, selectmode=tk.SINGLE, width=55, height=5, font=("Arial", 12), borderwidth=2)
+        self.history_scrollbar = Scrollbar(self.frame_gui, orient=tk.VERTICAL, command=self.history.yview)
+        self.history.config(yscrollcommand=self.history_scrollbar.set)
+        self.history.grid(row=8, column=0, padx=10, pady=10, columnspan=3)
+        self.history_scrollbar.grid(row=8, column=2, padx=10, pady=10, sticky="ns")
 
     def validate_spinbox_input(self, event):
         new_value = self.number_of_persons_spinbox.get()
@@ -293,7 +308,8 @@ class Home(tk.Tk):
         thread.start()
 
         sheet_name = alias[selected_airport_from] + '-' + alias[selected_airport_to]
-        self.excel_file = "tabella_prezzi/" + selected_n_of_persons + '-' + sheet_name + "-" + ",".join(selected_dates) + ".xlsx"
+        self.excel_file = "tabella_prezzi/" + selected_n_of_persons + '-' + sheet_name + "-" + ",".join(
+            selected_dates) + ".xlsx"
 
         # wait for the end of the thread
         self.after(100, self.wait_for_thread, thread, searching_window)

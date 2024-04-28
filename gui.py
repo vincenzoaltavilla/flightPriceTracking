@@ -407,12 +407,11 @@ class Home(tk.Tk):
         try:
             self.history.delete(0, tk.END)
             excel_files = get_excel_files(excel_folder)
-            print(excel_files)
+            # print(excel_files)
             if not excel_files:
                 self.history.insert(tk.END, "                                                Cronologia vuota")
             else:
                 for file in excel_files:
-                    file_n = file[:-5]
-                    self.history.insert(tk.END, file_n)
+                    self.history.insert(tk.END, file)
         except FileNotFoundError:
             print("Cartella prezzi non trovata")

@@ -2,14 +2,37 @@ import babel.numbers
 import os
 import threading
 import tkinter as tk
-from alias import alias
+from alias import alias, inverted_alias
 from get_n_plot_prices import get_prices
 from routes import routes
-from datetime import date
+from datetime import date, datetime
 from PIL import Image, ImageTk
 from time import sleep
 from tkcalendar import DateEntry
 from tkinter import ttk, messagebox, Scrollbar, Listbox
+import re
+
+
+def analizza_stringa(stringa):
+    # Definisci il pattern regex per la stringa
+    pattern = r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\.xlsx$'
+
+    # Cerca il pattern nella stringa
+    match = re.match(pattern, stringa)
+
+    if match:
+        # Estrai i dati dalla corrispondenza
+        primo_numero = int(match.group(1))
+        primo_trattino = match.group(2)
+        secondo_trattino = match.group(3)
+        date_string = match.group(4)
+        datee = date_string.split(',')
+
+        # Restituisci i risultati
+        return primo_numero, primo_trattino, secondo_trattino, datee
+    else:
+        # Se il pattern non viene trovato, restituisci None
+        return None
 
 
 def print_animation(label):
@@ -57,8 +80,7 @@ def execute_get_prices(searching_window, selected_airport_from, selected_airport
 
 
 def get_excel_files(folder_path):
-    excel_files = [file for file in os.listdir(folder_path)] # if file.endswith('.xlsx')
-    print(excel_files)
+    excel_files = [file for file in os.listdir(folder_path) if file.endswith('.xlsx')]
     return excel_files
     #######################################################################
 
@@ -115,7 +137,7 @@ class Home(tk.Tk):
                                          fg="white")
         self.label_airport_to.grid(row=2, column=0, padx=10, pady=10, sticky="e")
         self.airport_to = routes
-        self.var_airport_to = tk.StringVar(value=self.airport_to[self.airport_from[24]])
+        self.var_airport_to = tk.StringVar()
         self.menu_airport_to = ttk.Combobox(self.frame_gui, state="readonly", font=("Arial", 12), width=30)
         self.menu_airport_to.grid(row=2, column=1, padx=10, pady=10)
         # callback to update airport to menu
@@ -186,15 +208,39 @@ class Home(tk.Tk):
         self.reload_button.grid(row=9, columnspan=3, padx=10, pady=10)
 
     def set_history_flight(self, event):
-        selected_item = self.history.get(self.history.curselection())
-
+        selected_item = None
         try:
-            selected_n_of_persons = selected_item.split('-')[0]
-            self.number_of_persons_spinbox.delete(0, tk.END)
-            self.number_of_persons_spinbox.insert(0, selected_n_of_persons)
-        except IndexError:
-            # Gestione dell'errore nel caso in cui il formato dell'elemento selezionato non sia corretto
-            print("Errore: formato cronologia non valido")
+            selected_item = self.history.get(self.history.curselection())
+        except tk.TclError:
+            pass
+
+        if selected_item:
+            flight_fields = analizza_stringa(selected_item)
+            if flight_fields:
+                history_n_of_persons, history_airport_from, history_airport_to, history_dates = flight_fields
+                try:
+                    self.number_of_persons_spinbox.delete(0, tk.END)
+                    self.number_of_persons_spinbox.insert(0, history_n_of_persons)
+
+                    self.menu_airport_from.set(value=inverted_alias[history_airport_from])
+                    self.menu_airport_from.bind("<<ComboboxSelected>>", self.update_airport_to_menu)
+                    self.update_airport_to_menu(None)
+                    self.menu_airport_to.set(value=inverted_alias[history_airport_to])
+
+                    self.dates_list.delete(0, tk.END)
+
+                    # Add history dates
+                    for data in history_dates:
+                        self.dates_list.insert(tk.END, data)
+
+                    self.selected_dates = history_dates
+                    self.update_date_list()
+
+                except IndexError:
+                    # Gestione dell'errore nel caso in cui il formato dell'elemento selezionato non sia corretto
+                    print("Errore: formato cronologia non valido")
+            else:
+                print("Stringa non valida.")
 
     def validate_spinbox_input(self, event):
         new_value = self.number_of_persons_spinbox.get()
@@ -281,6 +327,11 @@ class Home(tk.Tk):
             messagebox.showerror("Errore", "Il campo del numero di persone non può essere vuoto.")
             return
 
+        for data in selected_dates:
+            if datetime.strptime(data, "%Y-%m-%d").date() < datetime.now().date():
+                messagebox.showerror("Errore", "Nel campo 'Date Selezionate' è presente una data antecedente ad oggi.")
+                return
+
         searching_window = tk.Toplevel(self)
         searching_window.title("Ricercando prezzi...")
         try:
@@ -356,10 +407,12 @@ class Home(tk.Tk):
         try:
             self.history.delete(0, tk.END)
             excel_files = get_excel_files(excel_folder)
+            print(excel_files)
             if not excel_files:
                 self.history.insert(tk.END, "                                                Cronologia vuota")
             else:
                 for file in excel_files:
-                    self.history.insert(tk.END, file)
+                    file_n = file[:-5]
+                    self.history.insert(tk.END, file_n)
         except FileNotFoundError:
             print("Cartella prezzi non trovata")

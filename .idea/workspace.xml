@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="todo: aggiustare titoli xlsx per rendere più comprensibile">
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="todo: aggiustare titoli xlsx per rendere più comprensibile, più meccanismo di rientro nei campi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_n_plot_prices.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_n_plot_prices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alias.py" beforeDir="false" afterPath="$PROJECT_DIR$/alias.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,23 +188,8 @@
       <workItem from="1714125987894" duration="1085000" />
       <workItem from="1714131341415" duration="26000" />
       <workItem from="1714132415200" duration="3575000" />
-      <workItem from="1714140369428" duration="2378000" />
-    </task>
-    <task id="LOCAL-00013" summary="VISUALIZATION OK">
-      <option name="closed" value="true" />
-      <created>1712658348018</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1712658348018</updated>
-    </task>
-    <task id="LOCAL-00014" summary="run=update">
-      <option name="closed" value="true" />
-      <created>1712745688151</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1712745688151</updated>
+      <workItem from="1714140369428" duration="2584000" />
+      <workItem from="1714305949453" duration="4098000" />
     </task>
     <task id="LOCAL-00015" summary="run=update">
       <option name="closed" value="true" />
@@ -582,14 +567,29 @@
       <option name="project" value="LOCAL" />
       <updated>1714140998678</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="todo: aggiustare titoli xlsx per rendere più comprensibile, più meccanismo di rientro nei campi">
+      <option name="closed" value="true" />
+      <created>1714142923823</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1714142923823</updated>
+    </task>
+    <task id="LOCAL-00063" summary="todo: aggiustare titoli xlsx per rendere più comprensibile, più meccanismo di rientro nei campi">
+      <option name="closed" value="true" />
+      <created>1714142948200</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1714142948200</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Press any key to close" />
     <MESSAGE value="GUI home ready" />
     <MESSAGE value="add requirements" />
     <MESSAGE value="little improvements" />
@@ -614,10 +614,11 @@
     <MESSAGE value="defined final structure" />
     <MESSAGE value="obtain list of excel files" />
     <MESSAGE value="todo: aggiustare titoli xlsx per rendere più comprensibile" />
-    <option name="LAST_COMMIT_MESSAGE" value="todo: aggiustare titoli xlsx per rendere più comprensibile" />
+    <MESSAGE value="todo: aggiustare titoli xlsx per rendere più comprensibile, più meccanismo di rientro nei campi" />
+    <option name="LAST_COMMIT_MESSAGE" value="todo: aggiustare titoli xlsx per rendere più comprensibile, più meccanismo di rientro nei campi" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714142399026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714310065640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713695870394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

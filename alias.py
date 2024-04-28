@@ -235,3 +235,5 @@ alias = {
     "Zara": "ZAD",
     "Örebro": "ORB"
 }
+
+inverted_alias = {value: key for key, value in alias.items()}

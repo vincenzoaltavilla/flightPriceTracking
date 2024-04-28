@@ -1,5 +1,6 @@
 import babel.numbers
 import os
+import re
 import threading
 import tkinter as tk
 from alias import alias, inverted_alias
@@ -10,29 +11,10 @@ from PIL import Image, ImageTk
 from time import sleep
 from tkcalendar import DateEntry
 from tkinter import ttk, messagebox, Scrollbar, Listbox
-import re
 
 
-def analizza_stringa(stringa):
-    # Definisci il pattern regex per la stringa
-    pattern = r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\.xlsx$'
-
-    # Cerca il pattern nella stringa
-    match = re.match(pattern, stringa)
-
-    if match:
-        # Estrai i dati dalla corrispondenza
-        primo_numero = int(match.group(1))
-        primo_trattino = match.group(2)
-        secondo_trattino = match.group(3)
-        date_string = match.group(4)
-        datee = date_string.split(',')
-
-        # Restituisci i risultati
-        return primo_numero, primo_trattino, secondo_trattino, datee
-    else:
-        # Se il pattern non viene trovato, restituisci None
-        return None
+def start_animation(label):
+    threading.Thread(target=print_animation, args=(label,)).start()
 
 
 def print_animation(label):
@@ -53,10 +35,6 @@ def print_animation(label):
         pass
     except RuntimeError:
         pass
-
-
-def start_animation(label):
-    threading.Thread(target=print_animation, args=(label,)).start()
 
 
 def validate_input(new_text):
@@ -83,6 +61,23 @@ def get_excel_files(folder_path):
     excel_files = [file for file in os.listdir(folder_path) if file.endswith('.xlsx')]
     return excel_files
     ###MANCA ORA ULTIMO AGGIORNAMENTO###
+
+
+def get_history_flight_fields(string_flight):
+
+    pattern = r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\.xlsx$'
+    match = re.match(pattern, string_flight)
+
+    if match:
+        history_n_of_persons = int(match.group(1))
+        history_airport_from = match.group(2)
+        history_airport_to = match.group(3)
+        history_dates_string = match.group(4)
+        history_dates_list = history_dates_string.split(',')
+
+        return history_n_of_persons, history_airport_from, history_airport_to, history_dates_list
+    else:
+        return None
 
 
 class Home(tk.Tk):
@@ -207,54 +202,6 @@ class Home(tk.Tk):
                                        font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
         self.reload_button.grid(row=9, columnspan=3, padx=10, pady=10)
 
-    def set_history_flight(self, event):
-        selected_item = None
-        try:
-            selected_item = self.history.get(self.history.curselection())
-        except tk.TclError:
-            pass
-
-        if selected_item:
-            flight_fields = analizza_stringa(selected_item)
-            if flight_fields:
-                history_n_of_persons, history_airport_from, history_airport_to, history_dates = flight_fields
-                try:
-                    self.number_of_persons_spinbox.delete(0, tk.END)
-                    self.number_of_persons_spinbox.insert(0, history_n_of_persons)
-
-                    self.menu_airport_from.set(value=inverted_alias[history_airport_from])
-                    self.menu_airport_from.bind("<<ComboboxSelected>>", self.update_airport_to_menu)
-                    self.update_airport_to_menu(None)
-                    self.menu_airport_to.set(value=inverted_alias[history_airport_to])
-
-                    self.dates_list.delete(0, tk.END)
-
-                    # Add history dates
-                    for data in history_dates:
-                        self.dates_list.insert(tk.END, data)
-
-                    self.selected_dates = history_dates
-                    self.update_date_list()
-
-                except IndexError:
-                    # Gestione dell'errore nel caso in cui il formato dell'elemento selezionato non sia corretto
-                    print("Errore: formato cronologia non valido")
-            else:
-                print("Stringa non valida.")
-
-    def validate_spinbox_input(self, event):
-        new_value = self.number_of_persons_spinbox.get()
-        if new_value.isdigit():
-            new_value = int(new_value)
-            if new_value < 1:
-                self.number_of_persons_spinbox.delete(0, tk.END)
-                self.number_of_persons_spinbox.insert(0, "1")
-            elif new_value > 25:
-                self.number_of_persons_spinbox.delete(0, tk.END)
-                self.number_of_persons_spinbox.insert(0, "25")
-        else:
-            self.number_of_persons_spinbox.delete(0, tk.END)
-
     def update_airport_to_menu(self, event):
         new_airport_from = self.var_airport_from.get()
         self.menu_airport_to.config(values=self.airport_to[new_airport_from])
@@ -307,6 +254,19 @@ class Home(tk.Tk):
 
     def delete_date_wrapper(self, event):
         self.delete_date()
+
+    def validate_spinbox_input(self, event):
+        new_value = self.number_of_persons_spinbox.get()
+        if new_value.isdigit():
+            new_value = int(new_value)
+            if new_value < 1:
+                self.number_of_persons_spinbox.delete(0, tk.END)
+                self.number_of_persons_spinbox.insert(0, "1")
+            elif new_value > 25:
+                self.number_of_persons_spinbox.delete(0, tk.END)
+                self.number_of_persons_spinbox.insert(0, "25")
+        else:
+            self.number_of_persons_spinbox.delete(0, tk.END)
 
     def look_for_prices(self):
         selected_airport_from = self.menu_airport_from.get()
@@ -415,3 +375,38 @@ class Home(tk.Tk):
                     self.history.insert(tk.END, file)
         except FileNotFoundError:
             self.history.insert(tk.END, "                                        Cartella prezzi non trovata")
+
+    def set_history_flight(self, event):
+        selected_item = None
+        try:
+            selected_item = self.history.get(self.history.curselection())
+        except tk.TclError:
+            pass
+
+        if selected_item:
+            flight_fields = get_history_flight_fields(selected_item)
+            if flight_fields:
+                history_n_of_persons, history_airport_from, history_airport_to, history_dates = flight_fields
+                try:
+                    self.number_of_persons_spinbox.delete(0, tk.END)
+                    self.number_of_persons_spinbox.insert(0, history_n_of_persons)
+
+                    self.menu_airport_from.set(value=inverted_alias[history_airport_from])
+                    self.menu_airport_from.bind("<<ComboboxSelected>>", self.update_airport_to_menu)
+                    self.update_airport_to_menu(None)
+                    self.menu_airport_to.set(value=inverted_alias[history_airport_to])
+
+                    self.dates_list.delete(0, tk.END)
+
+                    # Add history dates
+                    for data in history_dates:
+                        self.dates_list.insert(tk.END, data)
+
+                    self.selected_dates = history_dates
+                    self.update_date_list()
+
+                except IndexError:
+                    # Gestione dell'errore nel caso in cui il formato dell'elemento selezionato non sia corretto
+                    print("Errore: formato cronologia non valido")
+            else:
+                print("Stringa non valida.")

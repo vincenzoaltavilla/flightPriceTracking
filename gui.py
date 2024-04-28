@@ -82,7 +82,7 @@ def execute_get_prices(searching_window, selected_airport_from, selected_airport
 def get_excel_files(folder_path):
     excel_files = [file for file in os.listdir(folder_path) if file.endswith('.xlsx')]
     return excel_files
-    #######################################################################
+    ###MANCA ORA ULTIMO AGGIORNAMENTO###
 
 
 class Home(tk.Tk):

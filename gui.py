@@ -414,4 +414,4 @@ class Home(tk.Tk):
                 for file in excel_files:
                     self.history.insert(tk.END, file)
         except FileNotFoundError:
-            print("Cartella prezzi non trovata")
+            self.history.insert(tk.END, "                                        Cartella prezzi non trovata")

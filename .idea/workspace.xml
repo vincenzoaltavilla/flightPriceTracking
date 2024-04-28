@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="meccanismo History quasi completo" />
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="meccanismo History quasi completo, manca questione ultimo aggiornamento">
+      <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,15 +187,7 @@
       <workItem from="1714131341415" duration="26000" />
       <workItem from="1714132415200" duration="3575000" />
       <workItem from="1714140369428" duration="2584000" />
-      <workItem from="1714305949453" duration="4604000" />
-    </task>
-    <task id="LOCAL-00017" summary="run=update">
-      <option name="closed" value="true" />
-      <created>1712755626580</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1712755626580</updated>
+      <workItem from="1714305949453" duration="5016000" />
     </task>
     <task id="LOCAL-00018" summary="run=update">
       <option name="closed" value="true" />
@@ -579,14 +573,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714310563904</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="meccanismo History quasi completo, manca questione ultimo aggiornamento">
+      <option name="closed" value="true" />
+      <created>1714310877589</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1714310877589</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add requirements" />
     <MESSAGE value="little improvements" />
     <MESSAGE value="&quot;canc&quot; = delete_date" />
     <MESSAGE value="&quot;small bugfix&quot;" />
@@ -611,10 +612,11 @@
     <MESSAGE value="todo: aggiustare titoli xlsx per rendere più comprensibile" />
     <MESSAGE value="todo: aggiustare titoli xlsx per rendere più comprensibile, più meccanismo di rientro nei campi" />
     <MESSAGE value="meccanismo History quasi completo" />
-    <option name="LAST_COMMIT_MESSAGE" value="meccanismo History quasi completo" />
+    <MESSAGE value="meccanismo History quasi completo, manca questione ultimo aggiornamento" />
+    <option name="LAST_COMMIT_MESSAGE" value="meccanismo History quasi completo, manca questione ultimo aggiornamento" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714310292571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714310990255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713695870394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

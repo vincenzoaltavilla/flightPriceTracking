@@ -8,7 +8,7 @@ from get_n_plot_prices import get_prices
 from routes import routes
 from datetime import date, datetime
 from PIL import Image, ImageTk
-from time import sleep
+from time import sleep, ctime, strptime, strftime
 from tkcalendar import DateEntry
 from tkinter import ttk, messagebox, Scrollbar, Listbox
 
@@ -58,14 +58,17 @@ def execute_get_prices(searching_window, selected_airport_from, selected_airport
 
 
 def get_excel_files(folder_path):
-    excel_files = [file for file in os.listdir(folder_path) if file.endswith('.xlsx')]
+    excel_files = []
+    for file in os.listdir(folder_path):
+        excel_files.append(file[:-5] + strftime(". Last update: %Y-%m-%d, ore %H:%M:%S", strptime(ctime(os.path.getmtime(f"{folder_path}/{file}")))))
+
+    print(excel_files)
     return excel_files
-    ###MANCA ORA ULTIMO AGGIORNAMENTO###
 
 
 def get_history_flight_fields(string_flight):
 
-    pattern = r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\.xlsx$'
+    pattern = r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\. Last update: (\d{4}-\d{2}-\d{2}), ore (\d{2}:\d{2}:\d{2})$'
     match = re.match(pattern, string_flight)
 
     if match:

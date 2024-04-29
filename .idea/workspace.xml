@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="add switch position, now frontend">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="add switch button, now frontend">
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,15 +195,7 @@
       <workItem from="1714305949453" duration="5113000" />
       <workItem from="1714322449580" duration="4004000" />
       <workItem from="1714382203914" duration="3612000" />
-      <workItem from="1714386095661" duration="2848000" />
-    </task>
-    <task id="LOCAL-00024" summary="exceptions and improvements">
-      <option name="closed" value="true" />
-      <created>1713014374792</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1713014374792</updated>
+      <workItem from="1714386095661" duration="3167000" />
     </task>
     <task id="LOCAL-00025" summary="pdf download and new xlsx file name">
       <option name="closed" value="true" />
@@ -590,14 +581,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714385819366</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="add switch button, now frontend">
+      <option name="closed" value="true" />
+      <created>1714389754297</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1714389754297</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="BUGFIX SCONTI TO DO" />
     <MESSAGE value="BUGFIX voli scontati fatto" />
     <MESSAGE value="searching window fatta." />
     <MESSAGE value="searching window con animazione puntini." />
@@ -622,10 +620,11 @@
     <MESSAGE value="updated some graphic" />
     <MESSAGE value="updated some graphic, added horizontal scrollbar" />
     <MESSAGE value="add switch position, now frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="add switch position, now frontend" />
+    <MESSAGE value="add switch button, now frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="add switch button, now frontend" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714389529068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714389873971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713695870394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -128,7 +128,7 @@ class Home(tk.Tk):
         self.menu_airport_from = ttk.Combobox(self.frame_gui, values=self.airport_from, textvariable=self.var_airport_from,
                                               state="readonly",
                                               font=("Arial", 12), width=30)
-        self.menu_airport_from.grid(row=1, column=1, padx=(10, 0), pady=10)
+        self.menu_airport_from.grid(row=1, column=1, padx=10, pady=10)
 
         # Airport to
         self.label_airport_to = tk.Label(self.frame_gui, text="Aeroporto di arrivo:", font=("Arial", 12), bg="#073693",
@@ -137,7 +137,7 @@ class Home(tk.Tk):
         self.airport_to = routes
         self.var_airport_to = tk.StringVar()
         self.menu_airport_to = ttk.Combobox(self.frame_gui, state="readonly", font=("Arial", 12), width=30)
-        self.menu_airport_to.grid(row=2, column=1, padx=(10, 0), pady=10)
+        self.menu_airport_to.grid(row=2, column=1, padx=10, pady=10)
         # callback to update airport to menu
         self.menu_airport_from.bind("<<ComboboxSelected>>", self.update_airport_to_menu)
         self.update_airport_to_menu(None)
@@ -146,7 +146,7 @@ class Home(tk.Tk):
         self.switch_airports = tk.Button(self.frame_gui, text="🔃", font=("Arial", 40), bg="#073693", fg="#cdab2a",
                                          relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13",
                                          borderwidth=0, highlightthickness=0, state="disabled")
-        self.switch_airports.grid(row=1, column=2, rowspan=2, sticky="w")
+        self.switch_airports.grid(row=1, column=2, rowspan=2)
         # self.update_airport_to_menu(None)
 
         self.selected_dates = []
@@ -160,7 +160,7 @@ class Home(tk.Tk):
         # Add date button
         self.add_date_button = tk.Button(self.frame_gui, text="Aggiungi data", command=self.add_date, font=("Arial", 12),
                                          bg="#cdab2a", fg="#073693", relief=tk.FLAT)
-        self.add_date_button.grid(row=3, column=2, padx=10, pady=(10, 0))
+        self.add_date_button.grid(row=3, column=2, padx=10, pady=(10, 0), sticky="s")
 
         # Selected dates list
         self.label_selected_dates = tk.Label(self.frame_gui, text="Date selezionate:", font=("Arial", 12), bg="#073693",
@@ -193,7 +193,7 @@ class Home(tk.Tk):
 
         # Look for prices button
         self.look_for_prices = tk.Button(self.frame_gui, text="CERCA PREZZI", command=self.look_for_prices,
-                                         font=("Arial", 14), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
+                                         font=("Arial", 14, "bold"), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
         self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=(10, 40))
 
         # History section

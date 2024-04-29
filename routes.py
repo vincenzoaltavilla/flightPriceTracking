@@ -899,4 +899,8 @@ for source in routes.keys():
 
 print(len(routes))
 print(i)
+
+Riga -> Bristol does not exist
+Göteborg Landvetter -> Dublino does not exist
+Poznan -> Roma (Fiumicino) does not exist
 """

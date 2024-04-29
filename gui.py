@@ -60,13 +60,15 @@ def execute_get_prices(searching_window, selected_airport_from, selected_airport
 def get_excel_files(folder_path):
     excel_files = []
     for file in os.listdir(folder_path):
-        excel_files.append(file[:-5] + strftime(".   Last update: %Y-%m-%d, ore %H:%M:%S", strptime(ctime(os.path.getmtime(f"{folder_path}/{file}")))))
+        excel_files.append(file[:-5] + strftime(".   Last update: %Y-%m-%d, ore %H:%M:%S",
+                                                strptime(ctime(os.path.getmtime(f"{folder_path}/{file}")))))
     return excel_files
 
 
 def get_history_flight_fields(string_flight):
 
-    pattern = r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\.   Last update: (\d{4}-\d{2}-\d{2}), ore (\d{2}:\d{2}:\d{2})$'
+    pattern = (r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\.   '
+               r'Last update: (\d{4}-\d{2}-\d{2}), ore (\d{2}:\d{2}:\d{2})$')
     match = re.match(pattern, string_flight)
 
     if match:
@@ -126,7 +128,7 @@ class Home(tk.Tk):
         self.menu_airport_from = ttk.Combobox(self.frame_gui, values=self.airport_from, textvariable=self.var_airport_from,
                                               state="readonly",
                                               font=("Arial", 12), width=30)
-        self.menu_airport_from.grid(row=1, column=1, padx=10, pady=10)
+        self.menu_airport_from.grid(row=1, column=1, padx=(10, 0), pady=10)
 
         # Airport to
         self.label_airport_to = tk.Label(self.frame_gui, text="Aeroporto di arrivo:", font=("Arial", 12), bg="#073693",
@@ -135,14 +137,16 @@ class Home(tk.Tk):
         self.airport_to = routes
         self.var_airport_to = tk.StringVar()
         self.menu_airport_to = ttk.Combobox(self.frame_gui, state="readonly", font=("Arial", 12), width=30)
-        self.menu_airport_to.grid(row=2, column=1, padx=10, pady=10)
+        self.menu_airport_to.grid(row=2, column=1, padx=(10, 0), pady=10)
         # callback to update airport to menu
         self.menu_airport_from.bind("<<ComboboxSelected>>", self.update_airport_to_menu)
         self.update_airport_to_menu(None)
 
         # Switch airports
-        self.switch_airports = tk.Label(self.frame_gui, text="🔃", font=("Arial", 30), bg="#073693", fg="white")
-        self.switch_airports.grid(row=1, column=2, rowspan=2, padx=(5, 10), pady=10)
+        self.switch_airports = tk.Button(self.frame_gui, text="🔃", font=("Arial", 40), bg="#073693", fg="#cdab2a",
+                                         relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13",
+                                         borderwidth=0, highlightthickness=0, state="disabled")
+        self.switch_airports.grid(row=1, column=2, rowspan=2, sticky="w")
         # self.update_airport_to_menu(None)
 
         self.selected_dates = []
@@ -190,11 +194,12 @@ class Home(tk.Tk):
         # Look for prices button
         self.look_for_prices = tk.Button(self.frame_gui, text="CERCA PREZZI", command=self.look_for_prices,
                                          font=("Arial", 14), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
-        self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=30)
+        self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=(10, 40))
 
         # History section
-        self.label_history = tk.Label(self.frame_gui, text="Cronologia ricerche:", font=("Arial", 12), bg="#073693", fg="white")
-        self.label_history.grid(row=7, columnspan=3, padx=52, sticky="nsw")
+        self.label_history = tk.Label(self.frame_gui, text="Cronologia ricerche:", font=("Arial", 12), bg="#073693",
+                                      fg="white")
+        self.label_history.grid(row=7, columnspan=3, padx=52, pady=(10, 0), sticky="nsw")
         self.history = Listbox(self.frame_gui, selectmode=tk.SINGLE, width=71, height=5, font=("Arial", 10), borderwidth=2)
         self.history_scrollbar_vert = Scrollbar(self.frame_gui, orient=tk.VERTICAL, command=self.history.yview)
         self.history_scrollbar_horiz = Scrollbar(self.frame_gui, orient=tk.HORIZONTAL, command=self.history.xview)
@@ -297,7 +302,8 @@ class Home(tk.Tk):
 
         for data in selected_dates:
             if datetime.strptime(data, "%Y-%m-%d").date() < datetime.now().date():
-                messagebox.showerror("Errore", "Nel campo 'Date Selezionate' è presente una data antecedente ad oggi.")
+                messagebox.showerror("Errore", "Nel campo 'Date Selezionate' è presente una data"
+                                               " antecedente ad oggi.")
                 return
 
         searching_window = tk.Toplevel(self)

@@ -60,15 +60,13 @@ def execute_get_prices(searching_window, selected_airport_from, selected_airport
 def get_excel_files(folder_path):
     excel_files = []
     for file in os.listdir(folder_path):
-        excel_files.append(file[:-5] + strftime(". Last update: %Y-%m-%d, ore %H:%M:%S", strptime(ctime(os.path.getmtime(f"{folder_path}/{file}")))))
-
-    print(excel_files)
+        excel_files.append(file[:-5] + strftime(".   Last update: %Y-%m-%d, ore %H:%M:%S", strptime(ctime(os.path.getmtime(f"{folder_path}/{file}")))))
     return excel_files
 
 
 def get_history_flight_fields(string_flight):
 
-    pattern = r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\. Last update: (\d{4}-\d{2}-\d{2}), ore (\d{2}:\d{2}:\d{2})$'
+    pattern = r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\.   Last update: (\d{4}-\d{2}-\d{2}), ore (\d{2}:\d{2}:\d{2})$'
     match = re.match(pattern, string_flight)
 
     if match:
@@ -164,7 +162,7 @@ class Home(tk.Tk):
                                   yscrollcommand=self.scrollbar.set)
         self.scrollbar.config(command=self.dates_list.yview)
         self.dates_list.grid(row=4, column=1, padx=10, pady=10, columnspan=1, sticky="nsw")
-        self.scrollbar.grid(row=4, column=1, padx=10, pady=10, sticky="nse")
+        self.scrollbar.grid(row=4, column=1, padx=13, pady=10, sticky="nse")
 
         # Delete date button
         self.delete_date_button = tk.Button(self.frame_gui, text="Cancella data", command=self.delete_date,
@@ -192,11 +190,11 @@ class Home(tk.Tk):
         # History section
         self.label_history = tk.Label(self.frame_gui, text="Cronologia ricerche:", font=("Arial", 12), bg="#073693", fg="white")
         self.label_history.grid(row=7, columnspan=3, padx=60, sticky="nsw")
-        self.history = Listbox(self.frame_gui, selectmode=tk.SINGLE, width=55, height=5, font=("Arial", 12), borderwidth=2)
+        self.history = Listbox(self.frame_gui, selectmode=tk.SINGLE, width=71, height=5, font=("Arial", 10), borderwidth=2)
         self.history_scrollbar = Scrollbar(self.frame_gui, orient=tk.VERTICAL, command=self.history.yview)
         self.history.config(yscrollcommand=self.history_scrollbar.set)
         self.history.grid(row=8, column=0, padx=10, pady=5, columnspan=3)
-        self.history_scrollbar.grid(row=8, column=2, padx=10, pady=5, sticky="ns")
+        self.history_scrollbar.grid(row=8, column=2, padx=11, pady=5, sticky="ns")
         self.populate_excel_files_listbox()
 
         self.history.bind("<<ListboxSelect>>", self.set_history_flight)
@@ -372,12 +370,12 @@ class Home(tk.Tk):
             excel_files = get_excel_files(excel_folder)
             # print(excel_files)
             if not excel_files:
-                self.history.insert(tk.END, "                                                Cronologia vuota")
+                self.history.insert(tk.END, "                                                  Cronologia vuota")
             else:
                 for file in excel_files:
                     self.history.insert(tk.END, file)
         except FileNotFoundError:
-            self.history.insert(tk.END, "                                        Cartella prezzi non trovata")
+            self.history.insert(tk.END, "                                          Cartella prezzi non trovata")
 
     def set_history_flight(self, event):
         selected_item = None

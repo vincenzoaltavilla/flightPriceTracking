@@ -140,34 +140,39 @@ class Home(tk.Tk):
         self.menu_airport_from.bind("<<ComboboxSelected>>", self.update_airport_to_menu)
         self.update_airport_to_menu(None)
 
+        # Switch airports
+        self.switch_airports = tk.Label(self.frame_gui, text="🔃", font=("Arial", 30), bg="#073693", fg="white")
+        self.switch_airports.grid(row=1, column=2, rowspan=2, padx=(5, 10), pady=10)
+        # self.update_airport_to_menu(None)
+
         self.selected_dates = []
         # Calendar
         self.label_calendar = tk.Label(self.frame_gui, text="Date:", font=("Arial", 12), bg="#073693", fg="white")
         self.label_calendar.grid(row=3, column=0, padx=10, pady=10, sticky="e")
         self.calendar = DateEntry(self.frame_gui, width=30, background="#cdab2a", foreground="#073693", borderwidth=2,
                                   date_pattern="yyyy-mm-dd", state="readonly", font=("Arial", 12))
-        self.calendar.grid(row=3, column=1, padx=10, pady=10)
+        self.calendar.grid(row=3, column=1, padx=10, pady=(10, 0))
 
         # Add date button
         self.add_date_button = tk.Button(self.frame_gui, text="Aggiungi data", command=self.add_date, font=("Arial", 12),
                                          bg="#cdab2a", fg="#073693", relief=tk.FLAT)
-        self.add_date_button.grid(row=3, column=2, padx=10, pady=10)
+        self.add_date_button.grid(row=3, column=2, padx=10, pady=(10, 0))
 
         # Selected dates list
         self.label_selected_dates = tk.Label(self.frame_gui, text="Date selezionate:", font=("Arial", 12), bg="#073693",
                                              fg="white")
-        self.label_selected_dates.grid(row=3, column=0, padx=10, pady=10, sticky="e")
+        self.label_selected_dates.grid(row=3, column=0, padx=10, pady=(10, 0), sticky="e")
         self.scrollbar = Scrollbar(self.frame_gui, orient=tk.VERTICAL)
         self.dates_list = Listbox(self.frame_gui, width=30, height=5, font=("Arial", 12), borderwidth=2,
                                   yscrollcommand=self.scrollbar.set)
         self.scrollbar.config(command=self.dates_list.yview)
-        self.dates_list.grid(row=4, column=1, padx=10, pady=10, columnspan=1, sticky="nsw")
-        self.scrollbar.grid(row=4, column=1, padx=13, pady=10, sticky="nse")
+        self.dates_list.grid(row=4, column=1, padx=10, pady=(0, 10), sticky="nsw")
+        self.scrollbar.grid(row=4, column=1, padx=13, pady=(0, 10), sticky="nse")
 
         # Delete date button
         self.delete_date_button = tk.Button(self.frame_gui, text="Cancella data", command=self.delete_date,
                                             font=("Arial", 12), state="disabled", bg="#8c061e", fg="white", relief=tk.FLAT)
-        self.delete_date_button.grid(row=4, column=2, columnspan=3, padx=10, pady=10)
+        self.delete_date_button.grid(row=4, column=2, columnspan=3, padx=10, pady=(0, 10))
         self.bind("<Delete>", self.delete_date_wrapper)
 
         # Label number of persons

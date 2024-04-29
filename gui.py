@@ -189,19 +189,21 @@ class Home(tk.Tk):
 
         # History section
         self.label_history = tk.Label(self.frame_gui, text="Cronologia ricerche:", font=("Arial", 12), bg="#073693", fg="white")
-        self.label_history.grid(row=7, columnspan=3, padx=60, sticky="nsw")
+        self.label_history.grid(row=7, columnspan=3, padx=52, sticky="nsw")
         self.history = Listbox(self.frame_gui, selectmode=tk.SINGLE, width=71, height=5, font=("Arial", 10), borderwidth=2)
-        self.history_scrollbar = Scrollbar(self.frame_gui, orient=tk.VERTICAL, command=self.history.yview)
-        self.history.config(yscrollcommand=self.history_scrollbar.set)
-        self.history.grid(row=8, column=0, padx=10, pady=5, columnspan=3)
-        self.history_scrollbar.grid(row=8, column=2, padx=11, pady=5, sticky="ns")
+        self.history_scrollbar_vert = Scrollbar(self.frame_gui, orient=tk.VERTICAL, command=self.history.yview)
+        self.history_scrollbar_horiz = Scrollbar(self.frame_gui, orient=tk.HORIZONTAL, command=self.history.xview)
+        self.history.config(yscrollcommand=self.history_scrollbar_vert.set, xscrollcommand=self.history_scrollbar_horiz.set)
+        self.history.grid(row=8, column=0, padx=55, columnspan=3, sticky="nsw")
+        self.history_scrollbar_vert.grid(row=8, column=2, padx=55, sticky="nse")
+        self.history_scrollbar_horiz.grid(row=9, column=0, padx=55, columnspan=3, sticky="new")
         self.populate_excel_files_listbox()
 
         self.history.bind("<<ListboxSelect>>", self.set_history_flight)
 
         self.reload_button = tk.Button(self.frame_gui, text="Aggiorna cronologia", command=self.populate_excel_files_listbox,
                                        font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
-        self.reload_button.grid(row=9, columnspan=3, padx=10, pady=10)
+        self.reload_button.grid(row=9, columnspan=3, padx=10, pady=25)
 
     def update_airport_to_menu(self, event):
         new_airport_from = self.var_airport_from.get()

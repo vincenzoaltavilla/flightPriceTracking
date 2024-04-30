@@ -438,6 +438,7 @@ class Home(tk.Tk):
                     self.selected_dates = history_dates
                     self.update_date_list()
                     self.delete_date_button.config(state="normal")
+                    self.switch_airports_button.config(state="normal")
 
                 except IndexError:
                     # Gestione dell'errore nel caso in cui il formato dell'elemento selezionato non sia corretto

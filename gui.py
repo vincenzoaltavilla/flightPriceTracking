@@ -227,7 +227,19 @@ class Home(tk.Tk):
         self.switch_airports_button.config(state="normal")
 
     def switch_airports(self):
-        print("ok")
+        hold = self.menu_airport_from.get()
+        self.menu_airport_from.set(str(self.menu_airport_to.get()))
+        self.var_airport_from.set(str(self.menu_airport_to.get()))
+
+        if hold in self.airport_to[str(self.menu_airport_to.get())]:
+            self.update_airport_to_menu(None)
+            self.menu_airport_to.set(hold)
+            self.var_airport_to.set(hold)
+            self.switch_airports_button.config(state="normal")
+        else:
+            self.menu_airport_to.set("")
+            self.var_airport_to.set("")
+            self.switch_airports_button.config(state="disabled")
 
     def add_date(self):
         # Gain selected date

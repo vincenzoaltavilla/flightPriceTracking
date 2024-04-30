@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="bugfix: set delete date button state to normal when get history flight">
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="fix some routes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +66,8 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
@@ -198,22 +201,11 @@
       <workItem from="1714386095661" duration="3505000" />
       <workItem from="1714395985752" duration="645000" />
       <workItem from="1714396657643" duration="33000" />
-    </task>
-    <task id="LOCAL-00027" summary="GUI home ready">
-      <option name="closed" value="true" />
-      <created>1713456883399</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1713456883399</updated>
-    </task>
-    <task id="LOCAL-00028" summary="add requirements">
-      <option name="closed" value="true" />
-      <created>1713458597706</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1713458597706</updated>
+      <workItem from="1714399457874" duration="661000" />
+      <workItem from="1714400213939" duration="157000" />
+      <workItem from="1714472256394" duration="538000" />
+      <workItem from="1714473376438" duration="102000" />
+      <workItem from="1714503056597" duration="1124000" />
     </task>
     <task id="LOCAL-00029" summary="little improvements">
       <option name="closed" value="true" />
@@ -591,14 +583,29 @@
       <option name="project" value="LOCAL" />
       <updated>1714396463266</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="fix some routes">
+      <option name="closed" value="true" />
+      <created>1714399553094</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1714399553094</updated>
+    </task>
+    <task id="LOCAL-00077" summary="fix some routes">
+      <option name="closed" value="true" />
+      <created>1714399797501</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1714399797501</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="searching window fatta." />
     <MESSAGE value="searching window con animazione puntini." />
     <MESSAGE value="searching window con animazione puntini VERAMENTE." />
     <MESSAGE value="plot pdf e non show" />
@@ -623,10 +630,11 @@
     <MESSAGE value="add switch position, now frontend" />
     <MESSAGE value="add switch button, now frontend" />
     <MESSAGE value="bugfix: set delete date button state to normal when get history flight" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix: set delete date button state to normal when get history flight" />
+    <MESSAGE value="fix some routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some routes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714396597242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714504193726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713695870394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

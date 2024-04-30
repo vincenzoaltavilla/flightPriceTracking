@@ -140,14 +140,15 @@ class Home(tk.Tk):
         self.menu_airport_to.grid(row=2, column=1, padx=10, pady=10)
         # callback to update airport to menu
         self.menu_airport_from.bind("<<ComboboxSelected>>", self.update_airport_to_menu)
-        self.update_airport_to_menu(None)
+        self.menu_airport_to.bind("<<ComboboxSelected>>", self.update_switch_airports)
 
         # Switch airports
-        self.switch_airports = tk.Button(self.frame_gui, text="🔃", font=("Arial", 40), bg="#073693", fg="#cdab2a",
-                                         relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13",
-                                         borderwidth=0, highlightthickness=0, state="disabled")
-        self.switch_airports.grid(row=1, column=2, rowspan=2)
-        # self.update_airport_to_menu(None)
+        self.switch_airports_button = tk.Button(self.frame_gui, text="🔃", font=("Arial", 40), bg="#073693", fg="#cdab2a",
+                                                relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13",
+                                                borderwidth=0, highlightthickness=0, state="disabled",
+                                                command=self.switch_airports)
+        self.switch_airports_button.grid(row=1, column=2, rowspan=2)
+        self.update_airport_to_menu(None)
 
         self.selected_dates = []
         # Calendar
@@ -218,9 +219,15 @@ class Home(tk.Tk):
     def update_airport_to_menu(self, event):
         new_airport_from = self.var_airport_from.get()
         self.menu_airport_to.config(values=self.airport_to[new_airport_from])
-
         self.var_airport_to.set("")
         self.menu_airport_to.set("")
+        self.switch_airports_button.config(state="disabled")
+
+    def update_switch_airports(self, event):
+        self.switch_airports_button.config(state="normal")
+
+    def switch_airports(self):
+        print("ok")
 
     def add_date(self):
         # Gain selected date

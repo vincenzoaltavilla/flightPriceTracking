@@ -7,6 +7,7 @@ from alias import alias, inverted_alias
 from get_n_plot_prices import get_prices
 from routes import routes
 from datetime import date, datetime
+from idlelib.tooltip import Hovertip
 from PIL import Image, ImageTk
 from time import sleep, ctime, strptime, strftime
 from tkcalendar import DateEntry
@@ -66,7 +67,6 @@ def get_excel_files(folder_path):
 
 
 def get_history_flight_fields(string_flight):
-
     pattern = (r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\.   '
                r'Last update: (\d{4}-\d{2}-\d{2}), ore (\d{2}:\d{2}:\d{2})$')
     match = re.match(pattern, string_flight)
@@ -100,7 +100,7 @@ class Home(tk.Tk):
         window_width = 700
         window_height = 680
         x_position = (self.winfo_screenwidth() - window_width) // 2
-        y_position = ((self.winfo_screenheight() - window_height) // 2)-40
+        y_position = ((self.winfo_screenheight() - window_height) // 2) - 40
         self.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
 
         # frame
@@ -118,6 +118,12 @@ class Home(tk.Tk):
                                     fg="#cdab2a")
         finally:
             header_label.grid(row=0, column=0, columnspan=3, pady=10)
+
+        info_button = tk.Button(self.frame_gui, text='HELP', font=("Arial", 10), bg="#073693", fg="#cdab2a",
+                                relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13", borderwidth=0,
+                                highlightthickness=0)
+        info_button.grid(row=0, column=0, padx=(1,130), pady=(0, 30))
+        info_tip = Hovertip(info_button, 'This is \na multiline tooltip.', hover_delay=0)
 
         # Airport from
         self.label_airport_from = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12), bg="#073693",

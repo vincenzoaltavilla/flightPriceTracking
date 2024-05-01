@@ -243,7 +243,6 @@ class Home(tk.Tk):
             self.var_airport_to.set(hold)
             self.switch_airports_button.config(state="normal")
 
-
     def add_date(self):
         # Gain selected date
         selected_date = self.calendar.get_date()

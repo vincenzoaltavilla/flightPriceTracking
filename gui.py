@@ -122,7 +122,7 @@ class Home(tk.Tk):
         info_button = tk.Button(self.frame_gui, text='HELP', font=("Arial", 10), bg="#073693", fg="#cdab2a",
                                 relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13", borderwidth=0,
                                 highlightthickness=0)
-        info_button.grid(row=0, column=0, padx=(1,130), pady=(0, 30))
+        info_button.grid(row=0, column=0, padx=(1, 130), pady=(0, 30))
         info_tip = Hovertip(info_button, 'This is \na multiline tooltip.', hover_delay=0)
 
         # Airport from
@@ -243,9 +243,7 @@ class Home(tk.Tk):
             self.var_airport_to.set(hold)
             self.switch_airports_button.config(state="normal")
         else:
-            self.menu_airport_to.set("")
-            self.var_airport_to.set("")
-            self.switch_airports_button.config(state="disabled")
+            self.update_airport_to_menu(None)
 
     def add_date(self):
         # Gain selected date

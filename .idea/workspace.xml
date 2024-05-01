@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="? SECTION">
+    <list default="true" id="257660de-d5db-4f0e-b8f6-24d509abc51d" name="Changes" comment="bugfix switch button">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
     </list>
@@ -207,15 +207,8 @@
       <workItem from="1714473376438" duration="102000" />
       <workItem from="1714503056597" duration="1277000" />
       <workItem from="1714504364415" duration="5209000" />
-      <workItem from="1714550241131" duration="371000" />
-    </task>
-    <task id="LOCAL-00033" summary="&quot;canc&quot; = delete_date">
-      <option name="closed" value="true" />
-      <created>1713475476015</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1713475476015</updated>
+      <workItem from="1714550241131" duration="679000" />
+      <workItem from="1714588849816" duration="752000" />
     </task>
     <task id="LOCAL-00034" summary="&quot;small bugfix&quot;">
       <option name="closed" value="true" />
@@ -601,14 +594,21 @@
       <option name="project" value="LOCAL" />
       <updated>1714509498102</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="bugfix switch button">
+      <option name="closed" value="true" />
+      <created>1714550906807</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1714550906807</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="open pdf e xlsx" />
     <MESSAGE value="folders for excel and plot.pdf" />
     <MESSAGE value="manca qualche last dance" />
     <MESSAGE value="import and output adjustments" />
@@ -633,10 +633,11 @@
     <MESSAGE value="switch airport backend done" />
     <MESSAGE value="switch airport backend bugfix" />
     <MESSAGE value="? SECTION" />
-    <option name="LAST_COMMIT_MESSAGE" value="? SECTION" />
+    <MESSAGE value="bugfix switch button" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix switch button" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714550613370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="get_n_plot_prices Coverage Results" MODIFIED="1714589602792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713695870394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

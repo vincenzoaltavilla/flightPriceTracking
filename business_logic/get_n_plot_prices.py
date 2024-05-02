@@ -4,8 +4,8 @@ import matplotlib.backends.backend_pdf
 import pandas as pd
 import PyPDF2
 import reportlab.platypus
-from format import adapt_columns
-from get_flight_info import get_flight_info
+from business_logic.format import adapt_columns
+from business_logic.get_flight_info import get_flight_info
 from datetime import date
 matplotlib.use('agg')
 

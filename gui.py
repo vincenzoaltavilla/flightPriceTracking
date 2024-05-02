@@ -1,11 +1,10 @@
-import babel.numbers
 import os
 import re
 import threading
 import tkinter as tk
-from alias import alias, inverted_alias
-from get_n_plot_prices import get_prices
-from routes import routes
+from ryanair_configs.alias import alias, inverted_alias
+from business_logic.get_n_plot_prices import get_prices
+from ryanair_configs.routes import routes
 from datetime import date, datetime
 from idlelib.tooltip import Hovertip
 from PIL import Image, ImageTk

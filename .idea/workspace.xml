@@ -112,7 +112,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\Vincenzo\Desktop\Portfolio\flightPriceTracking\business_logic\gui.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,15 +214,7 @@
       <workItem from="1714588849816" duration="1364000" />
       <workItem from="1714591492976" duration="1281000" />
       <workItem from="1714642086014" duration="1080000" />
-      <workItem from="1714643468550" duration="3061000" />
-    </task>
-    <task id="LOCAL-00041" summary="searching window con animazione puntini.">
-      <option name="closed" value="true" />
-      <created>1713782243019</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1713782243019</updated>
+      <workItem from="1714643468550" duration="3417000" />
     </task>
     <task id="LOCAL-00042" summary="searching window con animazione puntini.">
       <option name="closed" value="true" />
@@ -608,7 +600,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714646394747</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="new skeleton">
+      <option name="closed" value="true" />
+      <created>1714646912998</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1714646912998</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,6 +645,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/flightPriceTracking$get_n_plot_prices.coverage" NAME="gui Coverage Results" MODIFIED="1714592561918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/flightPriceTracking$main.coverage" NAME="main Coverage Results" MODIFIED="1713695870394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/flightPriceTracking$gui.coverage" NAME="gui Coverage Results" MODIFIED="1714645927766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/flightPriceTracking$gui.coverage" NAME="gui Coverage Results" MODIFIED="1714646922912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

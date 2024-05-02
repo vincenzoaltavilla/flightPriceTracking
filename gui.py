@@ -123,13 +123,28 @@ class Home(tk.Tk):
                                 relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13", borderwidth=0,
                                 highlightthickness=0)
         help_button.grid(row=0, column=0, padx=(1, 130), pady=(0, 30))
-        help_tip = Hovertip(help_button, 'This is \na multiline tooltip.', hover_delay=0)
+        help_tip = Hovertip(help_button, 'Non spostare il programma dalla cartella in cui si trova. Se lo vuoi nel \n'
+                                         'tuo desktop, clicca tasto destro sull\'icona del programma e vai su \n'
+                                         '\'Invia a -> Desktop (crea collegamento)\'.\n\n'
+                                         'Assicurati innanzitutto che un volo esista tramite il sito di Ryanair.\n'
+                                         'Inserisci le date del tuo viaggio cliccando su \'Aggiungi data\'.\n'
+                                         'Se inserisci una data per errore, selezionala nel pannello e clicca su\n'
+                                         '\'Cancella data\', o premi direttamente CANC.\n'
+                                         'Più date inserirai (max 7), più sarà lento il programma a cercare i prezzi.\n'
+                                         'Inserisci quindi solo le date che effettivamente ti interessano.\n\n'
+                                         'Cliccando su una ricerca nella cronologia, ti verranno automaticamente \n'
+                                         'riempiti i campi, così da velocizzare un eventuale nuovo aggiornamento.\n\n'
+                                         'Qualora non si aprisse in automatico il file pdf con i risultati, lo\n'
+                                         'troverai nella cartella \'risultati\', con lo stesso nome presente in\n'
+                                         'cronologia. Buone ricerche!', hover_delay=0)
 
         credits_button = tk.Button(self.frame_gui, text='CREDITS', font=("Arial", 10), bg="#073693", fg="#cdab2a",
                                    relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13",
                                    borderwidth=0, highlightthickness=0)
         credits_button.grid(row=0, column=2, padx=(45, 1), pady=(0, 30))
-        credits_tip = Hovertip(credits_button, 'This is \na multiline tooltip.', hover_delay=0)
+        credits_tip = Hovertip(credits_button, f'Ryanair Flight Prices, v1.0.\nFor personal use only.\n'
+                                               f'Powered by Vincenzo Altavilla.\nCopyright © {date.today().year}.',
+                               hover_delay=0)
 
         # Airport from
         self.label_airport_from = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12),

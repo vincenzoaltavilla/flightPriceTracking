@@ -7,6 +7,7 @@ from alias import alias, inverted_alias
 from get_n_plot_prices import get_prices
 from routes import routes
 from datetime import date, datetime
+from idlelib.tooltip import Hovertip
 from PIL import Image, ImageTk
 from time import sleep, ctime, strptime, strftime
 from tkcalendar import DateEntry
@@ -66,7 +67,6 @@ def get_excel_files(folder_path):
 
 
 def get_history_flight_fields(string_flight):
-
     pattern = (r'^(\d+)-([A-Z]{3})-([A-Z]{3})-(\d{4}-\d{2}-\d{2}(?:,\d{4}-\d{2}-\d{2})*)\.   '
                r'Last update: (\d{4}-\d{2}-\d{2}), ore (\d{2}:\d{2}:\d{2})$')
     match = re.match(pattern, string_flight)
@@ -89,7 +89,7 @@ class Home(tk.Tk):
         self.excel_file = None
         self.title("Ryanair Flight Prices")
         try:
-            self.iconphoto(False, tk.PhotoImage(file='icon.png'))
+            self.iconphoto(False, tk.PhotoImage(file='img/icon.png'))
         except tk.TclError:
             print("Errore: icona non trovata")
 
@@ -100,7 +100,7 @@ class Home(tk.Tk):
         window_width = 700
         window_height = 680
         x_position = (self.winfo_screenwidth() - window_width) // 2
-        y_position = ((self.winfo_screenheight() - window_height) // 2)-40
+        y_position = ((self.winfo_screenheight() - window_height) // 2) - 40
         self.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
 
         # frame
@@ -109,7 +109,7 @@ class Home(tk.Tk):
 
         # header
         try:
-            image = Image.open("header.png")
+            image = Image.open("img/header.png")
             photo = ImageTk.PhotoImage(image)
             header_label = tk.Label(self.frame_gui, image=photo, borderwidth=0)
             header_label.image = photo
@@ -118,6 +118,12 @@ class Home(tk.Tk):
                                     fg="#cdab2a")
         finally:
             header_label.grid(row=0, column=0, columnspan=3, pady=10)
+
+        info_button = tk.Button(self.frame_gui, text='HELP', font=("Arial", 10), bg="#073693", fg="#cdab2a",
+                                relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13", borderwidth=0,
+                                highlightthickness=0)
+        info_button.grid(row=0, column=0, padx=(1, 130), pady=(0, 30))
+        info_tip = Hovertip(info_button, 'This is \na multiline tooltip.', hover_delay=0)
 
         # Airport from
         self.label_airport_from = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12), bg="#073693",
@@ -140,14 +146,14 @@ class Home(tk.Tk):
         self.menu_airport_to.grid(row=2, column=1, padx=10, pady=10)
         # callback to update airport to menu
         self.menu_airport_from.bind("<<ComboboxSelected>>", self.update_airport_to_menu)
-        self.update_airport_to_menu(None)
+        self.menu_airport_to.bind("<<ComboboxSelected>>", self.update_switch_airports)
 
         # Switch airports
-        self.switch_airports = tk.Button(self.frame_gui, text="🔃", font=("Arial", 40), bg="#073693", fg="#cdab2a",
-                                         relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13",
-                                         borderwidth=0, highlightthickness=0, state="disabled")
-        self.switch_airports.grid(row=1, column=2, rowspan=2)
-        # self.update_airport_to_menu(None)
+        self.switch_airports_button = tk.Button(self.frame_gui, text="🔃", font=("Arial", 40), bg="#073693", fg="#cdab2a",
+                                                relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13",
+                                                borderwidth=0, state="disabled", command=self.switch_airports)
+        self.switch_airports_button.grid(row=1, column=2, rowspan=2)
+        self.update_airport_to_menu(None)
 
         self.selected_dates = []
         # Calendar
@@ -159,7 +165,8 @@ class Home(tk.Tk):
 
         # Add date button
         self.add_date_button = tk.Button(self.frame_gui, text="Aggiungi data", command=self.add_date, font=("Arial", 12),
-                                         bg="#cdab2a", fg="#073693", relief=tk.FLAT)
+                                         bg="#cdab2a", fg="#073693", activebackground="#9c7f13", activeforeground="#073693",
+                                         relief=tk.FLAT)
         self.add_date_button.grid(row=3, column=2, padx=10, pady=(10, 0), sticky="s")
 
         # Selected dates list
@@ -175,7 +182,8 @@ class Home(tk.Tk):
 
         # Delete date button
         self.delete_date_button = tk.Button(self.frame_gui, text="Cancella data", command=self.delete_date,
-                                            font=("Arial", 12), state="disabled", bg="#8c061e", fg="white", relief=tk.FLAT)
+                                            font=("Arial", 12), state="disabled", bg="#8c061e", fg="white",
+                                            activebackground="#540413", activeforeground="white", relief=tk.FLAT)
         self.delete_date_button.grid(row=4, column=2, columnspan=3, padx=10, pady=(0, 10))
         self.bind("<Delete>", self.delete_date_wrapper)
 
@@ -193,7 +201,8 @@ class Home(tk.Tk):
 
         # Look for prices button
         self.look_for_prices = tk.Button(self.frame_gui, text="CERCA PREZZI", command=self.look_for_prices,
-                                         font=("Arial", 14, "bold"), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
+                                         font=("Arial", 14, "bold"), bg="#cdab2a", fg="#073693", activebackground="#9c7f13",
+                                         activeforeground="#073693", relief=tk.FLAT)
         self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=(10, 40))
 
         # History section
@@ -212,15 +221,30 @@ class Home(tk.Tk):
         self.history.bind("<<ListboxSelect>>", self.set_history_flight)
 
         self.reload_button = tk.Button(self.frame_gui, text="Aggiorna cronologia", command=self.populate_excel_files_listbox,
-                                       font=("Arial", 12), bg="#cdab2a", fg="#073693", relief=tk.FLAT)
+                                       font=("Arial", 12), bg="#cdab2a", fg="#073693", activebackground="#9c7f13",
+                                       activeforeground="#073693", relief=tk.FLAT)
         self.reload_button.grid(row=9, columnspan=3, padx=10, pady=25)
 
     def update_airport_to_menu(self, event):
         new_airport_from = self.var_airport_from.get()
         self.menu_airport_to.config(values=self.airport_to[new_airport_from])
-
         self.var_airport_to.set("")
         self.menu_airport_to.set("")
+        self.switch_airports_button.config(state="disabled")
+
+    def update_switch_airports(self, event):
+        self.switch_airports_button.config(state="normal")
+
+    def switch_airports(self):
+        hold = self.menu_airport_from.get()
+        self.menu_airport_from.set(str(self.menu_airport_to.get()))
+        self.var_airport_from.set(str(self.menu_airport_to.get()))
+        self.update_airport_to_menu(None)
+
+        if hold in self.airport_to[str(self.menu_airport_from.get())]:
+            self.menu_airport_to.set(hold)
+            self.var_airport_to.set(hold)
+            self.switch_airports_button.config(state="normal")
 
     def add_date(self):
         # Gain selected date
@@ -295,6 +319,10 @@ class Home(tk.Tk):
             messagebox.showerror("Errore", "Il campo delle date selezionate non può essere vuoto.")
             return
 
+        if len(selected_dates) > 7:
+            messagebox.showerror("Errore", "Puoi selezionare al massimo 7 date.")
+            return
+
         selected_n_of_persons = self.number_of_persons_spinbox.get()
         if not selected_n_of_persons:
             messagebox.showerror("Errore", "Il campo del numero di persone non può essere vuoto.")
@@ -309,7 +337,7 @@ class Home(tk.Tk):
         searching_window = tk.Toplevel(self)
         searching_window.title("Ricercando prezzi...")
         try:
-            searching_window.iconphoto(False, tk.PhotoImage(file='icon.png'))
+            searching_window.iconphoto(False, tk.PhotoImage(file='img/icon.png'))
         except tk.TclError:
             print("Errore: icona non trovata")
         searching_window.configure(background='#073693')
@@ -419,9 +447,15 @@ class Home(tk.Tk):
                     self.selected_dates = history_dates
                     self.update_date_list()
                     self.delete_date_button.config(state="normal")
+                    self.switch_airports_button.config(state="normal")
 
                 except IndexError:
                     # Gestione dell'errore nel caso in cui il formato dell'elemento selezionato non sia corretto
                     print("Errore: formato cronologia non valido")
             else:
                 print("Stringa non valida.")
+
+
+if __name__ == "__main__":
+    app = Home()
+    app.mainloop()

@@ -6,7 +6,7 @@ def adapt_columns(excel_file, sheet_name):
     try:
         wb = load_workbook(excel_file)
         ws = wb[sheet_name]
-        columns = "ABCDEFGHIJKL"
+        columns = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         for column in columns:
             ws.column_dimensions[column].width = 25
         wb.save(excel_file)

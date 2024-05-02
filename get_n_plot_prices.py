@@ -4,7 +4,6 @@ import matplotlib.backends.backend_pdf
 import pandas as pd
 from format import adapt_columns
 from get_flight_info import get_flight_info
-from gui import *
 from datetime import date
 matplotlib.use('agg')
 
@@ -89,8 +88,3 @@ def plot_prices(df, columns_complete_flight):
     plt.tight_layout()
 
     plt.gcf().autofmt_xdate()
-
-
-if __name__ == "__main__":
-    app = Home()
-    app.mainloop()

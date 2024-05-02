@@ -400,7 +400,7 @@ class Home(tk.Tk):
         thread.start()
 
         sheet_name = alias[selected_airport_from] + '-' + alias[selected_airport_to]
-        self.excel_file = "tabella_prezzi/" + selected_n_of_persons + '-' + sheet_name + "-" + ",".join(
+        self.excel_file = "tabelle_excel/" + selected_n_of_persons + '-' + sheet_name + "-" + ",".join(
             selected_dates) + ".xlsx"
 
         # wait for the end of the thread
@@ -421,7 +421,7 @@ class Home(tk.Tk):
             self.populate_excel_files_listbox()
 
     def populate_excel_files_listbox(self):
-        excel_folder = "tabella_prezzi"
+        excel_folder = "tabelle_excel"
         try:
             self.history.delete(0, tk.END)
             excel_files = get_excel_files(excel_folder)

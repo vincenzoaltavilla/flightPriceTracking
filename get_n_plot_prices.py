@@ -2,6 +2,9 @@ import os
 import matplotlib.pyplot as plt
 import matplotlib.backends.backend_pdf
 import pandas as pd
+import PyPDF2
+import shutil
+import reportlab.platypus
 from format import adapt_columns
 from get_flight_info import get_flight_info
 from datetime import date
@@ -10,18 +13,20 @@ matplotlib.use('agg')
 
 def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
 
-    # Specifica il percorso della cartella da creare
-    excel_folder = "tabella_prezzi"
-    plot_folder = "grafici"
+    excel_folder = "tabelle_excel"
+    excel_n_plot_folder = "risultati"
 
     if not os.path.exists(excel_folder):
         os.makedirs(excel_folder)
-    if not os.path.exists(plot_folder):
-        os.makedirs(plot_folder)
+    if not os.path.exists(excel_n_plot_folder):
+        os.makedirs(excel_n_plot_folder)
 
     sheet_name = airport_from + '-' + airport_to
     excel_file = excel_folder + '/' + n_of_persons + '-' + sheet_name + "-" + ",".join(date_of_flights) + ".xlsx"
-    plot_file = excel_file.replace(".xlsx", ".pdf").replace(excel_folder, plot_folder)
+
+    plot_file = excel_file.replace(".xlsx", ".pdf")
+
+    excel_n_plot_file = excel_file.replace(".xlsx", ".pdf").replace(excel_folder, excel_n_plot_folder)
 
     columns_complete_flight, prices = [], []
 
@@ -50,15 +55,21 @@ def get_prices(airport_from, airport_to, date_of_flights, n_of_persons):
         df.loc["Prezzi al " + str(date.today())] = [float(price.replace(' €', '').replace(',', '.')) for price in prices]
         df.to_excel(excel_file, sheet_name=sheet_name)
         adapt_columns(excel_file, sheet_name)
-        # print("\n\n" + df.to_string())
+        # print("\n" + df.to_string())
 
         plot_prices(df, columns_complete_flight)
         plt.savefig(plot_file)
         plt.close()
 
+        excel_pdf_file = plot_file.replace(".pdf", "G.pdf")
+
         try:
-            open_file(plot_file)
-            open_file(excel_file)
+            excel_to_pdf(excel_file, excel_pdf_file)
+            merge_pdfs(excel_pdf_file, plot_file, excel_n_plot_file)
+            os.remove(excel_pdf_file)
+            os.remove(plot_file)
+
+            open_file(excel_n_plot_file)
         except FileNotFoundError:
             print("file not found.")
 
@@ -70,6 +81,26 @@ def open_file(file_path):
         os.system('start "" "{}"'.format(file_path))
     else:
         raise OSError("Sistema operativo non supportato")
+
+
+def excel_to_pdf(input_excel, output_pdf):
+    df = pd.read_excel(input_excel)
+    data = [df.columns.tolist()] + df.values.tolist()
+
+    # print(df.shape[0 or 1])
+    table_width = (len(str(df.iloc[0, 0]))) * 7 * df.shape[1]
+    # table_height = df.shape[0] * 300
+    # print(table_width + "-" + table_height)
+
+    doc = reportlab.platypus.SimpleDocTemplate(output_pdf, pagesize=(table_width, 600))
+
+    table = reportlab.platypus.Table(data)
+    style = reportlab.platypus.TableStyle([('BACKGROUND', (0, 0), (-1, 0), (0.8, 0.8, 0.8)),
+                                           ('GRID', (0, 0), (-1, -1), 1, (0.5, 0.5, 0.5))])
+    table.setStyle(style)
+
+    # Aggiungi la tabella al documento PDF
+    doc.build([table])
 
 
 def plot_prices(df, columns_complete_flight):
@@ -88,3 +119,26 @@ def plot_prices(df, columns_complete_flight):
     plt.tight_layout()
 
     plt.gcf().autofmt_xdate()
+
+
+def merge_pdfs(pdf1_path, pdf2_path, output_path):
+    pdf1 = open(pdf1_path, 'rb')
+    pdf2 = open(pdf2_path, 'rb')
+
+    pdf_writer = PyPDF2.PdfWriter()
+
+    pdf_reader1 = PyPDF2.PdfReader(pdf1)
+    for page_num in range(len(pdf_reader1.pages)):
+        page = pdf_reader1.pages[page_num]
+        pdf_writer.add_page(page)
+
+    pdf_reader2 = PyPDF2.PdfReader(pdf2)
+    for page_num in range(len(pdf_reader2.pages)):
+        page = pdf_reader2.pages[page_num]
+        pdf_writer.add_page(page)
+
+    with open(output_path, 'wb') as merged_pdf:
+        pdf_writer.write(merged_pdf)
+
+    pdf1.close()
+    pdf2.close()

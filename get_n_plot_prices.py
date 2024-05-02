@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 import matplotlib.backends.backend_pdf
 import pandas as pd
 import PyPDF2
-import shutil
 import reportlab.platypus
 from format import adapt_columns
 from get_flight_info import get_flight_info

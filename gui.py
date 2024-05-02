@@ -114,24 +114,33 @@ class Home(tk.Tk):
             header_label = tk.Label(self.frame_gui, image=photo, borderwidth=0)
             header_label.image = photo
         except FileNotFoundError:
-            header_label = tk.Label(self.frame_gui, text="RYANAIR FLIGHT PRICES", font=("Arial", 15, "bold"), bg="#073693",
+            header_label = tk.Label(self.frame_gui, text="RYANAIR FLIGHT PRICES", font=("Arial", 15, "bold"),
+                                    bg="#073693",
                                     fg="#cdab2a")
         finally:
             header_label.grid(row=0, column=0, columnspan=3, pady=10)
 
-        info_button = tk.Button(self.frame_gui, text='HELP', font=("Arial", 10), bg="#073693", fg="#cdab2a",
+        help_button = tk.Button(self.frame_gui, text='HELP', font=("Arial", 10), bg="#073693", fg="#cdab2a",
                                 relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13", borderwidth=0,
                                 highlightthickness=0)
-        info_button.grid(row=0, column=0, padx=(1, 130), pady=(0, 30))
-        info_tip = Hovertip(info_button, 'This is \na multiline tooltip.', hover_delay=0)
+        help_button.grid(row=0, column=0, padx=(1, 130), pady=(0, 30))
+        help_tip = Hovertip(help_button, 'This is \na multiline tooltip.', hover_delay=0)
+
+        credits_button = tk.Button(self.frame_gui, text='CREDITS', font=("Arial", 10), bg="#073693", fg="#cdab2a",
+                                   relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13",
+                                   borderwidth=0, highlightthickness=0)
+        credits_button.grid(row=0, column=2, padx=(45, 1), pady=(0, 30))
+        credits_tip = Hovertip(credits_button, 'This is \na multiline tooltip.', hover_delay=0)
 
         # Airport from
-        self.label_airport_from = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12), bg="#073693",
+        self.label_airport_from = tk.Label(self.frame_gui, text="Aeroporto di partenza:", font=("Arial", 12),
+                                           bg="#073693",
                                            fg="white")
         self.label_airport_from.grid(row=1, column=0, padx=10, pady=5, sticky="e")
         self.airport_from = list(routes)
         self.var_airport_from = tk.StringVar(value=self.airport_from[184])
-        self.menu_airport_from = ttk.Combobox(self.frame_gui, values=self.airport_from, textvariable=self.var_airport_from,
+        self.menu_airport_from = ttk.Combobox(self.frame_gui, values=self.airport_from,
+                                              textvariable=self.var_airport_from,
                                               state="readonly",
                                               font=("Arial", 12), width=30)
         self.menu_airport_from.grid(row=1, column=1, padx=10, pady=10)
@@ -149,7 +158,8 @@ class Home(tk.Tk):
         self.menu_airport_to.bind("<<ComboboxSelected>>", self.update_switch_airports)
 
         # Switch airports
-        self.switch_airports_button = tk.Button(self.frame_gui, text="🔃", font=("Arial", 40), bg="#073693", fg="#cdab2a",
+        self.switch_airports_button = tk.Button(self.frame_gui, text="🔃", font=("Arial", 40), bg="#073693",
+                                                fg="#cdab2a",
                                                 relief=tk.FLAT, activebackground="#073693", activeforeground="#9c7f13",
                                                 borderwidth=0, state="disabled", command=self.switch_airports)
         self.switch_airports_button.grid(row=1, column=2, rowspan=2)
@@ -164,8 +174,10 @@ class Home(tk.Tk):
         self.calendar.grid(row=3, column=1, padx=10, pady=(10, 0))
 
         # Add date button
-        self.add_date_button = tk.Button(self.frame_gui, text="Aggiungi data", command=self.add_date, font=("Arial", 12),
-                                         bg="#cdab2a", fg="#073693", activebackground="#9c7f13", activeforeground="#073693",
+        self.add_date_button = tk.Button(self.frame_gui, text="Aggiungi data", command=self.add_date,
+                                         font=("Arial", 12),
+                                         bg="#cdab2a", fg="#073693", activebackground="#9c7f13",
+                                         activeforeground="#073693",
                                          relief=tk.FLAT)
         self.add_date_button.grid(row=3, column=2, padx=10, pady=(10, 0), sticky="s")
 
@@ -201,7 +213,8 @@ class Home(tk.Tk):
 
         # Look for prices button
         self.look_for_prices = tk.Button(self.frame_gui, text="CERCA PREZZI", command=self.look_for_prices,
-                                         font=("Arial", 14, "bold"), bg="#cdab2a", fg="#073693", activebackground="#9c7f13",
+                                         font=("Arial", 14, "bold"), bg="#cdab2a", fg="#073693",
+                                         activebackground="#9c7f13",
                                          activeforeground="#073693", relief=tk.FLAT)
         self.look_for_prices.grid(row=6, columnspan=3, padx=10, pady=(10, 40))
 
@@ -209,10 +222,12 @@ class Home(tk.Tk):
         self.label_history = tk.Label(self.frame_gui, text="Cronologia ricerche:", font=("Arial", 12), bg="#073693",
                                       fg="white")
         self.label_history.grid(row=7, columnspan=3, padx=52, pady=(10, 0), sticky="nsw")
-        self.history = Listbox(self.frame_gui, selectmode=tk.SINGLE, width=71, height=5, font=("Arial", 10), borderwidth=2)
+        self.history = Listbox(self.frame_gui, selectmode=tk.SINGLE, width=71, height=5, font=("Arial", 10),
+                               borderwidth=2)
         self.history_scrollbar_vert = Scrollbar(self.frame_gui, orient=tk.VERTICAL, command=self.history.yview)
         self.history_scrollbar_horiz = Scrollbar(self.frame_gui, orient=tk.HORIZONTAL, command=self.history.xview)
-        self.history.config(yscrollcommand=self.history_scrollbar_vert.set, xscrollcommand=self.history_scrollbar_horiz.set)
+        self.history.config(yscrollcommand=self.history_scrollbar_vert.set,
+                            xscrollcommand=self.history_scrollbar_horiz.set)
         self.history.grid(row=8, column=0, padx=55, columnspan=3, sticky="nsw")
         self.history_scrollbar_vert.grid(row=8, column=2, padx=55, sticky="nse")
         self.history_scrollbar_horiz.grid(row=9, column=0, padx=55, columnspan=3, sticky="new")
@@ -220,7 +235,8 @@ class Home(tk.Tk):
 
         self.history.bind("<<ListboxSelect>>", self.set_history_flight)
 
-        self.reload_button = tk.Button(self.frame_gui, text="Aggiorna cronologia", command=self.populate_excel_files_listbox,
+        self.reload_button = tk.Button(self.frame_gui, text="Aggiorna cronologia",
+                                       command=self.populate_excel_files_listbox,
                                        font=("Arial", 12), bg="#cdab2a", fg="#073693", activebackground="#9c7f13",
                                        activeforeground="#073693", relief=tk.FLAT)
         self.reload_button.grid(row=9, columnspan=3, padx=10, pady=25)
